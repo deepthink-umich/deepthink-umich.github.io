@@ -1,0 +1,2520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Research Thrusts | DeepThink Lab</title>
+    <meta name="description" content="Research Thrusts - DeepThink Lab at the University of Michigan">
+    <link rel="icon" type="image/svg+xml" href="Block_M-Hex.svg">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;500;600;700&family=Crimson+Text:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="unified-navbar" id="navbar">
+        <div class="unified-container">
+            <div class="lab-logo">
+                <img src="fig/DeepThink_logo_rec_light.svg" alt="DeepThink Logo" class="lab-icon">
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="research.html" class="nav-link">Research</a>
+                <a href="publications.html" class="nav-link active">Publications</a>
+                <a href="people.html" class="nav-link">People</a>
+                <a href="join.html" class="nav-link">Join Us</a>
+            </div>
+            <div class="umich-logo">
+                <img src="fig/Michigan_Engineering_Horizontal.svg" alt="University of Michigan Engineering" class="umich-logo-img">
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Publications Section -->
+    <section id="publications" class="publications">
+        <div class="container">
+            <h2 class="section-title">Publications</h2>
+            <div class="publications-intro">
+                <p>For a complete list of publications, please visit <a href="https://scholar.google.com/citations?user=JfblW3MAAAAJ" target="_blank">Google Scholar</a>.</p>
+            </div>
+
+            <!-- Year Navigation -->
+            <div class="year-navigation">
+                <button class="year-nav-btn active" onclick="toggleYear('selected')">Selected Publications</button>
+                <button class="year-nav-btn" onclick="toggleYear('preprint')">Preprint</button>
+                <button class="year-nav-btn" onclick="toggleYear('2025')">2025</button>
+                <button class="year-nav-btn" onclick="toggleYear('2024')">2024</button>
+                <button class="year-nav-btn" onclick="toggleYear('2023')">2023</button>
+                <button class="year-nav-btn" onclick="toggleYear('2022')">2022</button>
+                <button class="year-nav-btn" onclick="toggleYear('2021')">2021</button>
+                <button class="year-nav-btn" onclick="toggleYear('2020')">2020</button>
+                <button class="year-nav-btn" onclick="toggleYear('2019')">2019 & Prior</button>
+            </div>
+
+            <div class="publications-timeline">
+                <!-- Selected Publications -->
+                <div class="year-section active" id="year-selected">
+                    <div class="year-header" onclick="toggleYear('selected')">
+                        <h3 class="year-title">
+                            <i class="fas fa-chevron-down year-icon"></i>
+                            Selected Publications
+                        </h3>
+                        <div class="year-line"></div>
+                    </div>
+                    <div class="publications-list year-content">
+                        <!-- Add selected publications here -->
+                        <div class="publication-card">
+                            <h4 class="pub-title">
+                                <a href="https://arxiv.org/abs/2406.04112" target="_blank">
+                                    Compressible Dynamics in Deep Overparameterized Low-Rank Learning &amp; Adaptation
+                                </a>
+                            </h4>
+                            <p class="pub-authors">
+                                Can Yaras, Peng Wang, Laura Balzano, Qing Qu.
+                            </p>
+                            <p class="pub-venue">
+                                <em>International Conference on Machine Learning (ICML’24), 2024.</em>
+                            </p>
+                        
+                            <div class="pub-award">
+                                <i class="fas fa-award"></i>
+                                <span>Oral Presentation (top 1.5%); Best Poster Award at MMLS’24</span>
+                            </div>
+                        
+                            <div class="pub-links">
+                                <a href="https://arxiv.org/abs/2406.04112" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> Preprint
+                                </a>
+                                <a href="https://arxiv.org/pdf/2406.04112" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> PDF
+                                </a>
+                                <a href="https://qingqu.engin.umich.edu/bibtex-yaras2024compressible/" class="pub-link" target="_blank">
+                                    <i class="fas fa-quote-right"></i> BibTeX
+                                </a>
+                                <a href="https://github.com/cjyaras/deep-lora-transformers" class="pub-link" target="_blank">
+                                    <i class="fas fa-code"></i> Code
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="publication-card">
+                            <h4 class="pub-title">
+                                <a href="https://arxiv.org/abs/2310.05264" target="_blank">
+                                    The Emergence of Reproducibility and Generalizability in Diffusion Models
+                                </a>
+                            </h4>
+                            <p class="pub-authors">
+                                Huijie Zhang*, Jinfan Zhou*, Yifu Lu, Minzhe Guo, Liyue Shen, Qing Qu.
+                            </p>
+                            <p class="pub-venue">
+                                <em>International Conference on Machine Learning (ICML’24), 2024.</em>
+                            </p>
+                        
+                            <div class="pub-award">
+                                <i class="fas fa-award"></i>
+                                <span>
+                                    Best Paper Award at NeurIPS’23 Workshop on Diffusion Models
+                                    (<a href="https://ece.engin.umich.edu/stories/genai-diffusion-models-learn-to-generate-new-content-more-consistently-than-expected" target="_blank">news</a>)
+                                </span>
+                            </div>
+                        
+                            <div class="pub-links">
+                                <a href="https://arxiv.org/abs/2310.05264" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> Preprint
+                                </a>
+                                <a href="https://arxiv.org/pdf/2310.05264.pdf" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> PDF
+                                </a>
+                                <a href="https://qingqu.engin.umich.edu/bibtex-zhang2023emergence/" class="pub-link" target="_blank">
+                                    <i class="fas fa-quote-right"></i> BibTeX
+                                </a>
+                                <a href="https://qingqu.engin.umich.edu/wp-content/uploads/sites/42/2023/10/The_Emergence_of_Reproducibility_and_Consistency_in_Diffusion_Models_slides.pdf" class="pub-link" target="_blank">
+                                    <i class="fas fa-chalkboard-teacher"></i> Slides
+                                </a>
+                                <a href="https://www.huijiezh.com/reproducibility-generalizability/index.html" class="pub-link" target="_blank">
+                                    <i class="fas fa-globe"></i> Website
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="publication-card">
+                            <h4 class="pub-title">
+                                <a href="https://arxiv.org/abs/2105.02375" target="_blank">
+                                    A Geometric Analysis of Neural Collapse with Unconstrained Features
+                                </a>
+                            </h4>
+                            <p class="pub-authors">
+                                Zhihui Zhu*, Tianyu Ding*, Jinxin Zhou, Xiao Li, Chong You, Jeremias Sulam, Qing Qu.
+                            </p>
+                            <p class="pub-venue">
+                                <em>Neural Information Processing Systems (NeurIPS’21), 2021.</em>
+                            </p>
+                        
+                            <div class="pub-award">
+                                <i class="fas fa-award"></i>
+                                <span>Spotlight Presentation (top 3%)</span>
+                            </div>
+                        
+                            <div class="pub-links">
+                                <a href="https://arxiv.org/abs/2105.02375" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> Preprint
+                                </a>
+                                <a href="https://arxiv.org/pdf/2105.02375.pdf" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> PDF
+                                </a>
+                                <a href="https://qingqu.engin.umich.edu/wp-content/uploads/sites/42/2021/05/slides-NC.pdf" class="pub-link" target="_blank">
+                                    <i class="fas fa-chalkboard-teacher"></i> Slides
+                                </a>
+                                <a href="https://qingqu.engin.umich.edu/bibtex-zhu2021geometric/" class="pub-link" target="_blank">
+                                    <i class="fas fa-quote-right"></i> BibTeX
+                                </a>
+                                <a href="https://github.com/tding1/Neural-Collapse" class="pub-link" target="_blank">
+                                    <i class="fas fa-code"></i> Code
+                                </a>
+                                <a href="https://www.youtube.com/watch?v=L7YFn54Y3fE&t=133s" class="pub-link" target="_blank">
+                                    <i class="fas fa-video"></i> Video
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="publication-card">
+                            <h4 class="pub-title">
+                                <a href="https://openreview.net/forum?id=rygixkHKDH" target="_blank">
+                                    Analysis of the Optimization Landscapes for Overcomplete Representation Learning
+                                </a>
+                            </h4>
+                            <p class="pub-authors">
+                                Qing Qu, Yuexiang Zhai, Xiao Li, Yuqian Zhang, Zhihui Zhu.
+                            </p>
+                            <p class="pub-venue">
+                                <em>International Conference on Learning Representations (ICLR’20), 2020.</em>
+                            </p>
+                        
+                            <div class="pub-award">
+                                <i class="fas fa-award"></i>
+                                <span>Oral Presentation (top 1.9%)</span>
+                            </div>
+                        
+                            <div class="pub-links">
+                                <a href="https://arxiv.org/abs/1912.02427" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> Preprint
+                                </a>
+                                <a href="https://arxiv.org/pdf/1912.02427.pdf" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> PDF
+                                </a>
+                                <a href="https://qingqu.engin.umich.edu/wp-content/uploads/sites/42/2020/08/slides-odl.pdf" class="pub-link" target="_blank">
+                                    <i class="fas fa-chalkboard-teacher"></i> Slides
+                                </a>
+                                <a href="https://qingqu.engin.umich.edu/bibtex-zhu2021geometric/" class="pub-link" target="_blank">
+                                    <i class="fas fa-quote-right"></i> BibTeX
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="publication-card">
+                            <h4 class="pub-title">
+                                <a href="https://epubs.siam.org/doi/abs/10.1137/19M1291327" target="_blank">
+                                    Exact Recovery of Multichannel Sparse Blind Deconvolution via Gradient Descent
+                                </a>
+                            </h4>
+                            <p class="pub-authors">
+                                Qing Qu, Xiao Li, Zhihui Zhu.
+                            </p>
+                            <p class="pub-venue">
+                                <em>SIAM Journal on Imaging Sciences, 13(3): 1630–1652, 2020. Preliminary version appeared at NeurIPS 2019.</em>
+                            </p>
+                        
+                            <div class="pub-award">
+                                <i class="fas fa-award"></i>
+                                <span>Spotlight Presentation (top 3%)</span>
+                            </div>
+                        
+                            <div class="pub-links">
+                                <a href="https://arxiv.org/abs/1908.10776" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> Preprint
+                                </a>
+                                <a href="https://qingqu.engin.umich.edu/wp-content/uploads/sites/42/2020/08/paper-mcsbd.pdf" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> PDF
+                                </a>
+                                <a href="https://github.com/qingqu06/MCS-BD" class="pub-link" target="_blank">
+                                    <i class="fas fa-code"></i> Code
+                                </a>
+                                <a href="https://qingqu.engin.umich.edu/wp-content/uploads/sites/42/2020/08/poster-mcsbd.pdf" class="pub-link" target="_blank">
+                                    <i class="fas fa-image"></i> Poster
+                                </a>
+                                <a href="https://qingqu.engin.umich.edu/wp-content/uploads/sites/42/2020/08/slides-mcsbd.pdf" class="pub-link" target="_blank">
+                                    <i class="fas fa-chalkboard-teacher"></i> Slides
+                                </a>
+                                <a href="https://qingqu.engin.umich.edu/bibtex-qu2019nonconvex/" class="pub-link" target="_blank">
+                                    <i class="fas fa-quote-right"></i> BibTeX
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="publication-card">
+                            <h4 class="pub-title">
+                                <a href="https://link.springer.com/article/10.1007/s10208-017-9365-9" target="_blank">
+                                    A Geometric Analysis of Phase Retrieval
+                                </a>
+                            </h4>
+                            <p class="pub-authors">
+                                Ju Sun, Qing Qu, John Wright.
+                            </p>
+                            <p class="pub-venue">
+                                <em>Foundations of Computational Mathematics, 18(5): 1131-1198, 2018. Preliminary version appeared at ISIT 2016.</em>
+                            </p>
+                        
+                            <div class="pub-links">
+                                <a href="https://arxiv.org/abs/1602.06664" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> Preprint
+                                </a>
+                                <a href="https://qingqu.engin.umich.edu/wp-content/uploads/sites/42/2020/08/Sun_et_al-2018-Foundations_of_Computational_Mathematics.pdf" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> PDF
+                                </a>
+                                <a href="https://github.com/sunju/pr_plain" class="pub-link" target="_blank">
+                                    <i class="fas fa-code"></i> Code
+                                </a>
+                                <a href="https://qingqu.engin.umich.edu/wp-content/uploads/sites/42/2020/08/pr.pdf" class="pub-link" target="_blank">
+                                    <i class="fas fa-chalkboard-teacher"></i> Slides
+                                </a>
+                                <a href="https://qingqu.engin.umich.edu/bibtex-sun2018geometric/" class="pub-link" target="_blank">
+                                    <i class="fas fa-quote-right"></i> BibTeX
+                                </a>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <!-- Preprint -->
+                <div class="year-section" id="year-preprint">
+                    <div class="year-header" onclick="toggleYear('preprint')">
+                        <h3 class="year-title">
+                            <i class="fas fa-chevron-down year-icon"></i>
+                            Preprint
+                        </h3>
+                        <div class="year-line"></div>
+                    </div>
+                    <div class="publications-list year-content">
+                        <!-- Publication item template -->
+                        <div class="publication-card">
+                            <h4 class="pub-title">
+                                <a href="https://arxiv.org/abs/2512.13869" target="_blank">Coarse-to-Fine Hierarchical Alignment for UAV-based Human Detection using Diffusion Models</a>
+                            </h4>
+                            <p class="pub-authors">Wenda Li, Meng Wu, Sungmin Eum, Heesung Kwon, Qing Qu.</p>
+                            <p class="pub-venue"><em>Arxiv Preprint arXiv:2512.13869, 2025.</em></p>
+                            <div class="pub-links">
+                                <a href="https://arxiv.org/abs/2512.13869" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> Preprint
+                                </a>
+                                <a href="https://arxiv.org/pdf/2512.13869" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> PDF
+                                </a>
+                                <!-- <a href="#" class="pub-link" target="_blank">
+                                    <i class="fas fa-code"></i> Code
+                                </a>
+                                <a href="#" class="pub-link" target="_blank">
+                                    <i class="fas fa-globe"></i> Project
+                                </a> -->
+                            </div>
+                        </div>
+
+                        <div class="publication-card">
+                            <h4 class="pub-title">
+                                <a href="https://arxiv.org/abs/2510.20771" target="_blank">AlphaFlow: Understanding and Improving MeanFlow Models.</a>
+                            </h4>
+                            <p class="pub-authors">Huijie Zhang, Aliaksandr Siarohin, Willi Menapace, Michael Vasilkovsky, Sergey Tulyakov, Qing Qu, Ivan Skorokhodov.</p>
+                            <p class="pub-venue"><em>Arxiv Preprint arXiv:2510.20771, 2025.</em></p>
+                            <div class="pub-links">
+                                <a href="https://arxiv.org/abs/2510.20771" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> Preprint
+                                </a>
+                                <a href="https://arxiv.org/pdf/2510.20771" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> PDF
+                                </a>
+                                <a href="https://github.com/snap-research/alphaflow" class="pub-link" target="_blank">
+                                    <i class="fas fa-code"></i> Code
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="publication-card">
+                            <h4 class="pub-title">
+                                <a href="https://arxiv.org/abs/2512.04069" target="_blank">SpaceTools: Tool-Augmented Spatial Reasoning via Double Interactive RL.</a>
+                            </h4>
+                            <p class="pub-authors">Siyi Chen, Mikaela Angelina Uy, Chan Hee Song, Faisal Ladhak, Adithyavairavan Murali, Qing Qu, Stan Birchfield, Valts Blukis, Jonathan Tremblay.</p>
+                            <p class="pub-venue"><em>Arxiv Preprint arXiv:2512.04069, 2025.</em></p>
+                            <div class="pub-links">
+                                <a href="https://arxiv.org/abs/2512.04069" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> Preprint
+                                </a>
+                                <a href="https://arxiv.org/pdf/2512.04069" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> PDF
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="publication-card">
+                            <h4 class="pub-title">
+                                <a href="https://arxiv.org/abs/2506.14003" target="_blank">Unlearning Isn't Invisible: Detecting Unlearning Traces in LLMs from Model Outputs.</a>
+                            </h4>
+                            <p class="pub-authors">Yiwei Chen, Soumyadeep Pal, Yimeng Zhang, Qing Qu, Sijia Liu.</p>
+                            <p class="pub-venue"><em>Arxiv Preprint arXiv:2506.14003, 2025.</em></p>
+                            <div class="pub-links">
+                                <a href="https://arxiv.org/abs/2506.14003" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> Preprint
+                                </a>
+                                <a href="https://arxiv.org/pdf/2506.14003" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> PDF
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="publication-card">
+                            <h4 class="pub-title">
+                                <a href="https://arxiv.org/abs/2505.20123" target="_blank">
+                                    Understanding Generalization in Diffusion Models via Probability Flow Distance
+                                </a>
+                            </h4>
+                            <p class="pub-authors">
+                                Huijie Zhang, Zijian Huang, Siyi Chen, Jinfan Zhou, Zekai Zhang, Peng Wang, Qing Qu.
+                            </p>
+                            <p class="pub-venue">
+                                <em>Arxiv Preprint arXiv:2505.20123, 2025.</em>
+                            </p>
+                            <div class="pub-links">
+                                <a href="https://arxiv.org/abs/2505.20123" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> Preprint
+                                </a>
+                                <a href="https://arxiv.org/pdf/2505.20123" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> PDF
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="publication-card">
+                            <h4 class="pub-title">
+                                <a href="https://arxiv.org/abs/2505.14808" target="_blank">
+                                    Out-of-Distribution Generalization of In-Context Learning: A Low-Dimensional Subspace Perspective
+                                </a>
+                            </h4>
+                            <p class="pub-authors">
+                                Soo Min Kwon*, Alec S. Xu*, Can Yaras, Laura Balzano, Qing Qu.
+                            </p>
+                            <p class="pub-venue">
+                                <em>Arxiv Preprint arXiv:2505.14808, 2025.</em>
+                            </p>
+                            <div class="pub-links">
+                                <a href="https://arxiv.org/abs/2505.14808" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> Preprint
+                                </a>
+                                <a href="https://arxiv.org/pdf/2505.14808" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> PDF
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="publication-card">
+                            <h4 class="pub-title">
+                                <a href="https://arxiv.org/abs/2504.21307" target="_blank">
+                                    The Dual Power of Interpretable Token Embeddings: Jailbreaking Attacks and Defenses for Diffusion Model Unlearning
+                                </a>
+                            </h4>
+                            <p class="pub-authors">
+                                Siyi Chen, Yimeng Zhang, Sijia Liu, Qing Qu.
+                            </p>
+                            <p class="pub-venue">
+                                <em>Arxiv Preprint arXiv:2504.21307, 2025.</em>
+                            </p>
+                            <div class="pub-links">
+                                <a href="https://arxiv.org/abs/2504.21307" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> Preprint
+                                </a>
+                                <a href="https://arxiv.org/pdf/2504.21307" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> PDF
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="publication-card">
+                            <h4 class="pub-title">
+                                <a href="https://arxiv.org/abs/2503.19859" target="_blank">
+                                    An Overview of Low-Rank Structures in the Training and Adaptation of Large Models
+                                </a>
+                            </h4>
+                            <p class="pub-authors">
+                                Laura Balzano, Tianjiao Ding, Benjamin D. Haeffele, Soo Min Kwon, Qing Qu, Peng Wang, Zhangyang Wang, Can Yaras.
+                            </p>
+                            <p class="pub-venue">
+                                <em>Arxiv Preprint arXiv:2503.19859, 2025.</em>
+                                <span class="pub-note"> (Authors are listed <em>alphabetically</em>)</span>
+                            </p>
+                            <div class="pub-links">
+                                <a href="https://arxiv.org/abs/2503.19859" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> Preprint
+                                </a>
+                                <a href="https://arxiv.org/pdf/2503.19859" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> PDF
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="publication-card">
+                            <h4 class="pub-title">
+                                <a href="https://arxiv.org/abs/2501.02364" target="_blank">
+                                    Understanding How Nonlinear Layers Create Linearly Separable Features for Low-Dimensional Data
+                                </a>
+                            </h4>
+                            <p class="pub-authors">
+                                Alec S. Xu, Can Yaras, Peng Wang, Qing Qu.
+                            </p>
+                            <p class="pub-venue">
+                                <em>Arxiv Preprint arXiv:2501.02364, 2025.</em>
+                            </p>
+                            <div class="pub-links">
+                                <a href="https://arxiv.org/abs/2501.02364" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> Preprint
+                                </a>
+                                <a href="https://arxiv.org/pdf/2501.02364" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> PDF
+                                </a>
+                                <a href="https://qingqu.engin.umich.edu/bibtex-xu2025understanding/" class="pub-link" target="_blank">
+                                    <i class="fas fa-quote-right"></i> BibTeX
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="publication-card">
+                            <h4 class="pub-title">
+                                <a href="https://arxiv.org/abs/2412.08175" target="_blank">
+                                    Analyzing and Improving Model Collapse in Rectified Flow Models
+                                </a>
+                            </h4>
+                            <p class="pub-authors">
+                                Huminhao Zhu, Fangyikang Wang, Tianyu Ding, Qing Qu, Zhihui Zhu.
+                            </p>
+                            <p class="pub-venue">
+                                <em>Arxiv Preprint arXiv:2412.08175, 2024.</em>
+                            </p>
+                            <div class="pub-links">
+                                <a href="https://arxiv.org/abs/2412.08175" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> Preprint
+                                </a>
+                                <a href="https://arxiv.org/pdf/2412.08175" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> PDF
+                                </a>
+                                <a href="https://qingqu.engin.umich.edu/bibtex-zhu2024analyzing/" class="pub-link" target="_blank">
+                                    <i class="fas fa-quote-right"></i> BibTeX
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="publication-card">
+                            <h4 class="pub-title">
+                                <a href="https://arxiv.org/abs/2409.02426" target="_blank">
+                                    Diffusion Models Learn Low-Dimensional Distributions via Subspace Clustering
+                                </a>
+                            </h4>
+                            <p class="pub-authors">
+                                Peng Wang*, Huijie Zhang*, Zekai Zhang, Siyi Chen, Yi Ma, Qing Qu.
+                            </p>
+                            <p class="pub-venue">
+                                <em>Arxiv Preprint arXiv:2409.02426, 2024.</em>
+                            </p>
+                            <div class="pub-links">
+                                <a href="https://arxiv.org/abs/2409.02426" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> Preprint
+                                </a>
+                                <a href="https://arxiv.org/pdf/2409.02426" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> PDF
+                                </a>
+                                <a href="https://qingqu.engin.umich.edu/bibtex-wang2024diffusion/" class="pub-link" target="_blank">
+                                    <i class="fas fa-quote-right"></i> BibTeX
+                                </a>
+                                <a href="https://github.com/huijieZH/Diffusion-Model-Generalizability" class="pub-link" target="_blank">
+                                    <i class="fas fa-code"></i> Code
+                                </a>
+                                <a href="https://www.huijiezh.com/diffusion-model-subspace-clustering/index.html" class="pub-link" target="_blank">
+                                    <i class="fas fa-globe"></i> Project Website
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="publication-card">
+                            <h4 class="pub-title">
+                                <a href="https://arxiv.org/abs/2403.06054" target="_blank">
+                                    Decoupled Data Consistency with Diffusion Purification for Image Restoration
+                                </a>
+                            </h4>
+                            <p class="pub-authors">
+                                Xiang Li, Soo Min Kwon, Ismail R. Alkhouri, Saiprasad Ravishankar, Qing Qu.
+                            </p>
+                            <p class="pub-venue">
+                                <em>ArXiv Preprint arXiv:2403.06054, 2024.</em>
+                            </p>
+                            <div class="pub-links">
+                                <a href="https://arxiv.org/abs/2403.06054" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> Preprint
+                                </a>
+                                <a href="https://arxiv.org/pdf/2403.06054" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> PDF
+                                </a>
+                                <a href="https://qingqu.engin.umich.edu/bibtex-li2024decoupled/" class="pub-link" target="_blank">
+                                    <i class="fas fa-quote-right"></i> BibTeX
+                                </a>
+                                <a href="https://github.com/Morefre/Decoupled-Data-Consistency-with-Diffusion-Purification-for-Image-Restoration" class="pub-link" target="_blank">
+                                    <i class="fas fa-code"></i> Code
+                                </a>
+                            </div>
+                        </div>
+
+                        
+                    </div>
+                </div>
+
+                <!-- Year 2025 -->
+                <div class="year-section" id="year-2025">
+                    <div class="year-header" onclick="toggleYear('2025')">
+                        <h3 class="year-title">
+                            <i class="fas fa-chevron-down year-icon"></i>
+                            2025
+                        </h3>
+                        <div class="year-line"></div>
+                    </div>
+                    <div class="publications-list year-content">
+
+                        <div class="publication-card">
+                            <h4 class="pub-title">
+                                <a href="http://arxiv.org/abs/2505.19210" target="_blank">
+                                    Towards Understanding the Mechanisms of Classifier-Free Guidance
+                                </a>
+                            </h4>
+                            <p class="pub-authors">
+                                Xiang Li, Rongrong Wang, Qing Qu.
+                            </p>
+                            <p class="pub-venue">
+                                <em>Neural Information Processing Systems (NeurIPS'25), 2025.</em>
+                            </p>
+                        
+                            <div class="pub-award">
+                                <i class="fas fa-award"></i>
+                                <span>Spotlight Presentation (top 3.2%)</span>
+                            </div>
+                        
+                            <div class="pub-links">
+                                <a href="http://arxiv.org/abs/2505.19210" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> Preprint
+                                </a>
+                                <a href="https://arxiv.org/pdf/2505.19210" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> PDF
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="publication-card">
+                            <h4 class="pub-title">
+                                <a href="https://arxiv.org/abs/2509.16499" target="_blank">
+                                    A Closer Look at Model Collapse: From a Generalization-to-Memorization Perspective
+                                </a>
+                            </h4>
+                            <p class="pub-authors">
+                                Lianghe Shi*, Meng Wu*, Huijie Zhang, Zekai Zhang, Molei Tao, Qing Qu.
+                            </p>
+                            <p class="pub-venue">
+                                <em>Neural Information Processing Systems (NeurIPS'25), 2025.</em>
+                            </p>
+                        
+                            <div class="pub-award">
+                                <i class="fas fa-award"></i>
+                                <span>Spotlight Presentation (top 3.2%)</span>
+                            </div>
+                        
+                            <div class="pub-links">
+                                <a href="https://arxiv.org/abs/2509.16499" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> Preprint
+                                </a>
+                                <a href="https://arxiv.org/pdf/2509.16499" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> PDF
+                                </a>
+                                <a href="https://github.com/shilianghe007/Model_Collapse" class="pub-link" target="_blank">
+                                    <i class="fas fa-code"></i> Code
+                                </a>
+                                <a href="https://shilianghe007.github.io/model-collapse/index.html" class="pub-link" target="_blank">
+                                    <i class="fas fa-globe"></i> Project Website
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="publication-card">
+                            <h4 class="pub-title">
+                                <a href="https://arxiv.org/abs/2410.21088" target="_blank">
+                                    Shallow Diffuse: Robust and Invisible Watermarking through Low-Dimensional Subspaces in Diffusion Models
+                                </a>
+                            </h4>
+                            <p class="pub-authors">
+                                Wenda Li*, Huijie Zhang*, Qing Qu.
+                            </p>
+                            <p class="pub-venue">
+                                <em>Neural Information Processing Systems (NeurIPS'25), 2025.</em>
+                            </p>
+                        
+                            <div class="pub-award">
+                                <i class="fas fa-award"></i>
+                                <span>Spotlight Presentation (top 3.2%)</span>
+                            </div>
+                        
+                            <div class="pub-links">
+                                <a href="https://arxiv.org/abs/2410.21088" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> Preprint
+                                </a>
+                                <a href="https://arxiv.org/pdf/2410.21088" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> PDF
+                                </a>
+                                <a href="https://qingqu.engin.umich.edu/bibtex-li2024shallow/" class="pub-link" target="_blank">
+                                    <i class="fas fa-quote-right"></i> BibTeX
+                                </a>
+                                <a href="https://github.com/liwd190019/Shallow-Diffuse" class="pub-link" target="_blank">
+                                    <i class="fas fa-code"></i> Code
+                                </a>
+                                <a href="https://www.huijiezh.com/shallow-diffuse/" class="pub-link" target="_blank">
+                                    <i class="fas fa-globe"></i> Project Website
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="publication-card">
+                            <h4 class="pub-title">
+                                <a href="https://arxiv.org/abs/2502.05743" target="_blank">
+                                    Understanding Representation Dynamics of Diffusion Models via Low-Dimensional Modeling
+                                </a>
+                            </h4>
+                            <p class="pub-authors">
+                                Xiao Li*, Zekai Zhang*, Xiang Li, Siyi Chen, Zhihui Zhu, Peng Wang, Qing Qu.
+                            </p>
+                            <p class="pub-venue">
+                                <em>Neural Information Processing Systems (NeurIPS'25), 2025.</em>
+                            </p>
+                        
+                            <div class="pub-links">
+                                <a href="https://arxiv.org/abs/2502.05743" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> Preprint
+                                </a>
+                                <a href="https://arxiv.org/pdf/2502.05743" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> PDF
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="publication-card">
+                            <h4 class="pub-title">
+                                <a href="https://arxiv.org/abs/2501.16642" target="_blank">
+                                    FlowDAS: A Stochastic Interpolant-based Framework for Data Assimilation
+                                </a>
+                            </h4>
+                            <p class="pub-authors">
+                                Siyi Chen*, Yixuan Jia*, Qing Qu, He Sun, Jeffrey A. Fessler.
+                            </p>
+                            <p class="pub-venue">
+                                <em>Neural Information Processing Systems (NeurIPS'25), 2025.</em>
+                            </p>
+                        
+                            <div class="pub-links">
+                                <a href="https://arxiv.org/abs/2501.16642" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> Preprint
+                                </a>
+                                <a href="https://arxiv.org/pdf/2501.16642" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> PDF
+                                </a>
+                                <a href="https://qingqu.engin.umich.edu/bibtex-xu2025understanding/" class="pub-link" target="_blank">
+                                    <i class="fas fa-quote-right"></i> BibTeX
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="publication-card">
+                            <h4 class="pub-title">
+                                <a href="https://arxiv.org/abs/2505.11720" target="_blank">
+                                    UGoDIT: Unsupervised Group Deep Image Prior Via Transferable Weights
+                                </a>
+                            </h4>
+                            <p class="pub-authors">
+                                Shijun Liang, Ismail R. Alkhouri, Siddhant Gautam, Qing Qu, Saiprasad Ravishankar.
+                            </p>
+                            <p class="pub-venue">
+                                <em>Neural Information Processing Systems (NeurIPS'25), 2025.</em>
+                            </p>
+                        
+                            <div class="pub-links">
+                                <a href="https://arxiv.org/abs/2505.11720" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> Preprint
+                                </a>
+                                <a href="https://arxiv.org/pdf/2505.11720" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> PDF
+                                </a>
+                                <a href="https://qingqu.engin.umich.edu/bibtex-xu2025understanding/" class="pub-link" target="_blank">
+                                    <i class="fas fa-quote-right"></i> BibTeX
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="publication-card">
+                            <h4 class="pub-title">
+                                <a href="https://arxiv.org/abs/2309.05794" target="_blank">
+                                    Robust Physics-based Deep MRI Reconstruction Via Diffusion Purification
+                                </a>
+                            </h4>
+                            <p class="pub-authors">
+                                Ismail Alkhouri*, Shijun Liang*, Rongrong Wang, Qing Qu, Saiprasad Ravishankar.
+                            </p>
+                            <p class="pub-venue">
+                                <em>IEEE Transactions on Neural Networks and Learning Systems (TNNLS), 2025.</em>
+                            </p>
+                        
+                            <div class="pub-links">
+                                <a href="https://arxiv.org/abs/2309.05794" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> Preprint
+                                </a>
+                                <a href="https://arxiv.org/pdf/2309.05794.pdf" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> PDF
+                                </a>
+                                <a href="https://qingqu.engin.umich.edu/bibtex-alkhouri2023diffusion/" class="pub-link" target="_blank">
+                                    <i class="fas fa-quote-right"></i> BibTeX
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="publication-card">
+                            <h4 class="pub-title">
+                                <a href="https://arxiv.org/abs/2311.02960" target="_blank">
+                                    Understanding Deep Representation Learning via Layerwise Feature Compression and Discrimination
+                                </a>
+                            </h4>
+                            <p class="pub-authors">
+                                Peng Wang*, Xiao Li*, Can Yaras, Zhihui Zhu, Laura Balzano, Wei Hu, Qing Qu.
+                            </p>
+                            <p class="pub-venue">
+                                <em>Journal of Machine Learning Research (JMLR), 2025.</em>
+                            </p>
+                        
+                            <div class="pub-links">
+                                <a href="https://arxiv.org/abs/2311.02960" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> Preprint
+                                </a>
+                                <a href="https://arxiv.org/pdf/2311.02960.pdf" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> PDF
+                                </a>
+                                <a href="https://qingqu.engin.umich.edu/bibtex-wang2023understanding/" class="pub-link" target="_blank">
+                                    <i class="fas fa-quote-right"></i> BibTeX
+                                </a>
+                                <a href="https://github.com/Heimine/PNC_DLN" class="pub-link" target="_blank">
+                                    <i class="fas fa-code"></i> Code
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="publication-card">
+                            <h4 class="pub-title">
+                                <a href="https://arxiv.org/abs/2410.04479" target="_blank">
+                                    SITCOM: Step-wise Triple-Consistent Diffusion Sampling for Inverse Problems
+                                </a>
+                            </h4>
+                            <p class="pub-authors">
+                                Ismail Alkhouri, Shijun Liang, Cheng-Han Huang, Jimmy Dai, Qing Qu, Saiprasad Ravishankar, Rongrong Wang.
+                            </p>
+                            <p class="pub-venue">
+                                <em>International Conference on Machine Learning (ICML'25), 2025.</em>
+                            </p>
+                        
+                            <div class="pub-links">
+                                <a href="https://arxiv.org/abs/2410.04479" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> Preprint
+                                </a>
+                                <a href="https://arxiv.org/pdf/2410.04479" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> PDF
+                                </a>
+                                <a href="https://qingqu.engin.umich.edu/bibtex-wang2023understanding/" class="pub-link" target="_blank">
+                                    <i class="fas fa-quote-right"></i> BibTeX
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="publication-card">
+                            <h4 class="pub-title">
+                                <a href="https://openreview.net/forum?id=RhAW7TRJUy" target="_blank">
+                                    Attention-Only Transformers via Unrolled Subspace Denoising
+                                </a>
+                            </h4>
+                            <p class="pub-authors">
+                                Peng Wang, Yifu Lu, Yaodong Yu, Druv Pai, Qing Qu, Yi Ma.
+                            </p>
+                            <p class="pub-venue">
+                                <em>International Conference on Machine Learning (ICML'25), 2025.</em>
+                            </p>
+                        
+                            <div class="pub-links">
+                                <a href="https://arxiv.org/abs/2506.03790" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> Preprint
+                                </a>
+                                <a href="https://arxiv.org/pdf/2506.03790" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> PDF
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="publication-card">
+                            <h4 class="pub-title">
+                                <a href="https://arxiv.org/abs/2412.07909" target="_blank">
+                                    Explaining and Mitigating the Modality Gap in Contrastive Multimodal Learning
+                                </a>
+                            </h4>
+                            <p class="pub-authors">
+                                Can Yaras*, Siyi Chen*, Peng Wang, Qing Qu.
+                            </p>
+                            <p class="pub-venue">
+                                <em>Conference on Parsimony and Learning (CPAL'25), 2025.</em>
+                            </p>
+                        
+                            <div class="pub-links">
+                                <a href="https://arxiv.org/abs/2412.07909" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> Preprint
+                                </a>
+                                <a href="https://arxiv.org/pdf/2412.07909" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> PDF
+                                </a>
+                                <a href="https://qingqu.engin.umich.edu/bibtex-yaras2024explaining/" class="pub-link" target="_blank">
+                                    <i class="fas fa-quote-right"></i> BibTeX
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="publication-card">
+                            <h4 class="pub-title">
+                                <a href="https://arxiv.org/abs/2409.02371" target="_blank">
+                                    Unfolding Videos Dynamics via Taylor Expansion
+                                </a>
+                            </h4>
+                            <p class="pub-authors">
+                                Siyi Chen, Minkyu Choi, Zesen Zhao, Kuan Han, Qing Qu, Zhongming Liu.
+                            </p>
+                            <p class="pub-venue">
+                                <em>Conference on Parsimony and Learning (CPAL'25), 2025.</em>
+                            </p>
+                        
+                            <div class="pub-links">
+                                <a href="https://arxiv.org/abs/2409.02371" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> Preprint
+                                </a>
+                                <a href="https://arxiv.org/pdf/2409.02371" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> PDF
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="publication-card">
+                            <h4 class="pub-title">
+                                <a href="https://openreview.net/forum?id=J4Dvxv7WnG" target="_blank">
+                                    Learning Dynamics of Deep Matrix Factorization Beyond the Edge of Stability
+                                </a>
+                            </h4>
+                            <p class="pub-authors">
+                                Avrajit Ghosh*, Soo Min Kwon*, Rongrong Wang, Saiprasad Ravishankar, Qing Qu.
+                            </p>
+                            <p class="pub-venue">
+                                <em>International Conference on Learning Representations (ICLR'25), 2025.</em>
+                            </p>
+                        
+                            <div class="pub-links">
+                                <a href="https://openreview.net/forum?id=J4Dvxv7WnG" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> Preprint
+                                </a>
+                                <a href="https://openreview.net/pdf?id=J4Dvxv7WnG" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> PDF
+                                </a>
+                                <a href="https://qingqu.engin.umich.edu/bibtex-ghosh2025learning/" class="pub-link" target="_blank">
+                                    <i class="fas fa-quote-right"></i> BibTeX
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="publication-card">
+                            <h4 class="pub-title">
+                                <a href="https://ieeexplore.ieee.org/abstract/document/10890153/" target="_blank">
+                                    Sequential Diffusion-Guided Deep Image Prior for Medical Image Reconstruction
+                                </a>
+                            </h4>
+                            <p class="pub-authors">
+                                Shijun Liang, Ismail Alkhouri, Qing Qu, Rongrong Wang, Saiprasad Ravishankar.
+                            </p>
+                            <p class="pub-venue">
+                                <em>IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP'25), 2025.</em>
+                            </p>
+                        
+                            <div class="pub-links">
+                                <a href="https://ieeexplore.ieee.org/abstract/document/10890153" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> Preprint
+                                </a>
+                                <a href="https://ieeexplore.ieee.org/abstract/document/10890153" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> PDF
+                                </a>
+                                <a href="https://qingqu.engin.umich.edu/bibtex-liang2024analysis/" class="pub-link" target="_blank">
+                                    <i class="fas fa-quote-right"></i> BibTeX
+                                </a>
+                            </div>
+                        </div>
+                        
+
+                        <div class="publication-card">
+                            <h4 class="pub-title">
+                                <a href="https://ieeexplore.ieee.org/document/10896571" target="_blank">
+                                    Analysis of Deep Image Prior and Exploiting Self-Guidance for Image Reconstruction
+                                </a>
+                            </h4>
+                            <p class="pub-authors">
+                                Shijun Liang, Evan Bell, Qing Qu, Rongrong Wang, Saiprasad Ravishankar.
+                            </p>
+                            <p class="pub-venue">
+                                <em>IEEE Transactions on Computational Imaging (TCI), 2025.</em>
+                            </p>
+                        
+                            <div class="pub-links">
+                                <a href="https://arxiv.org/abs/2402.04097" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> Preprint
+                                </a>
+                                <a href="https://arxiv.org/pdf/2402.04097" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> PDF
+                                </a>
+                                <a href="https://qingqu.engin.umich.edu/bibtex-liang2024analysis/" class="pub-link" target="_blank">
+                                    <i class="fas fa-quote-right"></i> BibTeX
+                                </a>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <!-- Year 2024 -->
+                <div class="year-section" id="year-2024">
+                    <div class="year-header" onclick="toggleYear('2024')">
+                        <h3 class="year-title">
+                            <i class="fas fa-chevron-down year-icon"></i>
+                            2024
+                        </h3>
+                        <div class="year-line"></div>
+                    </div>
+                    <div class="publications-list year-content">
+
+                        <div class="publication-card">
+                            <h4 class="pub-title">
+                                <a href="https://arxiv.org/abs/2410.24060" target="_blank">
+                                    Understanding Generalizability of Diffusion Models Requires Rethinking the Hidden Gaussian Structure
+                                </a>
+                            </h4>
+                            <p class="pub-authors">
+                                Xiang Li, Yixiang Dai, Qing Qu.
+                            </p>
+                            <p class="pub-venue">
+                                <em>Neural Information Processing Systems (NeurIPS'24), 2024.</em>
+                            </p>
+                        
+                            <div class="pub-links">
+                                <a href="https://arxiv.org/abs/2410.24060" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> Preprint
+                                </a>
+                                <a href="https://arxiv.org/pdf/2410.24060" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> PDF
+                                </a>
+                                <a href="https://qingqu.engin.umich.edu/bibtex-li2024understanding/" class="pub-link" target="_blank">
+                                    <i class="fas fa-quote-right"></i> BibTeX
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="publication-card">
+                            <h4 class="pub-title">
+                                <a href="https://arxiv.org/abs/2410.21262" target="_blank">
+                                    BLAST: Block-Level Adaptive Structured Matrices for Efficient Deep Neural Network Inference
+                                </a>
+                            </h4>
+                            <p class="pub-authors">
+                                Changwoo Lee, Soo Min Kwon, Qing Qu, Hun-Seok Kim.
+                            </p>
+                            <p class="pub-venue">
+                                <em>Neural Information Processing Systems (NeurIPS'24), 2024.</em>
+                            </p>
+                        
+                            <div class="pub-links">
+                                <a href="https://arxiv.org/abs/2410.21262" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> Preprint
+                                </a>
+                                <a href="https://arxiv.org/pdf/2410.21262" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> PDF
+                                </a>
+                                <a href="https://qingqu.engin.umich.edu/bibtex-lee2024blast/" class="pub-link" target="_blank">
+                                    <i class="fas fa-quote-right"></i> BibTeX
+                                </a>
+                                <a href="https://github.com/changwoolee/BLAST" class="pub-link" target="_blank">
+                                    <i class="fas fa-code"></i> Code
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="publication-card">
+                            <h4 class="pub-title">
+                                <a href="https://openreview.net/forum?id=K1EG2ABzNE&noteId=KLbtyQ08BC" target="_blank">
+                                    Image Reconstruction Via Autoencoding Sequential Deep Image Prior
+                                </a>
+                            </h4>
+                            <p class="pub-authors">
+                                Ismail Alkhouri, Shijun Liang, Evan Bell, Qing Qu, Rongrong Wang, Saiprasad Ravishankar.
+                            </p>
+                            <p class="pub-venue">
+                                <em>Neural Information Processing Systems (NeurIPS'24), 2024.</em>
+                            </p>
+                        
+                            <div class="pub-links">
+                                <a href="https://openreview.net/forum?id=K1EG2ABzNE&noteId=KLbtyQ08BC" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> Preprint
+                                </a>
+                                <a href="https://qingqu.engin.umich.edu/bibtex-alkhouri2024image/" class="pub-link" target="_blank">
+                                    <i class="fas fa-quote-right"></i> BibTeX
+                                </a>
+                                <a href="https://github.com/sjames40/Aseq_DIP/tree/main" class="pub-link" target="_blank">
+                                    <i class="fas fa-code"></i> Code
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="publication-card">
+                            <h4 class="pub-title">
+                                <a href="https://arxiv.org/abs/2409.02374" target="_blank">
+                                    Exploring Low-Dimensional Subspaces in Diffusion Models for Controllable Image Editing
+                                </a>
+                            </h4>
+                            <p class="pub-authors">
+                                Siyi Chen*, Huijie Zhang*, Minzhe Guo, Yifu Lu, Peng Wang, Qing Qu.
+                            </p>
+                            <p class="pub-venue">
+                                <em>Neural Information Processing Systems (NeurIPS'24), 2024.</em>
+                            </p>
+                        
+                            <div class="pub-links">
+                                <a href="https://arxiv.org/abs/2409.02374" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> Preprint
+                                </a>
+                                <a href="https://arxiv.org/pdf/2409.02374" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> PDF
+                                </a>
+                                <a href="https://qingqu.engin.umich.edu/bibtex-chen2024exploring/" class="pub-link" target="_blank">
+                                    <i class="fas fa-quote-right"></i> BibTeX
+                                </a>
+                                <a href="https://github.com/ChicyChen/LOCO-Edit" class="pub-link" target="_blank">
+                                    <i class="fas fa-code"></i> Code
+                                </a>
+                                <a href="https://chicychen.github.io/LOCO/index.html" class="pub-link" target="_blank">
+                                    <i class="fas fa-globe"></i> Project Website
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="publication-card">
+                            <h4 class="pub-title">
+                                <a href="https://arxiv.org/abs/2406.04112" target="_blank">
+                                    Compressible Dynamics in Deep Overparameterized Low-Rank Learning &amp; Adaptation
+                                </a>
+                            </h4>
+                            <p class="pub-authors">
+                                Can Yaras, Peng Wang, Laura Balzano, Qing Qu.
+                            </p>
+                            <p class="pub-venue">
+                                <em>International Conference on Machine Learning (ICML'24), 2024.</em>
+                            </p>
+                        
+                            <div class="pub-award">
+                                <i class="fas fa-award"></i>
+                                <span>Oral Presentation (top 1.5%)</span>
+                            </div>
+                        
+                            <div class="pub-links">
+                                <a href="https://arxiv.org/abs/2406.04112" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> Preprint
+                                </a>
+                                <a href="https://arxiv.org/pdf/2406.04112" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> PDF
+                                </a>
+                                <a href="https://qingqu.engin.umich.edu/bibtex-yaras2024compressible/" class="pub-link" target="_blank">
+                                    <i class="fas fa-quote-right"></i> BibTeX
+                                </a>
+                                <a href="https://github.com/cjyaras/deep-lora-transformers" class="pub-link" target="_blank">
+                                    <i class="fas fa-code"></i> Code
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="publication-card">
+                            <h4 class="pub-title">
+                                <a href="https://arxiv.org/abs/2406.01909" target="_blank">
+                                    A Global Geometric Analysis of Maximal Coding Rate Reduction
+                                </a>
+                            </h4>
+                            <p class="pub-authors">
+                                Peng Wang, Huikang Liu, Druv Pai, Yaodong Yu, Zhihui Zhu, Qing Qu, Yi Ma.
+                            </p>
+                            <p class="pub-venue">
+                                <em>International Conference on Machine Learning (ICML'24), 2024.</em>
+                            </p>
+                        
+                            <div class="pub-links">
+                                <a href="https://arxiv.org/abs/2406.01909" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> Preprint
+                                </a>
+                                <a href="https://arxiv.org/pdf/2406.01909" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> PDF
+                                </a>
+                                <a href="https://qingqu.engin.umich.edu/bibtex-wang2024a/" class="pub-link" target="_blank">
+                                    <i class="fas fa-quote-right"></i> BibTeX
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="publication-card">
+                            <h4 class="pub-title">
+                                <a href="https://arxiv.org/abs/2406.05822" target="_blank">
+                                    Symmetric Matrix Completion with ReLU Sampling
+                                </a>
+                            </h4>
+                            <p class="pub-authors">
+                                Huikang Liu*, Peng Wang*, Longxiu Huang, Qing Qu, Laura Balzano.
+                            </p>
+                            <p class="pub-venue">
+                                <em>International Conference on Machine Learning (ICML'24), 2024.</em>
+                            </p>
+                        
+                            <div class="pub-links">
+                                <a href="https://arxiv.org/abs/2406.05822" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> Preprint
+                                </a>
+                                <a href="https://arxiv.org/pdf/2406.05822" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> PDF
+                                </a>
+                                <a href="https://qingqu.engin.umich.edu/bibtex-liu2024matrix/" class="pub-link" target="_blank">
+                                    <i class="fas fa-quote-right"></i> BibTeX
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="publication-card">
+                            <h4 class="pub-title">
+                                <a href="https://arxiv.org/abs/2406.05288v1" target="_blank">
+                                    Optimal Eye Surgeon: Finding Image Priors Through Sparse Generators at Initialization
+                                </a>
+                            </h4>
+                            <p class="pub-authors">
+                                Avrajit Ghosh, Xitong Zhang, Kenneth K. Sun, Qing Qu, Saiprasad Ravishankar, Rongrong Wang.
+                            </p>
+                            <p class="pub-venue">
+                                <em>International Conference on Machine Learning (ICML'24), 2024.</em>
+                            </p>
+                        
+                            <div class="pub-links">
+                                <a href="https://arxiv.org/abs/2406.05288v1" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> Preprint
+                                </a>
+                                <a href="https://arxiv.org/pdf/2406.05288v1" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> PDF
+                                </a>
+                                <a href="https://qingqu.engin.umich.edu/bibtex-ghosh2024optimal/" class="pub-link" target="_blank">
+                                    <i class="fas fa-quote-right"></i> BibTeX
+                                </a>
+                                <a href="https://github.com/Avra98/Optimal-Eye-Surgeon" class="pub-link" target="_blank">
+                                    <i class="fas fa-code"></i> Code
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="publication-card">
+                            <h4 class="pub-title">
+                                <a href="https://pubs.aip.org/aip/aml/article/2/3/036106/3309142/Sim2Real-in-reconstructive-spectroscopy-Deep" target="_blank">
+                                    Sim2Real in Reconstructive Spectroscopy: Deep Learning with Augmented Device-Informed Data Simulation
+                                </a>
+                            </h4>
+                            <p class="pub-authors">
+                                Jiyi Chen*, Pengyu Li*, Yutong Wang, Pei-Cheng Ku, Qing Qu.
+                            </p>
+                            <p class="pub-venue">
+                                <em>APL Machine Learning, Vol. 2, No. 3, pp. 036106, Aug. 2024.</em>
+                            </p>
+                        
+                            <div class="pub-links">
+                                <a href="https://arxiv.org/abs/2403.12354" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> Preprint
+                                </a>
+                                <a href="https://pubs.aip.org/aip/aml/article-pdf/doi/10.1063/5.0209339/20121785/036106_1_5.0209339.pdf" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> PDF
+                                </a>
+                                <a href="https://qingqu.engin.umich.edu/bibtex-chen2024sim2real/" class="pub-link" target="_blank">
+                                    <i class="fas fa-quote-right"></i> BibTeX
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="publication-card">
+                            <h4 class="pub-title">
+                                <a href="https://www.spiedigitallibrary.org/conference-proceedings-of-spie/13026/1302605/UV-VIS-chip-scale-spectropolarimeter/10.1117/12.3013574.short" target="_blank">
+                                    UV-VIS Chip-Scale Spectropolarimeter
+                                </a>
+                            </h4>
+                            <p class="pub-authors">
+                                Juhyeon Kim, Jiyi Chen, Pengyu Li, Yutong Wang, Qing Qu, Pei-Cheng Ku.
+                            </p>
+                            <p class="pub-venue">
+                                <em>Proceedings of SPIE 13026, Next-Generation Spectroscopic Technologies XVI, 1302605, 2024.</em>
+                            </p>
+                        
+                            <div class="pub-links">
+                                <a href="https://www.spiedigitallibrary.org/conference-proceedings-of-spie/13026/1302605/UV-VIS-chip-scale-spectropolarimeter/10.1117/12.3013574.short" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> Preprint
+                                </a>
+                                <a href="https://www.spiedigitallibrary.org/conference-proceedings-of-spie/13026/1302605/UV-VIS-chip-scale-spectropolarimeter/10.1117/12.3013574.short" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> PDF
+                                </a>
+                                <a href="https://www.spiedigitallibrary.org/conference-proceedings-of-spie/13026/1302605/UV-VIS-chip-scale-spectropolarimeter/10.1117/12.3013574.short" class="pub-link" target="_blank">
+                                    <i class="fas fa-quote-right"></i> BibTeX
+                                </a>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <!-- Year 2023 -->
+                <div class="year-section" id="year-2023">
+                    <div class="year-header" onclick="toggleYear('2023')">
+                        <h3 class="year-title">
+                            <i class="fas fa-chevron-down year-icon"></i>
+                            2023
+                        </h3>
+                        <div class="year-line"></div>
+                    </div>
+                    <div class="publications-list year-content">
+                        <!-- Add 2023 publications here -->
+                        <div class="publication-card">
+                            <h4 class="pub-title">
+                                <a href="https://arxiv.org/abs/2312.09181" target="_blank">
+                                    Improving Efficiency of Diffusion Models via Multi-Stage Framework and Tailored Multi-Decoder Architectures
+                                </a>
+                            </h4>
+                            <p class="pub-authors">
+                                Huijie Zhang*, Yifu Lu*, Ismail Alkhouri, Saiprasad Ravishankar, Dogyoon Song, Qing Qu.
+                            </p>
+                            <p class="pub-venue">
+                                <em>Conference on Computer Vision and Pattern Recognition (CVPR'24), 2024.</em>
+                            </p>
+                        
+                            <div class="pub-links">
+                                <a href="https://arxiv.org/abs/2312.09181" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> Preprint
+                                </a>
+                                <a href="https://arxiv.org/pdf/2312.09181.pdf" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> PDF
+                                </a>
+                                <a href="https://qingqu.engin.umich.edu/bibtex-zhang2023improving/" class="pub-link" target="_blank">
+                                    <i class="fas fa-quote-right"></i> BibTeX
+                                </a>
+                                <a href="https://github.com/LucasYFL/Multistage_Diffusion" class="pub-link" target="_blank">
+                                    <i class="fas fa-code"></i> Code
+                                </a>
+                                <a href="https://www.huijiezh.com/multistage-diffusion-model/" class="pub-link" target="_blank">
+                                    <i class="fas fa-globe"></i> Project Website
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="publication-card">
+                            <h4 class="pub-title">
+                                <a href="https://proceedings.mlr.press/v238/min-kwon24a.html" target="_blank">
+                                    Efficient Low-Dimensional Compression of Overparameterized Models
+                                </a>
+                            </h4>
+                            <p class="pub-authors">
+                                Soo Min Kwon*, Zekai Zhang*, Dogyoon Song, Laura Balzano, Qing Qu.
+                            </p>
+                            <p class="pub-venue">
+                                <em>Proceedings of the 27th International Conference on Artificial Intelligence and Statistics (AISTATS'24), 2024.</em>
+                            </p>
+                        
+                            <div class="pub-links">
+                                <a href="https://arxiv.org/abs/2311.05061" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> Preprint
+                                </a>
+                                <a href="https://arxiv.org/pdf/2311.05061.pdf" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> PDF
+                                </a>
+                                <a href="https://qingqu.engin.umich.edu/bibtexsoo-min2023efficient/" class="pub-link" target="_blank">
+                                    <i class="fas fa-quote-right"></i> BibTeX
+                                </a>
+                                <a href="https://github.com/soominkwon/comp-deep-nets" class="pub-link" target="_blank">
+                                    <i class="fas fa-code"></i> Code
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="publication-card">
+                            <h4 class="pub-title">
+                                <a href="https://arxiv.org/abs/2310.15903" target="_blank">
+                                    Neural Collapse in Multi-label Learning with Pick-all-label Loss
+                                </a>
+                            </h4>
+                            <p class="pub-authors">
+                                Pengyu Li*, Xiao Li*, Yutong Wang, Qing Qu.
+                            </p>
+                            <p class="pub-venue">
+                                <em>International Conference on Machine Learning (ICML'24), 2024.</em>
+                            </p>
+                        
+                            <div class="pub-links">
+                                <a href="https://arxiv.org/abs/2310.15903" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> Preprint
+                                </a>
+                                <a href="https://arxiv.org/pdf/2310.15903.pdf" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> PDF
+                                </a>
+                                <a href="https://qingqu.engin.umich.edu/bibtex-li2023neural/" class="pub-link" target="_blank">
+                                    <i class="fas fa-quote-right"></i> BibTeX
+                                </a>
+                                <a href="https://github.com/Heimine/NC_MLab" class="pub-link" target="_blank">
+                                    <i class="fas fa-code"></i> Code
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="publication-card">
+                            <h4 class="pub-title">
+                                <a href="https://arxiv.org/abs/2310.05351" target="_blank">
+                                    Generalized Neural Collapse for a Large Number of Classes
+                                </a>
+                            </h4>
+                            <p class="pub-authors">
+                                Jiachen Jiang*, Jinxin Zhou*, Peng Wang, Qing Qu, Dustin Mixon, Chong You*, Zhihui Zhu*.
+                            </p>
+                            <p class="pub-venue">
+                                <em>International Conference on Machine Learning (ICML'24), 2024.</em>
+                            </p>
+                        
+                            <div class="pub-links">
+                                <a href="https://arxiv.org/abs/2310.05351" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> Preprint
+                                </a>
+                                <a href="https://arxiv.org/pdf/2310.05351.pdf" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> PDF
+                                </a>
+                                <a href="https://qingqu.engin.umich.edu/bibtex-jiang2023generalized/" class="pub-link" target="_blank">
+                                    <i class="fas fa-quote-right"></i> BibTeX
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="publication-card">
+                            <h4 class="pub-title">
+                                <a href="https://arxiv.org/abs/2310.05264" target="_blank">
+                                    The Emergence of Reproducibility and Consistency in Diffusion Models
+                                </a>
+                            </h4>
+                            <p class="pub-authors">
+                                Huijie Zhang*, Jinfan Zhou*, Yifu Lu, Minzhe Guo, Liyue Shen, Qing Qu.
+                            </p>
+                            <p class="pub-venue">
+                                <em>International Conference on Machine Learning (ICML'24), 2024.</em>
+                            </p>
+                        
+                            <div class="pub-links">
+                                <a href="https://arxiv.org/abs/2310.05264" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> Preprint
+                                </a>
+                                <a href="https://arxiv.org/pdf/2310.05264.pdf" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> PDF
+                                </a>
+                                <a href="https://qingqu.engin.umich.edu/bibtex-zhang2023emergence/" class="pub-link" target="_blank">
+                                    <i class="fas fa-quote-right"></i> BibTeX
+                                </a>
+                                <a href="https://qingqu.engin.umich.edu/wp-content/uploads/sites/42/2023/10/The_Emergence_of_Reproducibility_and_Consistency_in_Diffusion_Models_slides.pdf" class="pub-link" target="_blank">
+                                    <i class="fas fa-chalkboard-teacher"></i> Slides
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="publication-card">
+                            <h4 class="pub-title">
+                                <a href="https://arxiv.org/abs/2309.10313" target="_blank">
+                                    Investigating the Catastrophic Forgetting in Multimodal Large Language Models
+                                </a>
+                            </h4>
+                            <p class="pub-authors">
+                                Yuexiang Zhai, Shengbang Tong, Xiao Li, Mu Cai, Qing Qu, Yong Jae Lee, Yi Ma.
+                            </p>
+                            <p class="pub-venue">
+                                <em>Conference on Parsimony and Learning (CPAL'24), 2024.</em>
+                            </p>
+                        
+                            <div class="pub-links">
+                                <a href="https://arxiv.org/abs/2309.10313" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> Preprint
+                                </a>
+                                <a href="https://arxiv.org/pdf/2309.10313.pdf" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> PDF
+                                </a>
+                                <a href="https://qingqu.engin.umich.edu/bibtex-zhai2023investigating/" class="pub-link" target="_blank">
+                                    <i class="fas fa-quote-right"></i> BibTeX
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="publication-card">
+                            <h4 class="pub-title">
+                                <a href="https://arxiv.org/abs/2306.01154" target="_blank">
+                                    The Law of Parsimony in Gradient Descent for Learning Deep Linear Networks
+                                </a>
+                            </h4>
+                            <p class="pub-authors">
+                                Can Yaras*, Peng Wang*, Wei Hu, Zhihui Zhu, Laura Balzano, Qing Qu.
+                            </p>
+                            <p class="pub-venue">
+                                <em>ArXiv Preprint arXiv:2306.01154, 2023.</em>
+                            </p>
+                        
+                            <div class="pub-links">
+                                <a href="https://arxiv.org/abs/2306.01154" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> Preprint
+                                </a>
+                                <a href="https://arxiv.org/pdf/2306.01154.pdf" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> PDF
+                                </a>
+                                <a href="https://qingqu.engin.umich.edu/bibtex-yaras2023law/" class="pub-link" target="_blank">
+                                    <i class="fas fa-quote-right"></i> BibTeX
+                                </a>
+                                <a href="https://github.com/cjyaras/law-of-parsimony" class="pub-link" target="_blank">
+                                    <i class="fas fa-code"></i> Code
+                                </a>
+                                <a href="https://qingqu.engin.umich.edu/wp-content/uploads/sites/42/2023/06/Talk_Law_of_Parsimony.pdf" class="pub-link" target="_blank">
+                                    <i class="fas fa-chalkboard-teacher"></i> Slides
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="publication-card">
+                            <h4 class="pub-title">
+                                <a href="https://openreview.net/forum?id=j8hdRqOUhN" target="_blank">
+                                    Solving Inverse Problems with Latent Diffusion Models via Hard Data Consistency
+                                </a>
+                            </h4>
+                            <p class="pub-authors">
+                                Bowen Song*, Soo Min Kwon*, Zecheng Zhang, Xinyu Hu, Qing Qu, Liyue Shen.
+                            </p>
+                            <p class="pub-venue">
+                                <em>International Conference on Learning Representations (ICLR'24), 2024.</em>
+                            </p>
+                        
+                            <div class="pub-award">
+                                <i class="fas fa-award"></i>
+                                <span>Spotlight Presentation (top 5%)</span>
+                            </div>
+                        
+                            <div class="pub-links">
+                                <a href="https://arxiv.org/abs/2307.08123" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> Preprint
+                                </a>
+                                <a href="https://arxiv.org/pdf/2307.08123.pdf" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> PDF
+                                </a>
+                                <a href="https://qingqu.engin.umich.edu/bibtex-song2023solving/" class="pub-link" target="_blank">
+                                    <i class="fas fa-quote-right"></i> BibTeX
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="publication-card">
+                            <h4 class="pub-title">
+                                <a href="https://ieeexplore.ieee.org/document/10096631" target="_blank">
+                                    Robust Self-Guided Deep Image Prior
+                                </a>
+                            </h4>
+                            <p class="pub-authors">
+                                Evan Bell, Shijun Liang, Qing Qu, Saiprasad Ravishankar.
+                            </p>
+                            <p class="pub-venue">
+                                <em>IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP'23), 2023.</em>
+                            </p>
+                        
+                            <div class="pub-links">
+                                <a href="https://qingqu.engin.umich.edu/wp-content/uploads/sites/42/2023/06/Robust_Self-Guided_Deep_Image_Prior.pdf" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> Preprint
+                                </a>
+                                <a href="https://qingqu.engin.umich.edu/wp-content/uploads/sites/42/2023/06/Robust_Self-Guided_Deep_Image_Prior.pdf" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> PDF
+                                </a>
+                                <a href="https://qingqu.engin.umich.edu/bibtex-bell2023robust/" class="pub-link" target="_blank">
+                                    <i class="fas fa-quote-right"></i> BibTeX
+                                </a>
+                            </div>
+                        </div>
+
+                        
+                    </div>
+                </div>
+
+                <!-- Year 2022 -->
+                <div class="year-section" id="year-2022">
+                    <div class="year-header" onclick="toggleYear('2022')">
+                        <h3 class="year-title">
+                            <i class="fas fa-chevron-down year-icon"></i>
+                            2022
+                        </h3>
+                        <div class="year-line"></div>
+                    </div>
+                    <div class="publications-list year-content">
+                        <!-- Add 2022 publications here -->
+
+                        <div class="publication-card">
+                            <h4 class="pub-title">
+                                <a href="https://arxiv.org/abs/2212.12206" target="_blank">
+                                    Understanding and Improving Transfer Learning of Deep Models via Neural Collapse
+                                </a>
+                            </h4>
+                            <p class="pub-authors">
+                                Xiao Li*, Sheng Liu*, Jinxin Zhou, Xinyu Lu, Carlos Fernandez-Granda, Zhihui Zhu, Qing Qu.
+                            </p>
+                            <p class="pub-venue">
+                                <em>Transactions on Machine Learning Research (TMLR), 2024.</em>
+                            </p>
+                        
+                            <div class="pub-links">
+                                <a href="https://arxiv.org/abs/2212.12206" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> Preprint
+                                </a>
+                                <a href="https://arxiv.org/pdf/2212.12206.pdf" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> PDF
+                                </a>
+                                <a href="https://qingqu.engin.umich.edu/bibtex-li2022principled/" class="pub-link" target="_blank">
+                                    <i class="fas fa-quote-right"></i> BibTeX
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="publication-card">
+                            <h4 class="pub-title">
+                                <a href="https://openreview.net/forum?id=Zvh6lF5b26N" target="_blank">
+                                    Neural Collapse with Normalized Features: A Geometric Analysis over the Riemannian Manifold
+                                </a>
+                            </h4>
+                            <p class="pub-authors">
+                                Can Yaras*, Peng Wang*, Zhihui Zhu, Laura Balzano, Qing Qu.
+                            </p>
+                            <p class="pub-venue">
+                                <em>Neural Information Processing Systems (NeurIPS'22), 2022.</em>
+                            </p>
+                        
+                            <div class="pub-links">
+                                <a href="https://arxiv.org/abs/2209.09211" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> Preprint
+                                </a>
+                                <a href="https://arxiv.org/pdf/2209.09211.pdf" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> PDF
+                                </a>
+                                <a href="https://qingqu.engin.umich.edu/bibtex-yaras2022neural/" class="pub-link" target="_blank">
+                                    <i class="fas fa-quote-right"></i> BibTeX
+                                </a>
+                                <a href="https://github.com/cjyaras/normalized-neural-collapse" class="pub-link" target="_blank">
+                                    <i class="fas fa-code"></i> Code
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="publication-card">
+                            <h4 class="pub-title">
+                                <a href="https://openreview.net/forum?id=8rfYWE3nyXl" target="_blank">
+                                    Are All Losses Created Equal: A Neural Collapse Perspective
+                                </a>
+                            </h4>
+                            <p class="pub-authors">
+                                Jinxin Zhou, Chong You, Xiao Li, Kangning Liu, Sheng Liu, Qing Qu, Zhihui Zhu.
+                            </p>
+                            <p class="pub-venue">
+                                <em>Neural Information Processing Systems (NeurIPS'22), 2022.</em>
+                            </p>
+                        
+                            <div class="pub-links">
+                                <a href="https://arxiv.org/abs/2210.02192" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> Preprint
+                                </a>
+                                <a href="https://arxiv.org/pdf/2210.02192.pdf" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> PDF
+                                </a>
+                                <a href="https://qingqu.engin.umich.edu/bibtex-zhou2022are/" class="pub-link" target="_blank">
+                                    <i class="fas fa-quote-right"></i> BibTeX
+                                </a>
+                                <a href="https://github.com/jinxinzhou/nc_loss" class="pub-link" target="_blank">
+                                    <i class="fas fa-code"></i> Code
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="publication-card">
+                            <h4 class="pub-title">
+                                <a href="https://pubs.acs.org/doi/10.1021/acs.nanolett.2c02654" target="_blank">
+                                    Miniaturizing a Chip-Scale Spectrometer Using Local Strain Engineering and Total-Variation Regularized Reconstruction
+                                </a>
+                            </h4>
+                            <p class="pub-authors">
+                                Tuba Sarwar, Can Yaras, Xiang Li, Qing Qu, Pei-Cheng Ku.
+                            </p>
+                            <p class="pub-venue">
+                                <em>Nano Letters, Vol. 22, No. 20, pp. 8174-8180, 2022.</em>
+                            </p>
+                        
+                            <div class="pub-links">
+                                <a href="https://pubs.acs.org/doi/10.1021/acs.nanolett.2c02654" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> Preprint
+                                </a>
+                                <a href="https://pubs.acs.org/doi/10.1021/acs.nanolett.2c02654" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> PDF
+                                </a>
+                                <a href="https://qingqu.engin.umich.edu/bibtex-sarwar2022miniaturizing/" class="pub-link" target="_blank">
+                                    <i class="fas fa-quote-right"></i> BibTeX
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="publication-card">
+                            <h4 class="pub-title">
+                                <a href="https://aclanthology.org/2022.findings-emnlp.422/" target="_blank">
+                                    Hidden State Variability of Pretrained Language Models Can Guide Computation Reduction for Transfer Learning
+                                </a>
+                            </h4>
+                            <p class="pub-authors">
+                                Shuo Xie, Jiahao Qiu, Ankita Pasad, Li Du, Qing Qu, Hongyuan Mei.
+                            </p>
+                            <p class="pub-venue">
+                                <em>Findings of Empirical Methods in Natural Language Processing (EMNLP), 2022.</em>
+                            </p>
+                        
+                            <div class="pub-links">
+                                <a href="https://arxiv.org/abs/2210.10041" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> Preprint
+                                </a>
+                                <a href="https://arxiv.org/pdf/2210.10041.pdf" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> PDF
+                                </a>
+                                <a href="https://qingqu.engin.umich.edu/bibtex-xie2022nc/" class="pub-link" target="_blank">
+                                    <i class="fas fa-quote-right"></i> BibTeX
+                                </a>
+                                <a href="https://github.com/shuox20/variability-efficient-tuning" class="pub-link" target="_blank">
+                                    <i class="fas fa-code"></i> Code
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="publication-card">
+                            <h4 class="pub-title">
+                                <a href="https://proceedings.mlr.press/v162/liu22w.html" target="_blank">
+                                    Robust Training under Label Noise by Over-parameterization
+                                </a>
+                            </h4>
+                            <p class="pub-authors">
+                                Sheng Liu, Zhihui Zhu, Qing Qu, Chong You.
+                            </p>
+                            <p class="pub-venue">
+                                <em>International Conference on Machine Learning (ICML'22), 2022.</em>
+                            </p>
+                        
+                            <div class="pub-links">
+                                <a href="https://arxiv.org/abs/2202.14026" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> Preprint
+                                </a>
+                                <a href="https://arxiv.org/pdf/2202.14026.pdf" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> PDF
+                                </a>
+                                <a href="https://qingqu.engin.umich.edu/bibtex-liu2022robust/" class="pub-link" target="_blank">
+                                    <i class="fas fa-quote-right"></i> BibTeX
+                                </a>
+                                <a href="https://github.com/shengliu66/SOP" class="pub-link" target="_blank">
+                                    <i class="fas fa-code"></i> Code
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="publication-card">
+                            <h4 class="pub-title">
+                                <a href="https://proceedings.mlr.press/v162/zhou22c.html" target="_blank">
+                                    On the Optimization Landscape of Neural Collapse under MSE Loss: Global Optimality with Unconstrained Features
+                                </a>
+                            </h4>
+                            <p class="pub-authors">
+                                Jinxin Zhou*, Xiao Li*, Tianyu Ding, Chong You, Qing Qu*, Zhihui Zhu*.
+                            </p>
+                            <p class="pub-venue">
+                                <em>International Conference on Machine Learning (ICML'22), 2022.</em>
+                            </p>
+                        
+                            <div class="pub-links">
+                                <a href="https://arxiv.org/abs/2203.01238" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> Preprint
+                                </a>
+                                <a href="https://arxiv.org/pdf/2203.01238.pdf" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> PDF
+                                </a>
+                                <a href="https://qingqu.engin.umich.edu/bibtex-zhou2022optimization/" class="pub-link" target="_blank">
+                                    <i class="fas fa-quote-right"></i> BibTeX
+                                </a>
+                                <a href="https://github.com/jinxinzhou/neural-collapse-MSE" class="pub-link" target="_blank">
+                                    <i class="fas fa-code"></i> Code
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="publication-card">
+                            <h4 class="pub-title">
+                                <a href="https://openreview.net/forum?id=WC9im-M_y5" target="_blank">
+                                    Linear Convergence Analysis of Neural Collapse with Unconstrained Features
+                                </a>
+                            </h4>
+                            <p class="pub-authors">
+                                Peng Wang*, Huikang Liu*, Can Yaras*, Laura Balzano, Qing Qu.
+                            </p>
+                            <p class="pub-venue">
+                                <em>OPT 2022: Optimization for Machine Learning (NeurIPS 2022 Workshop), 2022.</em>
+                            </p>
+                        
+                            <div class="pub-links">
+                                <a href="https://openreview.net/forum?id=WC9im-M_y5" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> Preprint
+                                </a>
+                                <a href="https://openreview.net/pdf?id=WC9im-M_y5" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> PDF
+                                </a>
+                                <a href="https://qingqu.engin.umich.edu/bibtex-zhou2022optimization/" class="pub-link" target="_blank">
+                                    <i class="fas fa-quote-right"></i> BibTeX
+                                </a>
+                            </div>
+                        </div>
+                        
+
+                    </div>
+                </div>
+
+                <!-- Year 2021 -->
+                <div class="year-section" id="year-2021">
+                    <div class="year-header" onclick="toggleYear('2021')">
+                        <h3 class="year-title">
+                            <i class="fas fa-chevron-down year-icon"></i>
+                            2021
+                        </h3>
+                        <div class="year-line"></div>
+                    </div>
+                    <div class="publications-list year-content">
+                        <!-- Add 2021 publications here -->
+                        <div class="publication-card">
+                            <h4 class="pub-title">
+                                <a href="https://proceedings.neurips.cc/paper/2021/hash/e13748298cfb23c19fdfd134a2221e7b-Abstract.html" target="_blank">
+                                    Rank Overspecified Robust Matrix Recovery: Subgradient Method and Exact Recovery
+                                </a>
+                            </h4>
+                            <p class="pub-authors">
+                                Lijun Ding*, Liwei Jiang*, Yudong Chen, Qing Qu, Zhihui Zhu.
+                            </p>
+                            <p class="pub-venue">
+                                <em>Neural Information Processing Systems (NeurIPS'21), 2021.</em>
+                            </p>
+                        
+                            <div class="pub-links">
+                                <a href="https://arxiv.org/abs/2109.11154" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> Preprint
+                                </a>
+                                <a href="https://arxiv.org/pdf/2109.11154.pdf" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> PDF
+                                </a>
+                                <a href="https://qingqu.engin.umich.edu/bibtex-ding2021rank" class="pub-link" target="_blank">
+                                    <i class="fas fa-quote-right"></i> BibTeX
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="publication-card">
+                            <h4 class="pub-title">
+                                <a href="https://proceedings.neurips.cc/paper/2021/hash/f92586a25bb3145facd64ab20fd554ff-Abstract.html" target="_blank">
+                                    A Geometric Analysis of Neural Collapse with Unconstrained Features
+                                </a>
+                            </h4>
+                            <p class="pub-authors">
+                                Zhihui Zhu*, Tianyu Ding*, Jinxin Zhou, Xiao Li, Chong You, Jeremias Sulam, Qing Qu.
+                            </p>
+                            <p class="pub-venue">
+                                <em>Neural Information Processing Systems (NeurIPS'21), 2021.</em>
+                            </p>
+                        
+                            <div class="pub-award">
+                                <i class="fas fa-award"></i>
+                                <span>Spotlight Presentation (top 3%)</span>
+                            </div>
+                        
+                            <div class="pub-links">
+                                <a href="https://arxiv.org/abs/2105.02375" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> Preprint
+                                </a>
+                                <a href="https://arxiv.org/pdf/2105.02375.pdf" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> PDF
+                                </a>
+                                <a href="https://qingqu.engin.umich.edu/wp-content/uploads/sites/42/2021/05/slides-NC.pdf" class="pub-link" target="_blank">
+                                    <i class="fas fa-chalkboard-teacher"></i> Slides
+                                </a>
+                                <a href="https://qingqu.engin.umich.edu/bibtex-zhu2021geometric/" class="pub-link" target="_blank">
+                                    <i class="fas fa-quote-right"></i> BibTeX
+                                </a>
+                                <a href="https://github.com/tding1/Neural-Collapse" class="pub-link" target="_blank">
+                                    <i class="fas fa-code"></i> Code
+                                </a>
+                                <a href="https://www.youtube.com/watch?v=L7YFn54Y3fE&t=133s" class="pub-link" target="_blank">
+                                    <i class="fas fa-video"></i> Video
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="publication-card">
+                            <h4 class="pub-title">
+                                <a href="https://proceedings.neurips.cc/paper/2021/hash/f23d125da1e29e34c552f448610ff25f-Abstract.html" target="_blank">
+                                    Convolutional Normalization: Improving Deep Convolutional Network Robustness and Training
+                                </a>
+                            </h4>
+                            <p class="pub-authors">
+                                Sheng Liu*, Xiao Li*, Yuexiang Zhai, Chong You, Zhihui Zhu, Carlos Fernandez-Granda, Qing Qu.
+                            </p>
+                            <p class="pub-venue">
+                                <em>Neural Information Processing Systems (NeurIPS'21), 2021.</em>
+                            </p>
+                        
+                            <div class="pub-links">
+                                <a href="https://arxiv.org/abs/2103.00673" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> Preprint
+                                </a>
+                                <a href="https://arxiv.org/pdf/2103.00673.pdf" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> PDF
+                                </a>
+                                <a href="https://qingqu.engin.umich.edu/bibtex-liu2021convolutional/" class="pub-link" target="_blank">
+                                    <i class="fas fa-quote-right"></i> BibTeX
+                                </a>
+                                <a href="https://github.com/shengliu66/ConvNorm" class="pub-link" target="_blank">
+                                    <i class="fas fa-code"></i> Code
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="publication-card">
+                            <h4 class="pub-title">
+                                <a href="https://epubs.siam.org/doi/abs/10.1137/20M1321000" target="_blank">
+                                    Weakly Convex Optimization over Stiefel Manifold Using Riemannian Subgradient-Type Methods
+                                </a>
+                            </h4>
+                            <p class="pub-authors">
+                                Xiao Li*, Shixiang Chen*, Zengde Deng, Qing Qu, Zhihui Zhu, Anthony Man Cho So.
+                            </p>
+                            <p class="pub-venue">
+                                <em>SIAM Journal on Optimization, 31(3): 1605-1634, 2021.</em>
+                            </p>
+                        
+                            <div class="pub-links">
+                                <a href="https://arxiv.org/abs/1911.05047" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> Preprint
+                                </a>
+                                <a href="https://arxiv.org/pdf/1911.05047.pdf" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> PDF
+                                </a>
+                                <a href="https://github.com/lixiao0982/Riemannian-subgradient-methods" class="pub-link" target="_blank">
+                                    <i class="fas fa-code"></i> Code
+                                </a>
+                                <a href="https://qingqu.engin.umich.edu/bibtex-li2019nonsmooth/" class="pub-link" target="_blank">
+                                    <i class="fas fa-quote-right"></i> BibTeX
+                                </a>
+                            </div>
+                        </div>
+
+                        
+                    </div>
+                </div>
+
+                <!-- Year 2020 -->
+                <div class="year-section" id="year-2020">
+                    <div class="year-header" onclick="toggleYear('2020')">
+                        <h3 class="year-title">
+                            <i class="fas fa-chevron-down year-icon"></i>
+                            2020
+                        </h3>
+                        <div class="year-line"></div>
+                    </div>
+                    <div class="publications-list year-content">
+                        <!-- Add 2020 publications here -->
+
+                        <div class="publication-card">
+                            <h4 class="pub-title">
+                                <a href="https://openreview.net/forum?id=rygixkHKDH" target="_blank">
+                                    Geometric Analysis of Nonconvex Optimization Landscapes for Overcomplete Learning
+                                </a>
+                            </h4>
+                            <p class="pub-authors">
+                                Qing Qu, Yuexiang Zhai, Xiao Li, Yuqian Zhang, Zhihui Zhu.
+                            </p>
+                            <p class="pub-venue">
+                                <em>International Conference on Learning Representations (ICLR'20), 2020.</em>
+                            </p>
+                        
+                            <div class="pub-award">
+                                <i class="fas fa-award"></i>
+                                <span>Oral Presentation (top 1.9%)</span>
+                            </div>
+                        
+                            <div class="pub-links">
+                                <a href="https://arxiv.org/abs/1912.02427" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> Preprint
+                                </a>
+                                <a href="https://arxiv.org/pdf/1912.02427.pdf" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> PDF
+                                </a>
+                                <a href="https://qingqu.engin.umich.edu/wp-content/uploads/sites/42/2020/08/slides-odl.pdf" class="pub-link" target="_blank">
+                                    <i class="fas fa-chalkboard-teacher"></i> Slides
+                                </a>
+                                <a href="https://qingqu.engin.umich.edu/bibtex-qu2019analysis/" class="pub-link" target="_blank">
+                                    <i class="fas fa-quote-right"></i> BibTeX
+                                </a>
+                            </div>
+                        </div>
+
+                        
+                        <div class="publication-card">
+                            <h4 class="pub-title">
+                                <a href="https://proceedings.neurips.cc/paper/2020/hash/cd42c963390a9cd025d007dacfa99351-Abstract.html" target="_blank">
+                                    Robust Recovery via Implicit Bias of Discrepant Learning Rates for Double Over-parameterization
+                                </a>
+                            </h4>
+                            <p class="pub-authors">
+                                Chong You*, Zhihui Zhu*, Qing Qu, Yi Ma.
+                            </p>
+                            <p class="pub-venue">
+                                <em>Neural Information Processing Systems (NeurIPS'20), 2020.</em>
+                            </p>
+                        
+                            <div class="pub-award">
+                                <i class="fas fa-award"></i>
+                                <span>Spotlight Presentation (top 4%)</span>
+                            </div>
+                        
+                            <div class="pub-links">
+                                <a href="https://arxiv.org/abs/2006.08857" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> Preprint
+                                </a>
+                                <a href="https://arxiv.org/pdf/2006.08857.pdf" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> PDF
+                                </a>
+                                <a href="https://qingqu.engin.umich.edu/bibtex-you2020robust-2/" class="pub-link" target="_blank">
+                                    <i class="fas fa-quote-right"></i> BibTeX
+                                </a>
+                                <a href="https://github.com/ChongYou/robust-image-recovery" class="pub-link" target="_blank">
+                                    <i class="fas fa-code"></i> Code
+                                </a>
+                            </div>
+                        </div>
+
+                        
+                        <div class="publication-card">
+                            <h4 class="pub-title">
+                                <a href="https://openreview.net/forum?id=Byg5ZANtvH" target="_blank">
+                                    Short and Sparse Deconvolution — A Geometric Approach
+                                </a>
+                            </h4>
+                            <p class="pub-authors">
+                                Yenson Lau*, Qing Qu*, Han-wen Kuo, Pengcheng Zhou, Yuqian Zhang, John Wright.
+                            </p>
+                            <p class="pub-venue">
+                                <em>International Conference on Learning Representations (ICLR'20), 2020.</em>
+                            </p>
+                        
+                            <div class="pub-links">
+                                <a href="https://arxiv.org/abs/1908.10959" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> Preprint
+                                </a>
+                                <a href="https://arxiv.org/pdf/1908.10959.pdf" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> PDF
+                                </a>
+                                <a href="https://github.com/qingqu06/sparse_deconvolution" class="pub-link" target="_blank">
+                                    <i class="fas fa-code"></i> Code
+                                </a>
+                                <a href="https://qingqu.engin.umich.edu/wp-content/uploads/sites/42/2020/08/poster-sasbd.pdf" class="pub-link" target="_blank">
+                                    <i class="fas fa-image"></i> Poster
+                                </a>
+                                <a href="https://qingqu.engin.umich.edu/wp-content/uploads/sites/42/2020/08/SaS-BD.pdf" class="pub-link" target="_blank">
+                                    <i class="fas fa-chalkboard-teacher"></i> Slides
+                                </a>
+                                <a href="https://deconvlab.github.io/" class="pub-link" target="_blank">
+                                    <i class="fas fa-globe"></i> Website
+                                </a>
+                                <a href="https://qingqu.engin.umich.edu/bibtex-lau2019short/" class="pub-link" target="_blank">
+                                    <i class="fas fa-quote-right"></i> BibTeX
+                                </a>
+                            </div>
+                        </div>
+
+                        
+                        <div class="publication-card">
+                            <h4 class="pub-title">
+                                <a href="https://arxiv.org/abs/2007.06753" target="_blank">
+                                    From Symmetry to Geometry: Tractable Nonconvex Problems
+                                </a>
+                            </h4>
+                            <p class="pub-authors">
+                                Yuqian Zhang, Qing Qu, John Wright.
+                            </p>
+                            <p class="pub-venue">
+                                <em>Preprint, 2020.</em>
+                            </p>
+                        
+                            <div class="pub-links">
+                                <a href="https://arxiv.org/abs/2007.06753" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> Preprint
+                                </a>
+                                <a href="https://arxiv.org/pdf/2007.06753.pdf" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> PDF
+                                </a>
+                                <a href="https://qingqu.engin.umich.edu/wp-content/uploads/sites/42/2020/08/slides-ncvx.pdf" class="pub-link" target="_blank">
+                                    <i class="fas fa-chalkboard-teacher"></i> Slides
+                                </a>
+                                <a href="https://qingqu.engin.umich.edu/bibtex/" class="pub-link" target="_blank">
+                                    <i class="fas fa-quote-right"></i> BibTeX
+                                </a>
+                            </div>
+                        </div>
+
+                        
+                        <div class="publication-card">
+                            <h4 class="pub-title">
+                                <a href="https://arxiv.org/abs/2001.06970" target="_blank">
+                                    Finding the Sparsest Vectors in a Subspace: Theory, Algorithms, and Applications
+                                </a>
+                            </h4>
+                            <p class="pub-authors">
+                                Qing Qu*, Zhihui Zhu*, Xiao Li, Manolis C. Tsakiris, John Wright, Rene Vidal.
+                            </p>
+                            <p class="pub-venue">
+                                <em>Preprint, 2020.</em>
+                            </p>
+                        
+                            <div class="pub-links">
+                                <a href="https://arxiv.org/abs/2001.06970" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> Preprint
+                                </a>
+                                <a href="https://arxiv.org/pdf/2001.06970.pdf" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> PDF
+                                </a>
+                                <a href="https://qingqu.engin.umich.edu/wp-content/uploads/sites/42/2020/08/slides-ncvx.pdf" class="pub-link" target="_blank">
+                                    <i class="fas fa-chalkboard-teacher"></i> Slides
+                                </a>
+                                <a href="https://qingqu.engin.umich.edu/bibtex-qu2020finding/" class="pub-link" target="_blank">
+                                    <i class="fas fa-quote-right"></i> BibTeX
+                                </a>
+                            </div>
+                        </div>
+
+                        
+                    </div>
+                </div>
+
+                <!-- Year 2019 & Prior -->
+                <div class="year-section" id="year-2019">
+                    <div class="year-header" onclick="toggleYear('2019')">
+                        <h3 class="year-title">
+                            <i class="fas fa-chevron-down year-icon"></i>
+                            2019 & Prior
+                        </h3>
+                        <div class="year-line"></div>
+                    </div>
+                    <div class="publications-list year-content">
+                        <!-- Add 2019 and earlier publications here -->
+
+                        <div class="publication-card">
+                            <h4 class="pub-title">
+                                <a href="https://epubs.siam.org/doi/abs/10.1137/19M1291327" target="_blank">
+                                    Exact Recovery of Multichannel Sparse Blind Deconvolution via Gradient Descent
+                                </a>
+                            </h4>
+                            <p class="pub-authors">
+                                Qing Qu, Xiao Li, Zhihui Zhu.
+                            </p>
+                            <p class="pub-venue">
+                                <em>SIAM Journal on Imaging Sciences, 13(3): 1630-1652, 2020. Preliminary version appeared at NeurIPS 2019.</em>
+                            </p>
+                        
+                            <div class="pub-award">
+                                <i class="fas fa-award"></i>
+                                <span>Spotlight Presentation (top 3%)</span>
+                            </div>
+                        
+                            <div class="pub-links">
+                                <a href="https://arxiv.org/abs/1908.10776" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> Preprint
+                                </a>
+                                <a href="https://qingqu.engin.umich.edu/wp-content/uploads/sites/42/2020/08/paper-mcsbd.pdf" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> PDF
+                                </a>
+                                <a href="https://github.com/qingqu06/MCS-BD" class="pub-link" target="_blank">
+                                    <i class="fas fa-code"></i> Code
+                                </a>
+                                <a href="https://qingqu.engin.umich.edu/wp-content/uploads/sites/42/2020/08/poster-mcsbd.pdf" class="pub-link" target="_blank">
+                                    <i class="fas fa-image"></i> Poster
+                                </a>
+                                <a href="https://qingqu.engin.umich.edu/wp-content/uploads/sites/42/2020/08/slides-mcsbd.pdf" class="pub-link" target="_blank">
+                                    <i class="fas fa-chalkboard-teacher"></i> Slides
+                                </a>
+                                <a href="https://qingqu.engin.umich.edu/bibtex-qu2019nonconvex/" class="pub-link" target="_blank">
+                                    <i class="fas fa-quote-right"></i> BibTeX
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="publication-card">
+                            <h4 class="pub-title">
+                                <a href="https://ieeexplore.ieee.org/abstract/document/8888195" target="_blank">
+                                    Convolutional Phase Retrieval via Gradient Descent
+                                </a>
+                            </h4>
+                            <p class="pub-authors">
+                                Qing Qu, Yuqian Zhang, Yonina C. Eldar, John Wright.
+                            </p>
+                            <p class="pub-venue">
+                                <em>IEEE Transactions on Information Theory, 66(3): 1785-1821, March 2020. Preliminary version appeared at NeurIPS 2017.</em>
+                            </p>
+                        
+                            <div class="pub-links">
+                                <a href="https://arxiv.org/abs/1712.00716" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> Preprint
+                                </a>
+                                <a href="https://qingqu.engin.umich.edu/wp-content/uploads/sites/42/2020/08/08888195.pdf" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> PDF
+                                </a>
+                                <a href="https://github.com/qingqu06/convolutional_pr" class="pub-link" target="_blank">
+                                    <i class="fas fa-code"></i> Code
+                                </a>
+                                <a href="https://qingqu.engin.umich.edu/wp-content/uploads/sites/42/2020/08/poster-cpr.pdf" class="pub-link" target="_blank">
+                                    <i class="fas fa-image"></i> Poster
+                                </a>
+                                <a href="https://qingqu.engin.umich.edu/wp-content/uploads/sites/42/2020/08/slides-cpr.pdf" class="pub-link" target="_blank">
+                                    <i class="fas fa-chalkboard-teacher"></i> Slides
+                                </a>
+                                <a href="https://qingqu.engin.umich.edu/bibtex-qu2020convolutional/" class="pub-link" target="_blank">
+                                    <i class="fas fa-quote-right"></i> BibTeX
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="publication-card">
+                            <h4 class="pub-title">
+                                <a href="https://link.springer.com/article/10.1007/s10208-017-9365-9" target="_blank">
+                                    A Geometric Analysis of Phase Retrieval
+                                </a>
+                            </h4>
+                            <p class="pub-authors">
+                                Ju Sun, Qing Qu, John Wright.
+                            </p>
+                            <p class="pub-venue">
+                                <em>Foundations of Computational Mathematics, 18(5): 1131-1198, 2018. Preliminary version appeared at ISIT 2016.</em>
+                            </p>
+                        
+                            <div class="pub-links">
+                                <a href="https://arxiv.org/abs/1602.06664" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> Preprint
+                                </a>
+                                <a href="https://qingqu.engin.umich.edu/wp-content/uploads/sites/42/2020/08/Sun_et_al-2018-Foundations_of_Computational_Mathematics.pdf" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> PDF
+                                </a>
+                                <a href="https://github.com/sunju/pr_plain" class="pub-link" target="_blank">
+                                    <i class="fas fa-code"></i> Code
+                                </a>
+                                <a href="https://qingqu.engin.umich.edu/wp-content/uploads/sites/42/2020/08/pr.pdf" class="pub-link" target="_blank">
+                                    <i class="fas fa-chalkboard-teacher"></i> Slides
+                                </a>
+                                <a href="https://qingqu.engin.umich.edu/bibtex-sun2018geometric/" class="pub-link" target="_blank">
+                                    <i class="fas fa-quote-right"></i> BibTeX
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="publication-card">
+                            <h4 class="pub-title">
+                                <a href="https://ieeexplore.ieee.org/document/7755794" target="_blank">
+                                    Complete Dictionary Recovery over the Sphere I: Overview and the Geometric Picture
+                                </a>
+                            </h4>
+                            <p class="pub-authors">
+                                Ju Sun, Qing Qu, John Wright.
+                            </p>
+                            <p class="pub-venue">
+                                <em>IEEE Transactions on Information Theory, 63(2): 853-884, February 2017. Preliminary version at ICML 2015.</em>
+                            </p>
+                        
+                            <div class="pub-award">
+                                <i class="fas fa-award"></i>
+                                <span>
+                                    Best Student Paper Award (SPARS 2015)
+                                </span>
+                            </div>
+                        
+                            <div class="pub-links">
+                                <a href="https://arxiv.org/abs/1504.06785" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> Preprint
+                                </a>
+                                <a href="https://qingqu.engin.umich.edu/wp-content/uploads/sites/42/2020/08/07755794.pdf" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> PDF
+                                </a>
+                                <a href="https://github.com/sunju/dl_focm" class="pub-link" target="_blank">
+                                    <i class="fas fa-code"></i> Code
+                                </a>
+                                <a href="https://qingqu.engin.umich.edu/wp-content/uploads/sites/42/2020/08/poster-DL.pdf" class="pub-link" target="_blank">
+                                    <i class="fas fa-image"></i> Poster
+                                </a>
+                                <a href="https://qingqu.engin.umich.edu/bibtex-sun2017complete/" class="pub-link" target="_blank">
+                                    <i class="fas fa-quote-right"></i> BibTeX
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="publication-card">
+                            <h4 class="pub-title">
+                                <a href="https://ieeexplore.ieee.org/document/7755786" target="_blank">
+                                    Complete Dictionary Recovery over the Sphere II: Recovery by Riemannian Trust-region Method
+                                </a>
+                            </h4>
+                            <p class="pub-authors">
+                                Ju Sun, Qing Qu, John Wright.
+                            </p>
+                            <p class="pub-venue">
+                                <em>IEEE Transactions on Information Theory, 63(2): 885-914, February 2017.</em>
+                            </p>
+                        
+                            <div class="pub-links">
+                                <a href="https://arxiv.org/abs/1504.06785" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> Preprint
+                                </a>
+                                <a href="https://qingqu.engin.umich.edu/wp-content/uploads/sites/42/2020/08/07755786.pdf" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> PDF
+                                </a>
+                                <a href="https://github.com/sunju/dl_focm" class="pub-link" target="_blank">
+                                    <i class="fas fa-code"></i> Code
+                                </a>
+                                <a href="https://qingqu.engin.umich.edu/wp-content/uploads/sites/42/2020/08/poster-DL.pdf" class="pub-link" target="_blank">
+                                    <i class="fas fa-image"></i> Poster
+                                </a>
+                                <a href="https://qingqu.engin.umich.edu/bibtex-sun2017complete_b/" class="pub-link" target="_blank">
+                                    <i class="fas fa-quote-right"></i> BibTeX
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="publication-card">
+                            <h4 class="pub-title">
+                                <a href="https://ieeexplore.ieee.org/document/7547961" target="_blank">
+                                    Finding a Sparse Vector in a Subspace: Linear Sparsity Using Alternating Directions
+                                </a>
+                            </h4>
+                            <p class="pub-authors">
+                                Qing Qu, Ju Sun, John Wright.
+                            </p>
+                            <p class="pub-venue">
+                                <em>IEEE Transactions on Information Theory, 62(10): 5855-5880, October 2016. Preliminary version appeared at NeurIPS 2014.</em>
+                            </p>
+                        
+                            <div class="pub-links">
+                                <a href="https://arxiv.org/abs/1412.4659" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> Preprint
+                                </a>
+                                <a href="https://qingqu.engin.umich.edu/wp-content/uploads/sites/42/2020/08/07547961.pdf" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> PDF
+                                </a>
+                                <a href="https://github.com/sunju/psv" class="pub-link" target="_blank">
+                                    <i class="fas fa-code"></i> Code
+                                </a>
+                                <a href="https://qingqu.engin.umich.edu/wp-content/uploads/sites/42/2020/08/poster-DL.pdf" class="pub-link" target="_blank">
+                                    <i class="fas fa-image"></i> Poster
+                                </a>
+                                <a href="https://qingqu.engin.umich.edu/wp-content/uploads/sites/42/2020/08/psv.pdf" class="pub-link" target="_blank">
+                                    <i class="fas fa-chalkboard-teacher"></i> Slides
+                                </a>
+                                <a href="https://qingqu.engin.umich.edu/bibtex-qu2016finding/" class="pub-link" target="_blank">
+                                    <i class="fas fa-quote-right"></i> BibTeX
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="publication-card">
+                            <h4 class="pub-title">
+                                <a href="https://ieeexplore.ieee.org/document/7078862" target="_blank">
+                                    Subspace Vertex Pursuit: A Fast and Robust Near-Separable Nonnegative Matrix Factorization Method for Hyperspectral Unmixing
+                                </a>
+                            </h4>
+                            <p class="pub-authors">
+                                Qing Qu, Nasser M. Nasrabadi, Trac D. Tran.
+                            </p>
+                            <p class="pub-venue">
+                                <em>IEEE Journal of Selected Topics in Signal Processing, 9(6): 1142-1155, September 2015. Preliminary version appeared at ICASSP 2014.</em>
+                            </p>
+                        
+                            <div class="pub-links">
+                                <a href="https://qingqu.engin.umich.edu/wp-content/uploads/sites/42/2020/08/07078862.pdf" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> PDF
+                                </a>
+                                <a href="https://qingqu.engin.umich.edu/wp-content/uploads/sites/42/2020/08/poster-svp.pdf" class="pub-link" target="_blank">
+                                    <i class="fas fa-image"></i> Poster
+                                </a>
+                                <a href="https://qingqu.engin.umich.edu/bibtex-qu2015subspace/" class="pub-link" target="_blank">
+                                    <i class="fas fa-quote-right"></i> BibTeX
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="publication-card">
+                            <h4 class="pub-title">
+                                <a href="https://arxiv.org/abs/1510.06096" target="_blank">
+                                    When Are Nonconvex Problems Not Scary?
+                                </a>
+                            </h4>
+                            <p class="pub-authors">
+                                Ju Sun, Qing Qu, John Wright.
+                            </p>
+                            <p class="pub-venue">
+                                <em>NeurIPS 2015 Workshop on Nonconvex Optimization for Machine Learning.</em>
+                            </p>
+                        
+                            <div class="pub-links">
+                                <a href="https://arxiv.org/abs/1510.06096" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> Preprint
+                                </a>
+                                <a href="https://arxiv.org/pdf/1510.06096.pdf" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> PDF
+                                </a>
+                                <a href="https://qingqu.engin.umich.edu/bibtex-sun2015nonconvex/" class="pub-link" target="_blank">
+                                    <i class="fas fa-quote-right"></i> BibTeX
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="publication-card">
+                            <h4 class="pub-title">
+                                <a href="https://ieeexplore.ieee.org/document/6619431" target="_blank">
+                                    Abundance Estimation for Bilinear Mixture Models via Joint Sparse and Low-Rank Representation
+                                </a>
+                            </h4>
+                            <p class="pub-authors">
+                                Qing Qu, Nasser M. Nasrabadi, Trac D. Tran.
+                            </p>
+                            <p class="pub-venue">
+                                <em>IEEE Transactions on Geoscience and Remote Sensing, 52(7): 4404-4423, July 2014. Preliminary version appeared at ICASSP 2013.</em>
+                            </p>
+                        
+                            <div class="pub-links">
+                                <a href="https://qingqu.engin.umich.edu/wp-content/uploads/sites/42/2020/08/06619431.pdf" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> PDF
+                                </a>
+                                <a href="https://qingqu06.github.io/pdf/TGRS-demo-14.zip" class="pub-link" target="_blank">
+                                    <i class="fas fa-code"></i> Code
+                                </a>
+                                <a href="https://qingqu.engin.umich.edu/wp-content/uploads/sites/42/2020/08/poster-abundance.pdf" class="pub-link" target="_blank">
+                                    <i class="fas fa-image"></i> Poster
+                                </a>
+                                <a href="https://qingqu.engin.umich.edu/wp-content/uploads/sites/42/2020/08/slides-abundance.pdf" class="pub-link" target="_blank">
+                                    <i class="fas fa-chalkboard-teacher"></i> Slides
+                                </a>
+                                <a href="https://qingqu.engin.umich.edu/bibtex-qu2014abundance/" class="pub-link" target="_blank">
+                                    <i class="fas fa-quote-right"></i> BibTeX
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="publication-card">
+                            <h4 class="pub-title">
+                                <a href="https://ieeexplore.ieee.org/document/6681879" target="_blank">
+                                    Structured Priors for Sparse-Representation-Based Hyperspectral Image Classification
+                                </a>
+                            </h4>
+                            <p class="pub-authors">
+                                Xiaoxia Sun, Qing Qu, Nasser M. Nasrabadi, Trac D. Tran.
+                            </p>
+                            <p class="pub-venue">
+                                <em>IEEE Geoscience and Remote Sensing Letters, 11(7): 1235-1239, July 2014.</em>
+                            </p>
+                        
+                            <div class="pub-links">
+                                <a href="https://arxiv.org/abs/1401.3818" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> Preprint
+                                </a>
+                                <a href="https://qingqu.engin.umich.edu/wp-content/uploads/sites/42/2020/08/06681879.pdf" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> PDF
+                                </a>
+                                <a href="https://qingqu.engin.umich.edu/bibtex-sun2014structured/" class="pub-link" target="_blank">
+                                    <i class="fas fa-quote-right"></i> BibTeX
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="publication-card">
+                            <h4 class="pub-title">
+                                <a href="https://ieeexplore.ieee.org/document/6547853" target="_blank">
+                                    Robust Zero-point Attraction Least Mean Square Algorithm on Near Sparse System Identification
+                                </a>
+                            </h4>
+                            <p class="pub-authors">
+                                Jian Jin, Qing Qu, Yuantao Gu.
+                            </p>
+                            <p class="pub-venue">
+                                <em>IET Signal Processing, 7(3): 210-218, May 2013.</em>
+                            </p>
+                        
+                            <div class="pub-links">
+                                <a href="https://arxiv.org/abs/1303.2255" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> Preprint
+                                </a>
+                                <a href="https://qingqu.engin.umich.edu/wp-content/uploads/sites/42/2020/08/06547853.pdf" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> PDF
+                                </a>
+                                <a href="https://qingqu.engin.umich.edu/bibtex-jin2013robust/" class="pub-link" target="_blank">
+                                    <i class="fas fa-quote-right"></i> BibTeX
+                                </a>
+                            </div>
+                        </div>
+                        
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-main">
+                    <p class="copyright">&copy; 2025 DeepThink Lab. All rights reserved.</p>
+                    <div class="footer-contact">
+                        <span><i class="fas fa-envelope"></i> deepthinkumich@gmail.com</span>
+                        <span><i class="fas fa-map-marker-alt"></i> University of Michigan, Ann Arbor</span>
+                    </div>
+                </div>
+                <div class="footer-credits">
+                    <p><i class="fas fa-heart"></i> Website inspired by <a href="https://pixail.engin.umich.edu/" target="_blank" rel="noopener noreferrer">PixAIL group</a> led by <a href="https://bme.umich.edu/people/joyce-yan-ran-wang-ph-d/" target="_blank" rel="noopener noreferrer">Dr. Joyce Wang</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

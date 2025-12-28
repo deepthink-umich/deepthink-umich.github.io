@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Research Thrusts | DeepThink Lab</title>
+    <meta name="description" content="Research Thrusts - DeepThink Lab at the University of Michigan">
+    <link rel="icon" type="image/svg+xml" href="Block_M-Hex.svg">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;500;600;700&family=Crimson+Text:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="unified-navbar" id="navbar">
+        <div class="unified-container">
+            <div class="lab-logo">
+                <img src="fig/DeepThink_logo_rec_light.svg" alt="DeepThink Logo" class="lab-icon">
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="research.html" class="nav-link active">Research</a>
+                <a href="publications.html" class="nav-link">Publications</a>
+                <a href="people.html" class="nav-link">People</a>
+                <a href="join.html" class="nav-link">Join Us</a>
+            </div>
+            <div class="umich-logo">
+                <img src="fig/Michigan_Engineering_Horizontal.svg" alt="University of Michigan Engineering" class="umich-logo-img">
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Research Section -->
+    <section id="research" class="research">
+        <div class="container">
+            <h2 class="section-title">Research Thrusts</h2>
+            <p class="section-intro">Our research focuses on computational methods for learning low-complexity models from high-dimensional data</p>
+
+            <!-- Research Tabs/Buttons -->
+            <div class="research-tabs">
+                <button class="research-tab active" onclick="openResearchTab(0)" data-tab="0">
+                    <div class="tab-icon"><i class="fas fa-project-diagram"></i></div>
+                    <div class="tab-title">Representation</div>
+                </button>
+                <button class="research-tab" onclick="openResearchTab(1)" data-tab="1">
+                    <div class="tab-icon"><i class="fas fa-brain"></i></div>
+                    <div class="tab-title">Generalization</div>
+                </button>
+                <button class="research-tab" onclick="openResearchTab(2)" data-tab="2">
+                    <div class="tab-icon"><i class="fas fa-tachometer-alt"></i></div>
+                    <div class="tab-title">Efficiency</div>
+                </button>
+                <button class="research-tab" onclick="openResearchTab(3)" data-tab="3">
+                    <div class="tab-icon"><i class="fas fa-flask"></i></div>
+                    <div class="tab-title">Scientific Applications</div>
+                </button>
+            </div>
+
+            <!-- Research Content Panels -->
+            <div class="research-panels">
+                <!-- Thrust I: Representation -->
+                <div class="research-panel active" data-panel="0">
+                    <div class="panel-header">
+                        <h3><i class="fas fa-project-diagram"></i> Representation</h3>
+                    </div>
+                    <!-- <div class="panel-content">
+                        <p class="panel-intro">Learning effective representations from high-dimensional data across multiple modalities including text, images, audio, and video.</p>
+                        <div class="panel-details">
+                            <div class="detail-section">
+                                <h4>Released Papers</h4>
+                                <ul>
+                                    <li><strong>Optimization Algorithms:</strong> Fast and scalable optimization methods</li>
+                                </ul>
+                                <h4>Blogs</h4>
+                                <ul>
+                                    <li><strong>Optimization Algorithms:</strong> Fast and scalable optimization methods</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+
+                <!-- Thrust II: Generalization -->
+                <div class="research-panel" data-panel="1">
+                    <div class="panel-header">
+                        <h3><i class="fas fa-brain"></i> Generalization</h3>
+                    </div>
+                    <!-- <div class="panel-content">
+                        <p class="panel-intro">Understanding how models generalize from training to test data and developing theoretical foundations for deep learning.</p>
+                        <div class="panel-details">
+                            <div class="detail-section">
+                                <h4>Released Papers</h4>
+                                <ul>
+                                    <li><strong>Optimization Algorithms:</strong> Fast and scalable optimization methods</li>
+                                </ul>
+                                <h4>Blogs</h4>
+                                <ul>
+                                    <li><strong>Optimization Algorithms:</strong> Fast and scalable optimization methods</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+
+                <!-- Thrust III: Efficiency -->
+                <div class="research-panel" data-panel="2">
+                    <div class="panel-header">
+                        <h3><i class="fas fa-tachometer-alt"></i> Efficiency</h3>
+                    </div>
+                    <!-- <div class="panel-content">
+                        <p class="panel-intro">Developing efficient algorithms and optimization methods for large-scale machine learning and computational problems.</p>
+                        <div class="panel-details">
+                            <div class="detail-section">
+                                <h4>Released Papers</h4>
+                                <ul>
+                                    <li><strong>Optimization Algorithms:</strong> Fast and scalable optimization methods</li>
+                                </ul>
+                                <h4>Blogs</h4>
+                                <ul>
+                                    <li><strong>Optimization Algorithms:</strong> Fast and scalable optimization methods</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+
+                <!-- Thrust IV: Scientific Applications -->
+                <div class="research-panel" data-panel="3">
+                    <div class="panel-header">
+                        <h3><i class="fas fa-flask"></i> Scientific Applications</h3>
+                    </div>
+                    <!-- <div class="panel-content">
+                        <p class="panel-intro">Applying machine learning methods to biomedical imaging, spectrometer sensing, geophysics, and other scientific domains.</p>
+                        <div class="panel-details">
+                            <div class="detail-section">
+                                <h4>Released Papers</h4>
+                                <ul>
+                                    <li><strong>Optimization Algorithms:</strong> Fast and scalable optimization methods</li>
+                                </ul>
+                                <h4>Blogs</h4>
+                                <ul>
+                                    <li><strong>Optimization Algorithms:</strong> Fast and scalable optimization methods</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-main">
+                    <p class="copyright">&copy; 2025 DeepThink Lab. All rights reserved.</p>
+                    <div class="footer-contact">
+                        <span><i class="fas fa-envelope"></i> deepthinkumich@gmail.com</span>
+                        <span><i class="fas fa-map-marker-alt"></i> University of Michigan, Ann Arbor</span>
+                    </div>
+                </div>
+                <div class="footer-credits">
+                    <p><i class="fas fa-heart"></i> Website inspired by <a href="https://pixail.engin.umich.edu/" target="_blank" rel="noopener noreferrer">PixAIL group</a> led by <a href="https://bme.umich.edu/people/joyce-yan-ran-wang-ph-d/" target="_blank" rel="noopener noreferrer">Dr. Joyce Wang</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
