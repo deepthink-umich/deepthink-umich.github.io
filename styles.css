@@ -2309,6 +2309,114 @@ section {
     }
 }
 
+/* iPad Pro and tablet optimization (768px - 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .unified-navbar {
+        width: calc(100% - 2rem);
+        padding: 0.75rem 1.25rem;
+        top: 1rem;
+    }
+    
+    .unified-container {
+        padding: 0 0.75rem;
+        gap: 1rem;
+    }
+    
+    /* Keep nav menu visible on iPad Pro */
+    .nav-menu {
+        display: flex !important;
+        gap: 0.9rem;
+        margin-left: 1rem;
+        position: static !important;
+        flex-direction: row !important;
+        background: transparent !important;
+        width: auto !important;
+        height: auto !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        left: auto !important;
+        top: auto !important;
+    }
+    
+    .nav-link {
+        font-size: 0.82rem;
+        padding: 0.5rem 0.55rem;
+        white-space: nowrap;
+        border-bottom: none !important;
+    }
+    
+    /* Hide hamburger menu on iPad Pro */
+    .hamburger {
+        display: none !important;
+    }
+    
+    .lab-icon {
+        height: 1.75rem;
+    }
+    
+    .umich-logo-img {
+        height: 1.75rem;
+    }
+    
+    .hero-container {
+        padding: 0 1.5rem;
+    }
+    
+    .hero-content {
+        grid-template-columns: 1.1fr 1fr !important;
+        text-align: left;
+        gap: 2rem;
+        align-items: center;
+    }
+    
+    .hero-text {
+        order: 1 !important;
+    }
+    
+    .hero-image {
+        order: 2 !important;
+        margin: 0;
+        max-width: 100%;
+        max-height: 70vh;
+    }
+    
+    .hero-text-wrapper {
+        padding: 1.75rem;
+    }
+    
+    .hero-title {
+        font-size: 3rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.3rem;
+    }
+    
+    .hero-affiliation {
+        font-size: 1.05rem;
+    }
+    
+    .photo-carousel {
+        max-height: 450px;
+        min-height: auto;
+        aspect-ratio: 4/3;
+    }
+    
+    .hero {
+        padding-top: 6rem;
+        min-height: 100vh;
+    }
+    
+    .social-links {
+        gap: 0.9rem;
+    }
+    
+    .social-link {
+        width: 3.5rem;
+        height: 3.5rem;
+    }
+}
+
 @media (max-width: 768px) {
     /* Fix background-attachment for mobile performance */
     body,
@@ -2441,6 +2549,27 @@ section {
                     0 2px 8px rgba(0, 0, 0, 0.2),
                     inset 0 1px 0 rgba(255, 255, 255, 0.1);
         border: 1px solid rgba(255, 255, 255, 0.1);
+        pointer-events: none; /* Prevent accidental clicks on navbar container */
+    }
+
+    /* Allow pointer events only on interactive elements */
+    .unified-navbar .hamburger,
+    .unified-navbar .lab-logo,
+    .unified-navbar .lab-icon,
+    .unified-navbar .umich-logo,
+    .unified-navbar .umich-logo-img {
+        pointer-events: auto;
+    }
+
+    /* When menu is active, allow pointer events on navbar */
+    .unified-navbar.menu-active {
+        pointer-events: auto;
+    }
+
+    /* Ensure hamburger button is always clickable */
+    .hamburger {
+        pointer-events: auto !important;
+        z-index: 1002;
     }
 
     /* 调整页面内容的上边距 */
@@ -3561,6 +3690,86 @@ section {
         font-size: 0.75rem;
         padding: 0.35rem 0.7rem;
         min-height: 32px;
+    }
+}
+
+/* iPhone 12 and similar small screens (390px - 450px) */
+@media (max-width: 450px) {
+    .news-title-row {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        align-items: flex-start;
+    }
+    
+    .news-date-inline {
+        flex-shrink: 0;
+    }
+    
+    .news-title-text {
+        width: 100%;
+        flex: 1 1 100%;
+        min-width: 100%;
+        font-size: 0.85rem;
+        line-height: 1.5;
+    }
+    
+    .news-badges {
+        margin-top: 0;
+        gap: 0.4rem;
+        flex-wrap: wrap;
+        flex: 0 1 auto;
+    }
+    
+    .news-toggle {
+        margin-top: 0;
+        margin-left: auto;
+        padding: 0.3rem 0.7rem;
+        font-size: 0.7rem;
+        min-width: 65px;
+        flex-shrink: 0;
+    }
+    
+    .badge {
+        font-size: 0.65rem;
+        padding: 0.2rem 0.45rem;
+    }
+    
+    .paper-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75rem;
+        padding: 1rem;
+    }
+    
+    .paper-title {
+        width: 100%;
+        margin-bottom: 0;
+    }
+    
+    .paper-links {
+        width: 100%;
+        gap: 0.4rem;
+        margin-top: 0;
+        justify-content: flex-start;
+    }
+    
+    .paper-link {
+        font-size: 0.7rem;
+        padding: 0.3rem 0.6rem;
+        min-height: 30px;
+        flex: 0 1 auto;
+    }
+    
+    .news-content {
+        padding: 0.875rem;
+    }
+    
+    .news-item {
+        padding-left: 1.25rem;
+    }
+    
+    .news-content {
+        margin-left: 0.5rem;
     }
 }
 
@@ -5336,17 +5545,38 @@ section {
         width: calc(100% - 1.5rem);
         top: 0.75rem;
         border-radius: 1.25rem;
+        pointer-events: none; /* Prevent accidental clicks on navbar container */
+    }
+
+    /* Allow pointer events only on interactive elements for iPhone */
+    .unified-navbar .hamburger,
+    .unified-navbar .lab-logo,
+    .unified-navbar .lab-icon {
+        pointer-events: auto;
+    }
+
+    .unified-navbar.menu-active {
+        pointer-events: auto;
     }
 
     .unified-container {
-        justify-content: flex-end; /* iPhone上也只显示汉堡菜单 */
+        justify-content: space-between; /* Show both logo and hamburger on iPhone */
     }
 
-    /* iPhone上也隐藏logo */
-    .lab-logo,
+    /* Show lab logo on iPhone, hide umich logo */
+    .lab-logo {
+        display: flex !important;
+        margin-left: 0;
+        left: 0;
+    }
+
     .umich-logo,
     .nav-lab-info {
         display: none !important;
+    }
+
+    .lab-icon {
+        height: 1.75rem; /* Slightly smaller for iPhone */
     }
 
     .nav-menu {
@@ -5453,6 +5683,18 @@ section {
         width: calc(100% - 1rem);
         top: max(0.5rem, env(safe-area-inset-top));
         border-radius: 1rem;
+        pointer-events: none; /* Prevent accidental clicks on navbar container */
+    }
+
+    /* Allow pointer events only on interactive elements for iPhone 15 Pro Max */
+    .unified-navbar .hamburger,
+    .unified-navbar .lab-logo,
+    .unified-navbar .lab-icon {
+        pointer-events: auto;
+    }
+
+    .unified-navbar.menu-active {
+        pointer-events: auto;
     }
 
     /* 调整iPhone 15 Pro Max的页面内容间距 */
@@ -5477,14 +5719,23 @@ section {
     }
 
     .unified-container {
-        justify-content: flex-end; /* 480px以下也只显示汉堡菜单 */
+        justify-content: space-between; /* Show both logo and hamburger */
     }
 
-    /* 480px以下也隐藏logo */
-    .lab-logo,
+    /* Show lab logo, hide umich logo on small screens */
+    .lab-logo {
+        display: flex !important;
+        margin-left: 0;
+        left: 0;
+    }
+
     .umich-logo,
     .nav-lab-info {
         display: none !important;
+    }
+
+    .lab-icon {
+        height: 1.75rem; /* Slightly smaller for small screens */
     }
 
     .hero {

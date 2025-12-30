@@ -22,10 +22,12 @@ document.addEventListener('DOMContentLoaded', function() {
         hamburger.classList.toggle('active');
         navMenu.classList.toggle('active');
         
-        // 防止背景滚动
+        // Toggle menu-active class for pointer-events control
         if (navMenu.classList.contains('active')) {
+            navbar.classList.add('menu-active');
             document.body.style.overflow = 'hidden';
         } else {
+            navbar.classList.remove('menu-active');
             document.body.style.overflow = '';
         }
     });
@@ -43,6 +45,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 const isMobileMenuOpen = hamburger.classList.contains('active');
                 hamburger.classList.remove('active');
                 navMenu.classList.remove('active');
+                navbar.classList.remove('menu-active');
                 document.body.style.overflow = '';
                 
                 // 只在移动菜单打开时延迟，否则立即滚动
