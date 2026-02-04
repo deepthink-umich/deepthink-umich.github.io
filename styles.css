@@ -4518,6 +4518,40 @@ section {
     z-index: 3;
 }
 
+/* =========================
+   News category dividers
+========================= */
+.news-divider {
+    position: relative;
+    margin: 26px 0 12px;
+    padding-left: 0; /* keep consistent with your timeline layout */
+}
+
+.news-divider::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    height: 1px;
+    background: rgba(0, 0, 0, 0.08);
+    transform: translateY(-50%);
+}
+
+.news-divider-label {
+    position: relative;
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.92);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    font-weight: 700;
+    letter-spacing: 0.2px;
+    color: #1f2a37;
+    /* subtle elevation, consistent with your card-ish look */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+}
+
 /* People页面响应式设计 */
 @media (max-width: 1400px) {
     .pi-card {
