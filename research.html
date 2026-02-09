@@ -5,16 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Research Thrusts | DeepThink Lab</title>
     <meta name="description" content="Research Thrusts - DeepThink Lab at the University of Michigan">
-    <link rel="icon" type="image/svg+xml" href="Block_M-Hex.svg">
+    <link rel="icon" type="image/svg+xml" href="./fig/DeepThink_logo_square.svg">
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;500;600;700&family=Crimson+Text:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
 </head>
 <body>
     <nav class="unified-navbar" id="navbar">
         <div class="unified-container">
             <div class="lab-logo">
-                <img src="fig/DeepThink_logo_rec_light.svg" alt="DeepThink Logo" class="lab-icon">
+                <img src="fig/DeepThink_logo_square_light.svg" alt="DeepThink Logo" class="lab-icon lab-icon-square">
+                <img src="fig/DeepThink_logo_rec_light.svg" alt="DeepThink Logo" class="lab-icon lab-icon-rectangle">
             </div>
             <div class="nav-menu" id="nav-menu">
                 <a href="index.html" class="nav-link">Home</a>
@@ -68,43 +70,55 @@
                     <div class="panel-header">
                         <h3><i class="fas fa-project-diagram"></i> Representation</h3>
                     </div>
-                    <!-- <div class="panel-content">
-                        <p class="panel-intro">Learning effective representations from high-dimensional data across multiple modalities including text, images, audio, and video.</p>
-                        <div class="panel-details">
-                            <div class="detail-section">
-                                <h4>Released Papers</h4>
-                                <ul>
-                                    <li><strong>Optimization Algorithms:</strong> Fast and scalable optimization methods</li>
-                                </ul>
-                                <h4>Blogs</h4>
-                                <ul>
-                                    <li><strong>Optimization Algorithms:</strong> Fast and scalable optimization methods</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div> -->
                 </div>
 
                 <!-- Thrust II: Generalization -->
                 <div class="research-panel" data-panel="1">
                     <div class="panel-header">
-                        <h3><i class="fas fa-brain"></i> Generalization</h3>
+                        <h3><i class="fas fa-brain"></i> Memorization and Generalization of Diffusion Models</h3>
                     </div>
-                    <!-- <div class="panel-content">
-                        <p class="panel-intro">Understanding how models generalize from training to test data and developing theoretical foundations for deep learning.</p>
-                        <div class="panel-details">
-                            <div class="detail-section">
-                                <h4>Released Papers</h4>
-                                <ul>
-                                    <li><strong>Optimization Algorithms:</strong> Fast and scalable optimization methods</li>
-                                </ul>
-                                <h4>Blogs</h4>
-                                <ul>
-                                    <li><strong>Optimization Algorithms:</strong> Fast and scalable optimization methods</li>
-                                </ul>
+                    <div class="panel-content">
+                        <!-- Paper Review Section -->
+                        <div class="paper-review-section">
+                            
+                            <!-- Graph Visualization -->
+                            <div class="graph-container-wrapper">
+                                <!-- Category Filter Buttons -->
+                                <div class="category-filters">
+                                    <button class="category-filter-btn active" data-category="all" onclick="filterByCategory('all')">
+                                        All
+                                    </button>
+                                    <button class="category-filter-btn" data-category="foundational" onclick="filterByCategory('foundational')" style="--category-color: #3b82f6;">
+                                        Foundational
+                                    </button>
+                                    <button class="category-filter-btn" data-category="sampling" onclick="filterByCategory('sampling')" style="--category-color: #10b981;">
+                                        Sampling Methods
+                                    </button>
+                                    <button class="category-filter-btn" data-category="guidance" onclick="filterByCategory('guidance')" style="--category-color: #f59e0b;">
+                                        Guidance
+                                    </button>
+                                    <button class="category-filter-btn" data-category="efficiency" onclick="filterByCategory('efficiency')" style="--category-color: #8b5cf6;">
+                                        Efficiency
+                                    </button>
+                                    <button class="category-filter-btn" data-category="generalization" onclick="filterByCategory('generalization')" style="--category-color: #ef4444;">
+                                        Generalization
+                                    </button>
+                                </div>
+                                
+                                <!-- Graph and Papers Layout -->
+                                <div class="graph-papers-layout">
+                                    <!-- Left: Graph -->
+                                    <div class="graph-section">
+                                        <div id="paper-graph" class="paper-graph"></div>
+                                        
+                                    </div>
+                                    
+                                    <!-- Right: Selected Papers List -->
+                                    <div id="selected-papers-list" class="selected-papers-list"></div>
+                                </div>
                             </div>
                         </div>
-                    </div> -->
+                    </div>
                 </div>
 
                 <!-- Thrust III: Efficiency -->
@@ -112,21 +126,6 @@
                     <div class="panel-header">
                         <h3><i class="fas fa-tachometer-alt"></i> Efficiency</h3>
                     </div>
-                    <!-- <div class="panel-content">
-                        <p class="panel-intro">Developing efficient algorithms and optimization methods for large-scale machine learning and computational problems.</p>
-                        <div class="panel-details">
-                            <div class="detail-section">
-                                <h4>Released Papers</h4>
-                                <ul>
-                                    <li><strong>Optimization Algorithms:</strong> Fast and scalable optimization methods</li>
-                                </ul>
-                                <h4>Blogs</h4>
-                                <ul>
-                                    <li><strong>Optimization Algorithms:</strong> Fast and scalable optimization methods</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div> -->
                 </div>
 
                 <!-- Thrust IV: Scientific Applications -->
@@ -134,21 +133,6 @@
                     <div class="panel-header">
                         <h3><i class="fas fa-flask"></i> Scientific Applications</h3>
                     </div>
-                    <!-- <div class="panel-content">
-                        <p class="panel-intro">Applying machine learning methods to biomedical imaging, spectrometer sensing, geophysics, and other scientific domains.</p>
-                        <div class="panel-details">
-                            <div class="detail-section">
-                                <h4>Released Papers</h4>
-                                <ul>
-                                    <li><strong>Optimization Algorithms:</strong> Fast and scalable optimization methods</li>
-                                </ul>
-                                <h4>Blogs</h4>
-                                <ul>
-                                    <li><strong>Optimization Algorithms:</strong> Fast and scalable optimization methods</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div> -->
                 </div>
             </div>
         </div>
@@ -173,6 +157,7 @@
     </footer>
 
     <script src="script.js"></script>
+    <script src="paper-review.js"></script>
 </body>
 </html>
 

@@ -395,7 +395,6 @@ document.addEventListener('DOMContentLoaded', function() {
     pubLinks.forEach(link => {
         link.addEventListener('click', function(e) {
             // 这里可以添加点击统计代码
-            console.log('Publication link clicked:', this.textContent.trim());
         });
     });
 
@@ -564,7 +563,7 @@ if ('performance' in window) {
     window.addEventListener('load', function() {
         setTimeout(function() {
             const perfData = performance.getEntriesByType('navigation')[0];
-            console.log('Page load time:', perfData.loadEventEnd - perfData.loadEventStart, 'ms');
+            // Performance monitoring can be enabled here if needed
         }, 0);
     });
 }

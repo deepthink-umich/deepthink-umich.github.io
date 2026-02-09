@@ -45,7 +45,7 @@ body {
     font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     line-height: 1.6;
     color: var(--text-primary);
-    background-image: url('./fig/background_dark.jpg');
+    /* background-image: url('./fig/background_dark.jpg'); */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -73,31 +73,100 @@ body {
 .unified-navbar {
     position: fixed;
     top: 1.5rem;
-    left: 50%;
-    transform: translateX(-50%);
-    width: calc(100% - 3rem);
-    max-width: 1400px;
-    background: rgba(60, 60, 60, 0.5);
+    left: 1.5rem;
+    width: 5.5rem;
+    min-width: 3.5rem;
+    max-width: calc(100% - 3rem);
+    background: rgba(60, 60, 60, 0.25);
     backdrop-filter: blur(20px) saturate(180%);
     -webkit-backdrop-filter: blur(20px) saturate(180%);
     color: white;
     z-index: 1000;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    padding: 0.75rem 1.5rem;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 0.25rem;
+    height: 4rem;
     min-height: 4rem;
     border-radius: 2rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2), 
+                0 2px 8px rgba(0, 0, 0, 0.15),
+                inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Home page: navbar expanded by default */
+.home-page .unified-navbar {
+    width: calc(100% - 3rem);
+    padding: 0.75rem 1.5rem;
+    background: rgba(60, 60, 60, 0.5);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 
                 0 2px 8px rgba(0, 0, 0, 0.2),
                 inset 0 1px 0 rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.unified-navbar.scrolled {
+.home-page .unified-navbar .lab-icon-square {
+    display: none;
+}
+
+.home-page .unified-navbar .lab-icon-rectangle {
+    display: block;
+    width: auto;
+    height: 3rem;
+    max-height: 3rem;
+    object-fit: contain;
+}
+
+.home-page .unified-navbar .nav-menu,
+.home-page .unified-navbar .umich-logo {
+    opacity: 1;
+    width: auto;
+    pointer-events: auto;
+}
+
+.unified-navbar:hover {
+    width: calc(100% - 3rem);
+    padding: 0.75rem 1.5rem;
+    background: rgba(60, 60, 60, 0.5);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 
+                0 2px 8px rgba(0, 0, 0, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Home page scrolled state: keep expanded */
+.home-page .unified-navbar.scrolled {
+    width: calc(100% - 2rem);
+    padding: 0.75rem 1.5rem;
     background: rgba(50, 50, 50, 0.6);
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4), 
                 0 4px 12px rgba(0, 0, 0, 0.3),
                 inset 0 1px 0 rgba(255, 255, 255, 0.15);
     top: 1rem;
+    left: 1rem;
+}
+
+.unified-navbar.scrolled {
+    background: rgba(50, 50, 50, 0.3);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25), 
+                0 4px 12px rgba(0, 0, 0, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    top: 1rem;
+    left: 1rem;
+}
+
+.unified-navbar.scrolled:hover {
+    width: calc(100% - 2rem);
+    padding: 0.75rem 1.5rem;
+    height: 4rem;
+    min-height: 4rem;
+    background: rgba(50, 50, 50, 0.6);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4), 
+                0 4px 12px rgba(0, 0, 0, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.15);
 }
 
 .unified-container {
@@ -109,6 +178,7 @@ body {
     align-items: center;
     gap: 1.5rem;
     width: 100%;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .umich-logo {
@@ -116,6 +186,17 @@ body {
     align-items: center;
     flex-shrink: 0;
     margin-left: auto;
+    opacity: 0;
+    width: 0;
+    overflow: hidden;
+    transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1), width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: none;
+}
+
+.unified-navbar:hover .umich-logo {
+    opacity: 1;
+    width: auto;
+    pointer-events: auto;
 }
 
 .umich-logo-img {
@@ -129,15 +210,38 @@ body {
     align-items: center;
     flex-shrink: 0;
     position: relative;
-    left: 0.5rem;
+    left: 0;
     margin-left: 0;
-    gap: 0.75rem;
+    gap: 0;
+    justify-content: center;
 }
 
 .lab-icon {
-    height: 2rem;
-    width: auto;
+    height: 3rem;
+    width: 3rem;
+    object-fit: contain;
     /* 保持原始外观，只控制尺寸 */
+}
+
+.lab-icon-square {
+    display: block;
+}
+
+.lab-icon-rectangle {
+    display: none;
+    width: auto; /* Rectangle logo should use auto width */
+}
+
+.unified-navbar:hover .lab-icon-square {
+    display: none;
+}
+
+.unified-navbar:hover .lab-icon-rectangle {
+    display: block;
+    width: auto;
+    height: 3rem;
+    max-height: 3rem;
+    object-fit: contain;
 }
 
 /* 顶部PixAIL样式 */
@@ -171,6 +275,17 @@ body {
     gap: 1.5rem;
     margin-left: 2rem;
     flex-wrap: nowrap;
+    opacity: 0;
+    width: 0;
+    overflow: hidden;
+    transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1), width 0.4s cubic-bezier(0.4, 0, 0.2, 1), margin 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: none;
+}
+
+.unified-navbar:hover .nav-menu {
+    opacity: 1;
+    width: auto;
+    pointer-events: auto;
 }
 
 .nav-link {
@@ -350,23 +465,6 @@ body {
     background: linear-gradient(135deg, rgba(255, 203, 5, 0.1), rgba(0, 39, 76, 0.1));
 }
 
-/* .shape-2 {
-    width: 200px;
-    height: 200px;
-    bottom: 15%;
-    right: 10%;
-    animation-delay: 5s;
-    background: linear-gradient(135deg, rgba(0, 39, 76, 0.15), rgba(255, 203, 5, 0.1));
-}
-
-.shape-3 {
-    width: 150px;
-    height: 150px;
-    top: 50%;
-    right: 20%;
-    animation-delay: 10s;
-    background: linear-gradient(135deg, rgba(255, 203, 5, 0.12), rgba(0, 39, 76, 0.08));
-} */
 
 .gradient-orb {
     position: absolute;
@@ -1453,6 +1551,687 @@ section {
     font-weight: 700;
 }
 
+/* Paper Review Section */
+.paper-review-section {
+    margin-top: 2rem;
+}
+
+.section-subtitle {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin: 0 0 1.5rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.section-subtitle i {
+    color: var(--secondary-color);
+    font-size: 1.3rem;
+}
+
+/* Graph Visualization */
+.graph-container-wrapper {
+    background: linear-gradient(135deg, #f8fafc, #ffffff);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    margin: 2rem auto;
+    box-shadow: 0 4px 20px rgba(0, 39, 76, 0.1);
+    position: relative;
+    max-width: 1200px;
+}
+
+.graph-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+.graph-legend h5 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 0.75rem;
+}
+
+.legend-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: white;
+    border-radius: 0.5rem;
+    border: 1px solid #e2e8f0;
+    font-size: 0.9rem;
+}
+
+.legend-color {
+    width: 16px;
+    height: 16px;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.graph-actions {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.graph-btn {
+    padding: 0.6rem 1.2rem;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.graph-btn:hover {
+    background: #1e3a8a;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 39, 76, 0.3);
+}
+
+.graph-btn i {
+    font-size: 0.9rem;
+}
+
+/* Category Filter Buttons */
+.category-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: white;
+    border-radius: 0.75rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.category-filter-btn {
+    padding: 0.7rem 1.5rem;
+    background: #f1f5f9;
+    color: #64748b;
+    border: 2px solid #e2e8f0;
+    border-radius: 0.5rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.category-filter-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--category-color, #94a3b8);
+    transform: scaleY(0);
+    transition: transform 0.3s ease;
+}
+
+.category-filter-btn:hover {
+    background: #e2e8f0;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.category-filter-btn.active {
+    background: var(--category-color, var(--primary-color));
+    color: white;
+    border-color: var(--category-color, var(--primary-color));
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.category-filter-btn.active::before {
+    transform: scaleY(1);
+}
+
+/* Graph and Papers Layout */
+.graph-papers-layout {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+}
+
+.graph-section {
+    flex: 0 0 50%;
+    position: relative;
+}
+
+.paper-graph {
+    width: 100%;
+    height: 500px;
+    background: linear-gradient(135deg, #f8fafc 0%, #ffffff 50%, #f1f5f9 100%);
+    border-radius: 0.75rem;
+    border: 1px solid rgba(226, 232, 240, 0.8);
+    overflow: hidden;
+    position: relative;
+    box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.02);
+}
+
+/* Selected Papers List */
+.selected-papers-list {
+    flex: 0 0 50%;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 0.75rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+/* Papers Panel Header */
+.papers-panel-header {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+.papers-panel-header h4 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin: 0;
+}
+
+.papers-panel-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* Summarized Paper Block */
+.paper-block-summarized {
+    padding: 1rem;
+    background: linear-gradient(135deg, #f8fafc, #ffffff);
+    border-radius: 0.5rem;
+    border-left: 4px solid var(--primary-color);
+    transition: all 0.3s ease;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.paper-block-summarized:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-left-width: 6px;
+}
+
+.paper-block-summarized-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+}
+
+.paper-block-summarized-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    line-height: 1.4;
+    flex: 1;
+    margin: 0;
+}
+
+.paper-block-summarized-title a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.paper-block-summarized-title a:hover {
+    color: var(--secondary-color);
+}
+
+.paper-block-summarized-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.paper-block-summarized-badge {
+    padding: 0.25rem 0.7rem;
+    border-radius: 0.4rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: white;
+    white-space: nowrap;
+}
+
+.paper-block-summarized-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    font-size: 0.85rem;
+    color: #64748b;
+}
+
+.paper-block-summarized-authors {
+    font-style: italic;
+}
+
+.paper-block-summarized-venue {
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+/* Detailed Paper Block */
+.paper-block-detailed {
+    padding: 1.5rem;
+    background: linear-gradient(135deg, #f8fafc, #ffffff);
+    border-radius: 0.75rem;
+    border-left: 4px solid var(--primary-color);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.paper-block-detailed-header {
+    margin-bottom: 1.5rem;
+}
+
+.paper-block-detailed-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    line-height: 1.4;
+    margin-bottom: 1rem;
+}
+
+.paper-block-detailed-title a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.paper-block-detailed-title a:hover {
+    color: var(--secondary-color);
+}
+
+.paper-block-detailed-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.paper-block-detailed-badge {
+    padding: 0.4rem 0.9rem;
+    border-radius: 0.4rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: white;
+}
+
+.paper-block-detailed-meta {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.paper-block-detailed-authors {
+    font-size: 0.95rem;
+    color: #475569;
+    margin-bottom: 0.75rem;
+    line-height: 1.6;
+}
+
+.paper-block-detailed-authors strong {
+    color: var(--primary-color);
+}
+
+.paper-block-detailed-venue-year {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.9rem;
+}
+
+.paper-block-detailed-venue {
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.paper-block-detailed-year {
+    font-weight: 600;
+    color: #64748b;
+}
+
+.paper-block-detailed-description {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.paper-block-detailed-description strong {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+    font-size: 0.95rem;
+}
+
+.paper-block-detailed-description p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #475569;
+    margin: 0;
+}
+
+.paper-block-detailed-actions {
+    margin-top: 1.5rem;
+}
+
+.paper-block-detailed-link-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+.paper-block-detailed-link-btn:hover {
+    background: #1e3a8a;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 39, 76, 0.3);
+}
+
+.paper-block-detailed-link-btn i {
+    font-size: 0.9rem;
+}
+
+/* Related Papers Section */
+.related-papers-section {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 2px solid #e2e8f0;
+}
+
+.related-papers-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+.related-papers-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.related-paper-wrapper {
+    position: relative;
+}
+
+.connection-indicator-summarized {
+    margin-bottom: 0.5rem;
+    padding: 0.4rem 0.6rem;
+    background: #f1f5f9;
+    border-radius: 0.4rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    font-size: 0.8rem;
+}
+
+.connection-type-badge-summarized {
+    padding: 0.2rem 0.5rem;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 0.3rem;
+    font-size: 0.7rem;
+    font-weight: 600;
+}
+
+.connection-desc-summarized {
+    font-size: 0.8rem;
+    color: #64748b;
+    font-style: italic;
+}
+
+/* Papers List Summarized */
+.papers-list-summarized {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+
+/* Paper Details Block */
+
+
+
+/* Paper List */
+.paper-list-container {
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+.paper-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+}
+
+.filter-btn {
+    padding: 0.6rem 1.2rem;
+    background: #f1f5f9;
+    color: var(--primary-color);
+    border: 2px solid #e2e8f0;
+    border-radius: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+    background: #e2e8f0;
+    transform: translateY(-2px);
+}
+
+.filter-btn.active {
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+.paper-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 1.5rem;
+}
+
+.paper-card {
+    background: linear-gradient(135deg, #f8fafc, #ffffff);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    border-left: 4px solid;
+    box-shadow: 0 2px 10px rgba(0, 39, 76, 0.08);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.paper-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(0, 39, 76, 0.15);
+}
+
+.paper-card.hidden {
+    display: none;
+}
+
+.paper-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.paper-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    line-height: 1.4;
+    flex: 1;
+}
+
+.paper-title a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.paper-title a:hover {
+    color: var(--secondary-color);
+}
+
+.paper-badge {
+    padding: 0.3rem 0.8rem;
+    border-radius: 0.4rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    white-space: nowrap;
+    color: white;
+}
+
+.paper-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    font-size: 0.9rem;
+    color: #64748b;
+}
+
+.paper-authors {
+    font-style: italic;
+}
+
+.paper-venue {
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.paper-year {
+    font-weight: 600;
+}
+
+.paper-description {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #475569;
+    margin-top: 0.5rem;
+}
+
+.paper-connections {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e2e8f0;
+}
+
+.paper-connections-title {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.connection-tag {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    background: #e2e8f0;
+    color: var(--primary-color);
+    border-radius: 0.4rem;
+    font-size: 0.8rem;
+    margin: 0.25rem 0.5rem 0.25rem 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.connection-tag:hover {
+    background: var(--secondary-color);
+    color: white;
+    transform: scale(1.05);
+}
+
+/* Responsive Design for Paper Review */
+@media (max-width: 768px) {
+    .graph-controls {
+        flex-direction: column;
+    }
+    
+    .graph-papers-layout {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .graph-section {
+        flex: 1 1 100%;
+    }
+    
+    .paper-graph {
+        width: 100%;
+        height: 300px;
+    }
+    
+    .paper-list {
+        grid-template-columns: 1fr;
+    }
+    
+    .paper-card-header {
+        flex-direction: column;
+    }
+    
+    
+    .category-filters {
+        padding: 0.75rem;
+        gap: 0.5rem;
+    }
+    
+    .category-filter-btn {
+        padding: 0.6rem 1rem;
+        font-size: 0.85rem;
+    }
+    
+    .selected-papers-list {
+        flex: 1 1 100%;
+        padding: 1rem;
+        max-height: none;
+    }
+}
+
 /* Applications Showcase */
 .applications-showcase {
     display: grid;
@@ -2312,9 +3091,25 @@ section {
 /* iPad Pro and tablet optimization (768px - 1024px) */
 @media (min-width: 768px) and (max-width: 1024px) {
     .unified-navbar {
-        width: calc(100% - 2rem);
-        padding: 0.75rem 1.25rem;
+        width: calc(100% - 2rem) !important;
+        padding: 0.25rem 1.25rem !important;
+        height: 4rem !important;
+        min-height: 4rem !important;
         top: 1rem;
+    }
+    
+    .unified-navbar:hover {
+        width: calc(100% - 2rem) !important;
+        padding: 0.75rem 1.25rem !important;
+        height: 4rem !important;
+        min-height: 4rem !important;
+    }
+    
+    .unified-navbar .nav-menu,
+    .unified-navbar .umich-logo {
+        opacity: 1 !important;
+        width: auto !important;
+        pointer-events: auto !important;
     }
     
     .unified-container {
@@ -2533,13 +3328,13 @@ section {
 
     /* 移动设备统一导航栏调整 */
     .unified-navbar {
-        padding: 0.75rem 1rem;
-        height: auto;
-        min-height: 5rem; /* 增加移动设备导航栏高度 */
+        padding: 0.25rem 1rem;
+        height: 4rem !important;
+        min-height: 4rem !important;
         position: fixed;
-        width: calc(100% - 2rem);
-        left: 50%;
-        transform: translateX(-50%);
+        width: calc(100% - 2rem) !important;
+        left: 1rem !important;
+        transform: none !important;
         top: 1rem;
         border-radius: 1.5rem;
         background: rgba(60, 60, 60, 0.55);
@@ -2550,6 +3345,21 @@ section {
                     inset 0 1px 0 rgba(255, 255, 255, 0.1);
         border: 1px solid rgba(255, 255, 255, 0.1);
         pointer-events: none; /* Prevent accidental clicks on navbar container */
+    }
+    
+    .unified-navbar:hover {
+        width: calc(100% - 2rem) !important;
+        padding: 0.75rem 1rem !important;
+        height: 4rem !important;
+        min-height: 4rem !important;
+    }
+    
+    /* On mobile, always show nav menu and umich logo */
+    .unified-navbar .nav-menu,
+    .unified-navbar .umich-logo {
+        opacity: 1 !important;
+        width: auto !important;
+        pointer-events: auto !important;
     }
 
     /* Allow pointer events only on interactive elements */
@@ -5574,8 +6384,9 @@ section {
 
     /* iPhone导航栏进一步调整 */
     .unified-navbar {
-        min-height: 5.5rem;
-        padding: 1rem 1rem;
+        height: 4rem !important;
+        min-height: 4rem !important;
+        padding: 0.25rem 1rem;
         width: calc(100% - 1.5rem);
         top: 0.75rem;
         border-radius: 1.25rem;
@@ -5665,7 +6476,9 @@ section {
     }
 
     .unified-navbar {
-        padding: 0.5rem 0.75rem;
+        padding: 0.25rem 0.75rem;
+        height: 4rem !important;
+        min-height: 4rem !important;
         width: calc(100% - 1rem);
         top: 0.5rem;
         border-radius: 1rem;
@@ -5709,11 +6522,12 @@ section {
 
     /* iPhone 15 Pro Max 导航栏优化 */
     .unified-navbar {
-        padding-top: max(0.5rem, env(safe-area-inset-top));
-        padding-bottom: 0.5rem;
+        padding-top: max(0.25rem, env(safe-area-inset-top));
+        padding-bottom: 0.25rem;
         padding-left: 0.75rem;
         padding-right: 0.75rem;
-        min-height: 3.5rem;
+        height: 4rem !important;
+        min-height: 4rem !important;
         width: calc(100% - 1rem);
         top: max(0.5rem, env(safe-area-inset-top));
         border-radius: 1rem;
@@ -5802,8 +6616,9 @@ section {
     }
 
     .unified-navbar {
-        padding: 0.5rem 0.75rem;
-        min-height: 3.5rem;
+        padding: 0.25rem 0.75rem;
+        height: 4rem !important;
+        min-height: 4rem !important;
         width: calc(100% - 1rem);
         top: 0.5rem;
         border-radius: 1rem;
