@@ -5950,18 +5950,19 @@ section {
 }
 
 .join-requirements a,
-.join-programs a {
+.join-programs a,
+.join-highlight a {
     color: var(--primary-color);
-    text-decoration: none;
-    font-weight: 500;
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+    font-weight: 600;
     transition: color 0.2s ease;
-    border-bottom: 1px solid transparent;
 }
 
 .join-requirements a:hover,
-.join-programs a:hover {
+.join-programs a:hover,
+.join-highlight a:hover {
     color: var(--secondary-color);
-    border-bottom-color: var(--secondary-color);
 }
 
 .join-highlight {
