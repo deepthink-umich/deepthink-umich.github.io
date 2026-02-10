@@ -1077,3 +1077,131 @@ function toggleYear(year) {
         }
     });
 })();
+
+/* =========================
+   Page Tracker (localStorage)
+   - Tracks page view, section view, time on page
+   - No external dependency
+========================= */
+(function pageTracker() {
+  const STORAGE_KEY = "deepthink_page_tracker_v1";
+
+  function nowISO() {
+    return new Date().toISOString();
+  }
+
+  function safeParse(json, fallback) {
+    try { return JSON.parse(json); } catch { return fallback; }
+  }
+
+  function loadStore() {
+    return safeParse(localStorage.getItem(STORAGE_KEY), {
+      sessions: [],
+      events: []
+    });
+  }
+
+  function saveStore(store) {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(store));
+  }
+
+  function pushEvent(type, payload = {}) {
+    const store = loadStore();
+    store.events.push({
+      type,
+      ts: nowISO(),
+      path: location.pathname,
+      url: location.href,
+      referrer: document.referrer || null,
+      ...payload
+    });
+    saveStore(store);
+  }
+
+  // Session start
+  const sessionId = (crypto?.randomUUID?.() || String(Math.random()).slice(2));
+  const startTs = Date.now();
+  const store = loadStore();
+  store.sessions.push({
+    sessionId,
+    startedAt: nowISO(),
+    path: location.pathname,
+    url: location.href
+  });
+  saveStore(store);
+
+  // Page view
+  pushEvent("page_view", {
+    sessionId,
+    title: document.title,
+    userAgent: navigator.userAgent
+  });
+
+  // Track hash changes (e.g., clicking navbar #home)
+  window.addEventListener("hashchange", () => {
+    pushEvent("hash_change", {
+      sessionId,
+      hash: location.hash || "#"
+    });
+  });
+
+  // Section tracking via IntersectionObserver
+  const sections = Array.from(document.querySelectorAll("section[id]"));
+  if (sections.length > 0 && "IntersectionObserver" in window) {
+    const seen = new Set();
+
+    const io = new IntersectionObserver((entries) => {
+      // pick the most visible section
+      const visible = entries
+        .filter(e => e.isIntersecting)
+        .sort((a, b) => (b.intersectionRatio || 0) - (a.intersectionRatio || 0))[0];
+
+      if (!visible) return;
+
+      const id = visible.target.id;
+      if (!id) return;
+
+      // Log first time a section becomes visible
+      if (!seen.has(id)) {
+        seen.add(id);
+        pushEvent("section_view_first", { sessionId, sectionId: id });
+      }
+
+      // Also log every time it becomes the "primary" visible section
+      pushEvent("section_view", {
+        sessionId,
+        sectionId: id,
+        ratio: visible.intersectionRatio
+      });
+    }, {
+      root: null,
+      // trigger when ~55% visible
+      threshold: [0.55]
+    });
+
+    sections.forEach(sec => io.observe(sec));
+  }
+
+  // Time on page (sent when leaving / background)
+  function endSession(reason) {
+    const durationMs = Date.now() - startTs;
+    pushEvent("session_end", {
+      sessionId,
+      reason,
+      durationMs
+    });
+  }
+
+  // pagehide is more reliable than beforeunload on mobile
+  window.addEventListener("pagehide", () => endSession("pagehide"), { once: true });
+
+  // Also log when tab goes background
+  document.addEventListener("visibilitychange", () => {
+    if (document.visibilityState === "hidden") endSession("visibility_hidden");
+  });
+
+  // Optional: quick debug helper in console
+  window.__pageTrackerDump = function () {
+    return loadStore();
+  };
+})();
