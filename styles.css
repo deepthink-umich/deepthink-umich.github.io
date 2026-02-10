@@ -1016,7 +1016,7 @@ body {
 
 /* 通用部分样式 */
 section {
-    padding: 5rem 0;
+    padding: 3rem 0;
     scroll-margin-top: calc(4rem + 1rem); /* 导航栏高度 + 额外缓冲 */
     position: relative;
     z-index: 1; /* 确保所有section都在Hero之上 */
@@ -1128,6 +1128,21 @@ section {
 }
 
 .news::before { 
+    content: none; 
+}
+
+.ack {
+    background-color: #ffffff;
+    background-image: none;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: relative;
+    overflow: hidden;
+}
+
+.ack::before { 
     content: none; 
 }
 
