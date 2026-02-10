@@ -1016,7 +1016,7 @@ body {
 
 /* 通用部分样式 */
 section {
-    padding: 3rem 0;
+    padding: 5rem 0;
     scroll-margin-top: calc(4rem + 1rem); /* 导航栏高度 + 额外缓冲 */
     position: relative;
     z-index: 1; /* 确保所有section都在Hero之上 */
@@ -1144,6 +1144,21 @@ section {
 
 .ack::before { 
     content: none; 
+}
+
+.about {
+    padding-top: 3rem;   
+    padding-bottom: 3rem;
+}
+
+.news {
+    padding-top: 3rem;  
+    padding-bottom: 3rem;
+}
+
+.ack {
+    padding-top: 3rem;   
+    padding-bottom: 3rem;
 }
 
 .umich-motto {
