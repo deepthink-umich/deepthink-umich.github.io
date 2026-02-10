@@ -1134,7 +1134,7 @@ section {
     left: 0;
     right: 0;
     height: 200px;
-    background: transparent;
+    background: linear-gradient(to bottom, #00274C, rgba(0, 39, 76, 0.9), rgba(0, 39, 76, 0.6), rgba(0, 39, 76, 0.3), transparent);
     z-index: 1;
     pointer-events: none;
 }
