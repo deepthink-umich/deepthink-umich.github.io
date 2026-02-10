@@ -1115,6 +1115,30 @@ section {
     margin-bottom: 1.5rem;
 }
 
+
+.news {
+    background-color: #ffffff;
+    background-image: none;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: relative;
+    overflow: hidden;
+}
+
+.news::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 200px;
+    background: transparent;
+    z-index: 1;
+    pointer-events: none;
+}
+
 .umich-motto {
     margin: 2rem 0;
     padding: 1.5rem;
