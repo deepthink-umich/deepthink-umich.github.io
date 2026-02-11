@@ -1146,6 +1146,50 @@ section {
     content: none; 
 }
 
+/* Funding logos container */
+.funding-logos {
+  display: flex;
+  flex-wrap: wrap;               /* auto wrap */
+  justify-content: center;       /* center horizontally */
+  align-items: center;           /* center vertically */
+  gap: 60px 80px;                /* row-gap / column-gap */
+  padding: 40px 0;
+}
+
+/* Each logo wrapper */
+.funding-logos figure {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* All logo images: unified visual size */
+.funding-logos img {
+  height: 110px;                 /* key: unify height */
+  width: auto;                   /* keep aspect ratio */
+  object-fit: contain;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Optional hover effect */
+.funding-logos img:hover {
+  transform: scale(1.05);
+  opacity: 0.85;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .funding-logos {
+    gap: 40px 40px;
+    padding: 28px 0;
+  }
+
+  .funding-logos img {
+    height: 80px;
+  }
+}
+
 .about {
     padding-top: 5rem;   
     padding-bottom: 3rem;
