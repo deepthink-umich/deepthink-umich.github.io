@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Blog | DeepThink Lab</title>
+    <meta name="description" content="DeepThink Lab blog with research explainers, lab updates, and technical notes.">
+    <link rel="icon" type="image/svg+xml" href="./fig/DeepThink_logo_square.svg">
+    <link rel="stylesheet" href="styles.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;500;600;700&family=Crimson+Text:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <nav class="unified-navbar" id="navbar">
+        <div class="unified-container">
+            <div class="lab-logo">
+                <img src="fig/DeepThink_logo_rec_light.svg" alt="DeepThink Logo" class="lab-icon">
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="research.html" class="nav-link">Research</a>
+                <a href="publications.html" class="nav-link">Publications</a>
+                <a href="blog.html" class="nav-link active">Blog</a>
+                <a href="people.html" class="nav-link">People</a>
+                <a href="join.html" class="nav-link">Join Us</a>
+            </div>
+            <div class="umich-logo">
+                <img src="fig/Michigan_Engineering_Horizontal.svg" alt="University of Michigan Engineering"
+                    class="umich-logo-img">
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <section class="page-section blog-page">
+        <canvas id="particles-canvas-blog" class="particles-canvas-light"></canvas>
+        <div class="container">
+            <h2 class="section-title">Blog</h2>
+            <p class="section-subtitle">Research explainers, lab notes, and practical insights from DeepThink.</p>
+
+            <div class="blog-grid">
+                <article class="blog-card">
+                    <div class="blog-meta">
+                        <span><i class="fas fa-calendar"></i> April 2025</span>
+                    </div>
+                    <h3 class="blog-title">Generalization of Diffusion Models: Principles, Theory, and Implications</h3>
+                    <p class="blog-excerpt">A SIAM News feature on theoretical perspectives and implications for
+                        understanding diffusion model generalization.</p>
+                    <a href="https://www.siam.org/publications/siam-news/articles/generalization-of-diffusion-models-principles-theory-and-implications/"
+                        target="_blank" rel="noopener noreferrer" class="blog-link"
+                        aria-label="Read the SIAM News article on generalization of diffusion models">Read post <i
+                            class="fas fa-arrow-right"></i></a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-main">
+                    <p class="copyright">&copy; 2025 DeepThink Lab. All rights reserved.</p>
+                    <div class="footer-contact">
+                        <span><i class="fas fa-envelope"></i> deepthinkumich@gmail.com</span>
+                        <span><i class="fas fa-map-marker-alt"></i> University of Michigan, Ann Arbor</span>
+                    </div>
+                </div>
+                <div class="footer-credits">
+                    <p><i class="fas fa-heart"></i> Website inspired by <a href="https://pixail.engin.umich.edu/"
+                            target="_blank" rel="noopener noreferrer">PixAIL group</a> led by <a
+                            href="https://bme.umich.edu/people/joyce-yan-ran-wang-ph-d/" target="_blank"
+                            rel="noopener noreferrer">Dr. Joyce Wang</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
