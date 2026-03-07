@@ -1064,6 +1064,23 @@ section {
     border-radius: 2px;
 }
 
+.page-header {
+    max-width: 760px;
+    margin: 0 auto 2.75rem;
+    text-align: center;
+}
+
+.page-header .section-title {
+    margin-bottom: 0.9rem;
+    line-height: 1.1;
+}
+
+.page-header .section-subtitle {
+    margin-top: 0;
+    margin-bottom: 0;
+    max-width: none;
+}
+
 /* 关于部分 */
 .about {
     background-color: #ffffff;
@@ -1906,28 +1923,6 @@ section {
     overflow: hidden;
 }
 
-.publications-intro {
-    max-width: 900px;
-    margin: 0 auto 4rem;
-    text-align: center;
-    color: var(--text-secondary);
-    font-size: 1.1rem;
-}
-
-.publications-intro a {
-    color: var(--primary-color);
-    text-decoration: none;
-    font-weight: 600;
-}
-
-.publications-intro a:hover {
-    text-decoration: underline;
-}
-
-.publications-intro-compact {
-    margin-bottom: 1.25rem;
-}
-
 .publications-filter-controls {
     max-width: 1000px;
     margin: 0 auto 0.85rem;
@@ -2667,6 +2662,10 @@ section {
         padding: 4.5rem 0 3rem;
     }
 
+    .page-section {
+        padding-top: 4.5rem;
+    }
+
     .publications {
         padding: 4.5rem 0 3rem;
     }
@@ -2827,11 +2826,6 @@ section {
     .hamburger {
         pointer-events: auto !important;
         z-index: 1002;
-    }
-
-    /* 调整页面内容的上边距 */
-    .page-section {
-        padding-top: 6rem;
     }
 
     .hero {
@@ -4157,18 +4151,29 @@ section {
 .people {
     background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
     min-height: 100vh;
-    padding: 6rem 0 4rem;
+    padding: 120px 0 4rem;
 }
 
 .section-subtitle {
     text-align: center;
-    font-size: 1.2rem;
+    font-size: 1.08rem;
+    line-height: 1.7;
     color: var(--text-secondary);
-    margin-top: -1rem;
-    margin-bottom: 4rem;
-    max-width: 800px;
+    margin-top: 0;
+    margin-bottom: 0;
+    max-width: 720px;
     margin-left: auto;
     margin-right: auto;
+}
+
+.section-subtitle a {
+    color: var(--primary-color);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.section-subtitle a:hover {
+    text-decoration: underline;
 }
 
 /* Team Section Spacing */
@@ -4892,7 +4897,7 @@ section {
 
 @media (max-width: 768px) {
     .people {
-        padding: 5rem 0 3rem;
+        padding: 4.5rem 0 3rem;
     }
 
     .section-subtitle {
@@ -6148,7 +6153,7 @@ section {
     background-attachment: fixed;
     background-color: var(--surface);
     min-height: calc(100vh - 400px);
-    padding: 6rem 0 4rem;
+    padding: 120px 0 4rem;
 }
 
 @media (max-width: 768px) {
@@ -6307,7 +6312,7 @@ section {
 /* Responsive styles for Join page */
 @media (max-width: 768px) {
     .join-lab {
-        padding: 5rem 0 3rem;
+        padding: 4.5rem 0 3rem;
     }
 
     .join-card {
@@ -6439,7 +6444,7 @@ section {
     background-image: none;
     background-color: var(--surface);
     min-height: calc(100vh - 400px);
-    padding: 6rem 0 4rem;
+    padding: 120px 0 4rem;
 }
 
 .blog-grid {
@@ -6525,7 +6530,7 @@ section {
 
 @media (max-width: 768px) {
     .blog-page {
-        padding: 5rem 0 3rem;
+        padding: 4.5rem 0 3rem;
     }
 
     .blog-grid {
