@@ -1039,7 +1039,7 @@ section {
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    padding-top: calc(5rem + 4rem); /* Account for fixed navbar */
+    padding-top: 120px; /* Match other interior pages below the fixed navbar */
     position: relative;
     overflow: hidden;
 }
@@ -1345,6 +1345,18 @@ section {
 
 /* 研究部分 */
 /* Research Framework Styles */
+#research {
+    padding: 120px 0 4rem;
+}
+
+#research .container {
+    max-width: 1140px;
+}
+
+#research .section-title {
+    margin-bottom: 1.45rem;
+}
+
 .section-intro {
     text-align: center;
     font-size: 1.1rem;
@@ -1357,10 +1369,10 @@ section {
 /* Research Tabs (Button-like) */
 .research-tabs {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1rem;
-    margin-bottom: 2rem;
-    max-width: 1200px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.95rem;
+    margin-bottom: 1.6rem;
+    max-width: 920px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -1369,7 +1381,8 @@ section {
     background: white;
     border: 3px solid #e2e8f0;
     border-radius: 1rem;
-    padding: 1.5rem 1rem;
+    padding: 1.25rem 1rem;
+    min-height: 120px;
     cursor: pointer;
     transition: all 0.3s ease;
     position: relative;
@@ -1410,9 +1423,9 @@ section {
 }
 
 .tab-icon {
-    font-size: 2.5rem;
+    font-size: 2.25rem;
     color: var(--primary-color);
-    margin-bottom: 0.8rem;
+    margin-bottom: 0.6rem;
     transition: all 0.3s ease;
 }
 
@@ -1421,7 +1434,7 @@ section {
 }
 
 .tab-title {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     font-weight: 700;
     color: var(--primary-color);
     transition: all 0.3s ease;
@@ -1434,7 +1447,7 @@ section {
 /* Research Panels (Content) */
 .research-panels {
     position: relative;
-    min-height: 400px;
+    min-height: 0;
 }
 
 .research-panel {
@@ -1484,18 +1497,101 @@ section {
 
 .panel-content {
     background: white;
-    padding: 2.5rem;
+    padding: 2rem 2rem 1.7rem;
     border-radius: 0 0 1rem 1rem;
     box-shadow: 0 8px 30px rgba(0, 39, 76, 0.15);
 }
 
+.panel-content.standalone {
+    border-radius: 1rem;
+}
+
 .panel-intro {
-    font-size: 1.2rem;
-    line-height: 1.8;
+    font-size: 1.18rem;
+    line-height: 1.65;
     color: var(--text-primary);
-    margin-bottom: 2rem;
-    padding-bottom: 2rem;
-    border-bottom: 2px solid #e2e8f0;
+    margin-bottom: 0.9rem;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.research-panel-paragraph {
+    color: var(--text-secondary);
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin: 0;
+}
+
+.research-panel-paragraph + .research-panel-paragraph {
+    margin-top: 0.9rem;
+}
+
+.research-panel-paragraph a {
+    color: var(--primary-color);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.research-panel-paragraph a:hover {
+    text-decoration: underline;
+}
+
+.science-thrust-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    width: 100%;
+}
+
+.science-thrust-card {
+    border: 1px solid rgba(0, 39, 76, 0.18);
+    border-left: 5px solid var(--secondary-color);
+    border-radius: 1rem;
+    background: #ffffff;
+    padding: 1.15rem 1.2rem 1.05rem;
+    box-shadow: 0 4px 14px rgba(0, 39, 76, 0.08);
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.science-thrust-card:nth-child(3n + 2) {
+    border-left-color: #2f7a36;
+}
+
+.science-thrust-card:nth-child(3n + 3) {
+    border-left-color: #12528f;
+}
+
+.science-thrust-title {
+    font-size: 1.16rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 0.55rem;
+}
+
+.science-thrust-text {
+    font-size: 1.04rem;
+    color: var(--text-secondary);
+    line-height: 1.72;
+    margin: 0 0 0.7rem;
+}
+
+.science-thrust-links {
+    margin: 0;
+    font-size: 1.03rem;
+    color: var(--text-secondary);
+}
+
+.science-thrust-links a {
+    color: var(--primary-color);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.science-thrust-links a:hover {
+    text-decoration: underline;
 }
 
 .panel-details {
@@ -1805,7 +1901,7 @@ section {
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    padding: 5rem 0;
+    padding: 120px 0 4rem;
     position: relative;
     overflow: hidden;
 }
@@ -1826,6 +1922,82 @@ section {
 
 .publications-intro a:hover {
     text-decoration: underline;
+}
+
+.publications-intro-compact {
+    margin-bottom: 1.25rem;
+}
+
+.publications-filter-controls {
+    max-width: 1000px;
+    margin: 0 auto 0.85rem;
+    padding: 1.2rem 1.3rem;
+    border-radius: 0.9rem;
+    background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+    border: 1px solid rgba(0, 39, 76, 0.12);
+    box-shadow: 0 2px 15px rgba(0, 39, 76, 0.08);
+}
+
+.paper-filter-row {
+    display: grid;
+    gap: 0.9rem;
+}
+
+.paper-filter-row-primary {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.paper-filter-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.paper-filter-label {
+    color: var(--primary-color);
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.paper-filter-select {
+    width: 100%;
+    min-height: 3.1rem;
+    padding: 0.72rem 0.9rem;
+    border-radius: 0.65rem;
+    border: 1.5px solid rgba(0, 39, 76, 0.24);
+    background: #ffffff;
+    color: var(--text-primary);
+    font-size: 1.05rem;
+    font-weight: 600;
+    font-family: inherit;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.paper-filter-select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(0, 39, 76, 0.12);
+}
+
+.publications-filter-summary {
+    max-width: 1000px;
+    margin: 0 auto 1rem;
+    min-height: 1.35rem;
+    color: var(--text-secondary);
+    font-size: 1.02rem;
+    font-weight: 600;
+}
+
+.paper-review-empty {
+    max-width: 1000px;
+    margin: 1rem auto 0;
+    padding: 0.9rem 1rem;
+    border-radius: 0.75rem;
+    border: 1px solid rgba(0, 39, 76, 0.14);
+    background: #f8fafc;
+    color: var(--primary-color);
+    font-weight: 600;
+    text-align: center;
 }
 
 .year-navigation {
@@ -1871,19 +2043,16 @@ section {
 
 .year-section {
     margin-bottom: 2rem;
+    content-visibility: auto;
+    contain-intrinsic-size: 700px;
 }
 
 .year-header {
     display: flex;
     align-items: center;
-    gap: 1.5rem;
-    margin-bottom: 2rem;
-    cursor: pointer;
-    user-select: none;
-}
-
-.year-header:hover .year-title {
-    color: var(--secondary-color);
+    gap: 0;
+    margin-bottom: 1rem;
+    cursor: default;
 }
 
 .year-title {
@@ -1898,22 +2067,6 @@ section {
     transition: color 0.3s ease;
 }
 
-.year-icon {
-    font-size: 1.2rem;
-    transition: transform 0.3s ease;
-    transform: rotate(-90deg);
-}
-
-.year-section.active .year-icon {
-    transform: rotate(0deg);
-}
-
-.year-line {
-    flex: 1;
-    height: 2px;
-    background: linear-gradient(to right, var(--primary-color), transparent);
-}
-
 .publications-list {
     display: flex;
     flex-direction: column;
@@ -1921,13 +2074,15 @@ section {
 }
 
 .year-content {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.5s ease;
+    display: none;
+    max-height: none;
+    overflow: visible;
+    transition: none;
 }
 
 .year-section.active .year-content {
-    max-height: 10000px;
+    display: block;
+    max-height: none;
 }
 
 .publication-card {
@@ -2508,6 +2663,18 @@ section {
 }
 
 @media (max-width: 768px) {
+    #research {
+        padding: 4.5rem 0 3rem;
+    }
+
+    .publications {
+        padding: 4.5rem 0 3rem;
+    }
+
+    #research .section-title {
+        margin-bottom: 1.1rem;
+    }
+
     /* Fix background-attachment for mobile performance */
     body,
     .page-section,
@@ -2836,16 +3003,8 @@ section {
     }
 
     .research-tab {
-        padding: 0.9rem 0.4rem;
-        min-height: 90px;
-    }
-
-    .tab-icon {
-        font-size: 1.5rem;
-    }
-
-    .tab-title {
-        font-size: 0.85rem;
+        padding: 0.95rem 0.6rem;
+        min-height: 96px;
     }
 
     .tab-number {
@@ -2861,7 +3020,7 @@ section {
     }
 
     .tab-title {
-        font-size: 0.9rem;
+        font-size: 1rem;
         line-height: 1.3;
     }
 
@@ -2886,11 +3045,59 @@ section {
     }
 
     .panel-content {
-        padding: 1.5rem;
+        padding: 1.2rem 1.1rem 1.05rem;
     }
 
     .panel-intro {
-        font-size: 1rem;
+        font-size: 1.08rem;
+        margin-bottom: 0.95rem;
+        padding-bottom: 0;
+    }
+
+    .research-panel-paragraph {
+        font-size: 0.98rem;
+    }
+
+    .science-thrust-grid {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+    }
+
+    .science-thrust-card {
+        padding: 0.9rem 0.9rem 0.85rem;
+    }
+
+    .science-thrust-text {
+        font-size: 1.02rem;
+        margin-bottom: 0.6rem;
+    }
+
+    .science-thrust-links {
+        font-size: 0.99rem;
+    }
+
+    .publications-filter-controls {
+        padding: 1rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .paper-filter-row-primary {
+        grid-template-columns: 1fr;
+    }
+
+    .paper-filter-label {
+        font-size: 0.95rem;
+    }
+
+    .paper-filter-select {
+        min-height: 2.9rem;
+        font-size: 0.98rem;
+    }
+
+    .publications-filter-summary {
+        font-size: 0.95rem;
+        min-height: 1.2rem;
+        margin-bottom: 0.75rem;
     }
 
     .detail-section h4 {
@@ -3045,6 +3252,10 @@ section {
 }
 
 @media (max-width: 480px) {
+    #research {
+        padding: 4.5rem 0 3rem;
+    }
+
     /* Prevent horizontal overflow */
     * {
         max-width: 100%;
@@ -3135,6 +3346,14 @@ section {
         padding: 0.5rem;
     }
 
+    .publications-filter-controls {
+        padding: 0.85rem;
+    }
+
+    .paper-review-empty {
+        font-size: 0.88rem;
+    }
+
     .year-nav-btn {
         padding: 0.5rem 1rem;
         font-size: 0.85rem;
@@ -3147,10 +3366,6 @@ section {
     .year-title {
         font-size: 1.5rem;
         min-width: 120px;
-    }
-
-    .year-icon {
-        font-size: 1rem;
     }
 
     .publication-card {

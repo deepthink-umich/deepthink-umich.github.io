@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Research Thrusts | DeepThink Lab</title>
     <meta name="description" content="Research Thrusts - DeepThink Lab at the University of Michigan">
-    <link rel="icon" type="image/svg+xml" href="Block_M-Hex.svg">
+    <link rel="icon" type="image/svg+xml" href="./fig/DeepThink_logo_square.svg">
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;500;600;700&family=Crimson+Text:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -40,116 +40,61 @@
         <canvas id="particles-canvas-research" class="particles-canvas-dark"></canvas>
         <div class="container">
             <h2 class="section-title">Research Thrusts</h2>
-            <p class="section-intro">Our research focuses on computational methods for learning low-complexity models from high-dimensional data</p>
-
             <!-- Research Tabs/Buttons -->
-            <div class="research-tabs">
-                <button class="research-tab active" onclick="openResearchTab(0)" data-tab="0">
-                    <div class="tab-icon"><i class="fas fa-project-diagram"></i></div>
-                    <div class="tab-title">Representation</div>
-                </button>
-                <button class="research-tab" onclick="openResearchTab(1)" data-tab="1">
+            <div class="research-tabs" role="tablist" aria-label="Research areas">
+                <button class="research-tab active" type="button" role="tab" id="research-tab-0" aria-selected="true" aria-controls="research-panel-0" tabindex="0" data-tab="0">
                     <div class="tab-icon"><i class="fas fa-brain"></i></div>
-                    <div class="tab-title">Generalization</div>
+                    <div class="tab-title">Science of AI</div>
                 </button>
-                <button class="research-tab" onclick="openResearchTab(2)" data-tab="2">
-                    <div class="tab-icon"><i class="fas fa-tachometer-alt"></i></div>
-                    <div class="tab-title">Efficiency</div>
-                </button>
-                <button class="research-tab" onclick="openResearchTab(3)" data-tab="3">
+                <button class="research-tab" type="button" role="tab" id="research-tab-1" aria-selected="false" aria-controls="research-panel-1" tabindex="-1" data-tab="1">
                     <div class="tab-icon"><i class="fas fa-flask"></i></div>
-                    <div class="tab-title">Scientific Applications</div>
+                    <div class="tab-title">AI for Science</div>
                 </button>
             </div>
 
             <!-- Research Content Panels -->
             <div class="research-panels">
-                <!-- Thrust I: Representation -->
-                <div class="research-panel active" data-panel="0">
-                    <div class="panel-header">
-                        <h3><i class="fas fa-project-diagram"></i> Representation</h3>
-                    </div>
-                    <!-- <div class="panel-content">
-                        <p class="panel-intro">Learning effective representations from high-dimensional data across multiple modalities including text, images, audio, and video.</p>
-                        <div class="panel-details">
-                            <div class="detail-section">
-                                <h4>Released Papers</h4>
-                                <ul>
-                                    <li><strong>Optimization Algorithms:</strong> Fast and scalable optimization methods</li>
-                                </ul>
-                                <h4>Blogs</h4>
-                                <ul>
-                                    <li><strong>Optimization Algorithms:</strong> Fast and scalable optimization methods</li>
-                                </ul>
-                            </div>
+                <!-- Thrust I: Science of AI -->
+                <div class="research-panel active" id="research-panel-0" role="tabpanel" aria-labelledby="research-tab-0" data-panel="0">
+                    <div class="panel-content standalone">
+                        <p class="panel-intro">Our work centers on three complementary directions: representation, generalization, and efficiency.</p>
+                        <div class="science-thrust-grid">
+                            <article class="science-thrust-card">
+                                <h4 class="science-thrust-title">Representation</h4>
+                                <p class="science-thrust-text">We study how deep models organize high-dimensional data into structured, low-dimensional features that support their functionality.</p>
+                                <p class="science-thrust-links">Curated reading list and other resources coming soon.</p>
+                            </article>
+                            <article class="science-thrust-card">
+                                <h4 class="science-thrust-title">Generalization</h4>
+                                <p class="science-thrust-text">We aim to explain when deep models learn underlying distributions instead of memorizing samples, and how this transition depends on model architecture, optimization, and data.</p>
+                                <p class="science-thrust-links">See our curated reading list: <a href="https://github.com/huijieZH/Awesome-Diffusion-Models-Memorization-Generalization" target="_blank" rel="noopener noreferrer">Memorization and Generalization of Diffusion Models</a>.</p>
+                            </article>
+                            <article class="science-thrust-card">
+                                <h4 class="science-thrust-title">Efficiency</h4>
+                                <p class="science-thrust-text">We develop low-complexity principles to help deep models train and run efficiently.</p>
+                                <p class="science-thrust-links">Curated reading list and other resources coming soon.</p>
+                            </article>
                         </div>
-                    </div> -->
+                    </div>
                 </div>
 
-                <!-- Thrust II: Generalization -->
-                <div class="research-panel" data-panel="1">
-                    <div class="panel-header">
-                        <h3><i class="fas fa-brain"></i> Generalization</h3>
-                    </div>
-                    <!-- <div class="panel-content">
-                        <p class="panel-intro">Understanding how models generalize from training to test data and developing theoretical foundations for deep learning.</p>
-                        <div class="panel-details">
-                            <div class="detail-section">
-                                <h4>Released Papers</h4>
-                                <ul>
-                                    <li><strong>Optimization Algorithms:</strong> Fast and scalable optimization methods</li>
-                                </ul>
-                                <h4>Blogs</h4>
-                                <ul>
-                                    <li><strong>Optimization Algorithms:</strong> Fast and scalable optimization methods</li>
-                                </ul>
-                            </div>
+                <!-- Thrust II: AI for Science -->
+                <div class="research-panel" id="research-panel-1" role="tabpanel" aria-labelledby="research-tab-1" data-panel="1" hidden>
+                    <div class="panel-content standalone">
+                        <p class="panel-intro">We develop domain-aware AI methods that accelerate scientific discovery.</p>
+                        <div class="science-thrust-grid">
+                            <article class="science-thrust-card">
+                                <h4 class="science-thrust-title">Inverse Problems</h4>
+                                <p class="science-thrust-text">We design stable reconstruction and control methods under noise, model mismatch, and uncertainty in sensing systems.</p>
+                                <p class="science-thrust-links">Curated reading list and other resources coming soon.</p>
+                            </article>
+                            <article class="science-thrust-card">
+                                <h4 class="science-thrust-title">Physics-Guided Learning</h4>
+                                <p class="science-thrust-text">We integrate mechanistic priors, simulators, and structure-aware objectives into modern ML pipelines for robust and data-efficient scientific solutions.</p>
+                                <p class="science-thrust-links">Curated reading list and other resources coming soon.</p>
+                            </article>
                         </div>
-                    </div> -->
-                </div>
-
-                <!-- Thrust III: Efficiency -->
-                <div class="research-panel" data-panel="2">
-                    <div class="panel-header">
-                        <h3><i class="fas fa-tachometer-alt"></i> Efficiency</h3>
                     </div>
-                    <!-- <div class="panel-content">
-                        <p class="panel-intro">Developing efficient algorithms and optimization methods for large-scale machine learning and computational problems.</p>
-                        <div class="panel-details">
-                            <div class="detail-section">
-                                <h4>Released Papers</h4>
-                                <ul>
-                                    <li><strong>Optimization Algorithms:</strong> Fast and scalable optimization methods</li>
-                                </ul>
-                                <h4>Blogs</h4>
-                                <ul>
-                                    <li><strong>Optimization Algorithms:</strong> Fast and scalable optimization methods</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div> -->
-                </div>
-
-                <!-- Thrust IV: Scientific Applications -->
-                <div class="research-panel" data-panel="3">
-                    <div class="panel-header">
-                        <h3><i class="fas fa-flask"></i> Scientific Applications</h3>
-                    </div>
-                    <!-- <div class="panel-content">
-                        <p class="panel-intro">Applying machine learning methods to biomedical imaging, spectrometer sensing, geophysics, and other scientific domains.</p>
-                        <div class="panel-details">
-                            <div class="detail-section">
-                                <h4>Released Papers</h4>
-                                <ul>
-                                    <li><strong>Optimization Algorithms:</strong> Fast and scalable optimization methods</li>
-                                </ul>
-                                <h4>Blogs</h4>
-                                <ul>
-                                    <li><strong>Optimization Algorithms:</strong> Fast and scalable optimization methods</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div> -->
                 </div>
             </div>
         </div>
@@ -176,4 +121,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-

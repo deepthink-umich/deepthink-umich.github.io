@@ -587,26 +587,69 @@ function toggleNews(headerElement) {
 }
 
 // Research Tab Functions
-function openResearchTab(tabIndex) {
-    // Get all tabs and panels
-    const tabs = document.querySelectorAll('.research-tab');
-    const panels = document.querySelectorAll('.research-panel');
-    
-    // Remove active class from all tabs and panels
-    tabs.forEach(tab => tab.classList.remove('active'));
-    panels.forEach(panel => panel.classList.remove('active'));
-    
-    // Add active class to selected tab and panel
-    const selectedTab = document.querySelector(`.research-tab[data-tab="${tabIndex}"]`);
-    const selectedPanel = document.querySelector(`.research-panel[data-panel="${tabIndex}"]`);
-    
-    if (selectedTab) selectedTab.classList.add('active');
-    if (selectedPanel) selectedPanel.classList.add('active');
-    
-    // Smooth scroll to panel
-    if (selectedPanel) {
+function openResearchTab(tabIndex, options = {}) {
+    const { shouldScroll = true, focusTab = false } = options;
+    const tabs = Array.from(document.querySelectorAll('.research-tab'));
+    const panels = Array.from(document.querySelectorAll('.research-panel'));
+    const selectedKey = String(tabIndex);
+
+    tabs.forEach(tab => {
+        const isActive = tab.dataset.tab === selectedKey;
+        tab.classList.toggle('active', isActive);
+        tab.setAttribute('aria-selected', String(isActive));
+        tab.tabIndex = isActive ? 0 : -1;
+
+        if (isActive && focusTab) {
+            tab.focus();
+        }
+    });
+
+    panels.forEach(panel => {
+        const isActive = panel.dataset.panel === selectedKey;
+        panel.classList.toggle('active', isActive);
+        panel.hidden = !isActive;
+    });
+
+    const selectedPanel = document.querySelector(`.research-panel[data-panel="${selectedKey}"]`);
+    if (selectedPanel && shouldScroll) {
         selectedPanel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     }
+}
+
+function initializeResearchTabs() {
+    const tabList = document.querySelector('.research-tabs');
+    if (!tabList) return;
+
+    const tabs = Array.from(tabList.querySelectorAll('.research-tab'));
+    if (tabs.length === 0) return;
+
+    tabs.forEach((tab, index) => {
+        tab.addEventListener('click', function() {
+            openResearchTab(tab.dataset.tab);
+        });
+
+        tab.addEventListener('keydown', function(event) {
+            let targetIndex = null;
+
+            if (event.key === 'ArrowRight' || event.key === 'ArrowDown') {
+                targetIndex = (index + 1) % tabs.length;
+            } else if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') {
+                targetIndex = (index - 1 + tabs.length) % tabs.length;
+            } else if (event.key === 'Home') {
+                targetIndex = 0;
+            } else if (event.key === 'End') {
+                targetIndex = tabs.length - 1;
+            }
+
+            if (targetIndex === null) return;
+
+            event.preventDefault();
+            openResearchTab(tabs[targetIndex].dataset.tab, { shouldScroll: false, focusTab: true });
+        });
+    });
+
+    const initialTab = tabs.find(tab => tab.classList.contains('active')) || tabs[0];
+    openResearchTab(initialTab.dataset.tab, { shouldScroll: false });
 }
 
 // Photo Carousel Functions
@@ -673,82 +716,185 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Initialize publication year sections on page load
 document.addEventListener('DOMContentLoaded', function() {
-    // Set proper max-height for initially active year
-    const activeSection = document.querySelector('.year-section.active');
-    if (activeSection) {
-        const activeContent = activeSection.querySelector('.year-content');
-        if (activeContent) {
-            activeContent.style.maxHeight = activeContent.scrollHeight + 'px';
-        }
-    }
+    const publicationRoot = document.getElementById('publications-filter-root') || document.querySelector('.publications-timeline');
+    if (!publicationRoot) return;
+
+    const activeSections = publicationRoot.querySelectorAll('.year-section.active');
+    activeSections.forEach(section => setYearSectionExpanded(section, true));
 });
 
-// Publication year toggle function - only one year active at a time
-function toggleYear(year) {
-    const allSections = document.querySelectorAll('.year-section');
-    const allNavBtns = document.querySelectorAll('.year-nav-btn');
-    const selectedSection = document.getElementById('year-' + year);
-    const selectedContent = selectedSection.querySelector('.year-content');
-    const selectedIcon = selectedSection.querySelector('.year-icon');
-    
-    // Check if the selected year is already active
-    const isActive = selectedSection.classList.contains('active');
-    
-    if (isActive) {
-        // If clicking the active year, collapse it
-        selectedSection.classList.remove('active');
-        selectedContent.style.maxHeight = '0';
-        selectedIcon.style.transform = 'rotate(-90deg)';
-        
-        // Deactivate all nav buttons
-        allNavBtns.forEach(btn => btn.classList.remove('active'));
-    } else {
-        // Hide all other years
-        allSections.forEach(section => {
-            section.classList.remove('active');
-            const content = section.querySelector('.year-content');
-            const icon = section.querySelector('.year-icon');
-            content.style.maxHeight = '0';
-            icon.style.transform = 'rotate(-90deg)';
-        });
-        
-        // Show only the selected year
-        selectedSection.classList.add('active');
-        selectedContent.style.maxHeight = selectedContent.scrollHeight + 'px';
-        selectedIcon.style.transform = 'rotate(0deg)';
-        
-        // Update navigation buttons
-        allNavBtns.forEach(btn => btn.classList.remove('active'));
-        const selectedNavBtn = document.querySelector(`.year-nav-btn[onclick*="${year}"]`);
-        if (selectedNavBtn) selectedNavBtn.classList.add('active');
-        
-        // Scroll to the year-title smoothly
-        setTimeout(() => {
-            const navbar = document.getElementById('navbar');
-            const navbarHeight = navbar ? navbar.offsetHeight : 80;
-            const yearNavigation = document.querySelector('.year-navigation');
-            const yearNavHeight = yearNavigation ? yearNavigation.offsetHeight : 0;
-            const yearTitle = selectedSection.querySelector('.year-title');
-            
-            // Get the absolute position of the year-title from the top of the page
-            let elementTop = 0;
-            let element = yearTitle;
-            while (element) {
-                elementTop += element.offsetTop;
-                element = element.offsetParent;
-            }
-            
-            // Calculate offset: navbar + year navigation bar + some padding
-            const totalOffset = navbarHeight + yearNavHeight + 40; // 40px padding
-            const offsetPosition = elementTop - totalOffset;
-            
-            window.scrollTo({
-                top: offsetPosition,
-                behavior: 'smooth'
-            });
-        }, 100); // Small delay to allow content to start expanding
-    }
+function setYearSectionExpanded(section, isExpanded) {
+    section.classList.toggle('active', isExpanded);
 }
+
+function normalizePublicationAuthor(author) {
+    const normalized = author
+        .replace(/\*/g, '')
+        .replace(/\((?:[^)]*correspond[^)]*)\)/gi, '')
+        .replace(/[.;]+$/, '')
+        .replace(/\s+/g, ' ')
+        .trim();
+
+    return normalized;
+}
+
+function normalizeVenueForFilter(venueText) {
+    const normalized = venueText.replace(/\s+/g, ' ').trim().replace(/\.$/, '');
+
+    if (/arxiv/i.test(normalized)) {
+        return 'arXiv preprint';
+    }
+
+    const withoutYearSuffix = normalized.split(',')[0] ? normalized.split(',')[0].trim() : normalized;
+    return withoutYearSuffix
+        .replace(/\barXiv:\S+/gi, '')
+        .replace(/\bpreprint\b/gi, 'Preprint')
+        .replace(/\(([A-Za-z0-9&.+\-\s]+?)'?\d{2}\)/g, '($1)')
+        .replace(/\s+/g, ' ')
+        .trim();
+}
+
+function initializePublicationFilters() {
+    const publicationRoot = document.getElementById('publications-filter-root');
+    const collectionFilter = document.getElementById('publication-collection-filter');
+    const authorFilter = document.getElementById('publication-author-filter');
+    const venueFilter = document.getElementById('publication-venue-filter');
+    const summaryElement = document.getElementById('publication-filter-summary');
+    const emptyStateElement = document.getElementById('publication-filter-empty');
+
+    if (!publicationRoot || !collectionFilter || !authorFilter || !venueFilter) return;
+
+    const yearSections = Array.from(publicationRoot.querySelectorAll('.year-section'));
+    const publicationCards = Array.from(publicationRoot.querySelectorAll('.publication-card'));
+    if (publicationCards.length === 0) return;
+
+    const collectionLabels = new Map();
+    const collectionValues = [];
+    yearSections.forEach(section => {
+        const collection = section.id.replace(/^year-/, '');
+        const label = (section.querySelector('.year-title')?.textContent || collection).replace(/\s+/g, ' ').trim();
+        collectionLabels.set(collection, label);
+        if (!collectionValues.includes(collection)) collectionValues.push(collection);
+    });
+
+    const authorSet = new Set();
+    const venueMap = new Map();
+    const cardMeta = new Map();
+
+    publicationCards.forEach(card => {
+        const section = card.closest('.year-section');
+        const collection = section ? section.id.replace(/^year-/, '') : '';
+        const authorsText = card.querySelector('.pub-authors')?.textContent || '';
+        const authors = authorsText
+            .split(',')
+            .map(normalizePublicationAuthor)
+            .filter(Boolean);
+        authors.forEach(author => authorSet.add(author));
+
+        const venueRaw = (card.querySelector('.pub-venue em')?.textContent || card.querySelector('.pub-venue')?.textContent || '')
+            .replace(/\s+/g, ' ')
+            .trim();
+        const venueLabel = venueRaw ? normalizeVenueForFilter(venueRaw) : '';
+        const venueKey = venueLabel ? venueLabel.toLowerCase() : '';
+        if (venueKey && !venueMap.has(venueKey)) {
+            venueMap.set(venueKey, venueLabel);
+        }
+
+        cardMeta.set(card, { collection, authors, venueKey });
+    });
+
+    function populateFilterOptions(selectElement, values, labelMap) {
+        while (selectElement.options.length > 1) {
+            selectElement.remove(1);
+        }
+
+        values.forEach(value => {
+            const option = document.createElement('option');
+            option.value = value;
+            option.textContent = labelMap ? (labelMap.get(value) || value) : value;
+            selectElement.appendChild(option);
+        });
+    }
+
+    populateFilterOptions(collectionFilter, collectionValues, collectionLabels);
+    populateFilterOptions(authorFilter, Array.from(authorSet).sort((a, b) => a.localeCompare(b)));
+    populateFilterOptions(
+        venueFilter,
+        Array.from(venueMap.keys()).sort((a, b) => (venueMap.get(a) || a).localeCompare(venueMap.get(b) || b)),
+        venueMap
+    );
+
+    function applyPublicationFilters() {
+        const selectedCollection = collectionFilter.value;
+        const selectedAuthor = authorFilter.value;
+        const selectedVenue = venueFilter.value;
+
+        const filtersActive =
+            selectedCollection !== 'all' ||
+            selectedAuthor !== 'all' ||
+            selectedVenue !== 'all';
+
+        publicationRoot.dataset.filtersActive = filtersActive ? 'true' : 'false';
+
+        let visibleCount = 0;
+
+        yearSections.forEach(section => {
+            const sectionCards = Array.from(section.querySelectorAll('.publication-card'));
+            let sectionVisibleCount = 0;
+
+            sectionCards.forEach(card => {
+                const metadata = cardMeta.get(card);
+                if (!metadata) {
+                    card.hidden = false;
+                    sectionVisibleCount += 1;
+                    visibleCount += 1;
+                    return;
+                }
+
+                const matchesCollection = selectedCollection === 'all' || metadata.collection === selectedCollection;
+                const matchesAuthor = selectedAuthor === 'all' || metadata.authors.includes(selectedAuthor);
+                const matchesVenue = selectedVenue === 'all' || metadata.venueKey === selectedVenue;
+                const isMatch = matchesCollection && matchesAuthor && matchesVenue;
+
+                card.hidden = !isMatch;
+                if (isMatch) {
+                    sectionVisibleCount += 1;
+                    visibleCount += 1;
+                }
+            });
+
+            const hasMatches = sectionVisibleCount > 0;
+            section.hidden = !hasMatches;
+            setYearSectionExpanded(section, hasMatches);
+        });
+
+        const visibleSections = yearSections.filter(section => !section.hidden);
+        visibleSections.forEach(section => setYearSectionExpanded(section, true));
+
+        if (summaryElement) {
+            const activeFilters = [];
+            if (selectedCollection !== 'all') activeFilters.push(collectionFilter.options[collectionFilter.selectedIndex].text);
+            if (selectedAuthor !== 'all') activeFilters.push(authorFilter.options[authorFilter.selectedIndex].text);
+            if (selectedVenue !== 'all') activeFilters.push(venueFilter.options[venueFilter.selectedIndex].text);
+
+            const filterText = activeFilters.length > 0 ? ` (${activeFilters.join(' | ')})` : '';
+            summaryElement.textContent = `Showing ${visibleCount} of ${publicationCards.length} publications${filterText}.`;
+        }
+
+        if (emptyStateElement) {
+            emptyStateElement.hidden = visibleCount !== 0;
+        }
+    }
+
+    [collectionFilter, authorFilter, venueFilter].forEach(select =>
+        select.addEventListener('change', applyPublicationFilters)
+    );
+
+    applyPublicationFilters();
+}
+
+document.addEventListener('DOMContentLoaded', initializeResearchTabs);
+document.addEventListener('DOMContentLoaded', initializePublicationFilters);
 
 // Particles Background Animation
 (function() {

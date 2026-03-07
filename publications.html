@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Research Thrusts | DeepThink Lab</title>
-    <meta name="description" content="Research Thrusts - DeepThink Lab at the University of Michigan">
-    <link rel="icon" type="image/svg+xml" href="Block_M-Hex.svg">
+    <title>Publications | DeepThink Lab</title>
+    <meta name="description" content="Publications - DeepThink Lab at the University of Michigan">
+    <link rel="icon" type="image/svg+xml" href="./fig/DeepThink_logo_square.svg">
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;500;600;700&family=Crimson+Text:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -40,39 +40,46 @@
         <canvas id="particles-canvas-publications" class="particles-canvas-light"></canvas>
         <div class="container">
             <h2 class="section-title">Publications</h2>
-            <div class="publications-intro">
-                <p>For a complete list of publications, please visit <a href="https://scholar.google.com/citations?user=JfblW3MAAAAJ" target="_blank">Google Scholar</a>.</p>
+            <div class="publications-intro publications-intro-compact">
+                <p>For a complete list of publications, please visit <a href="https://scholar.google.com/citations?user=JfblW3MAAAAJ" target="_blank" rel="noopener noreferrer">Google Scholar</a>.</p>
             </div>
-
-            <!-- Year Navigation -->
-            <div class="year-navigation">
-                <button class="year-nav-btn active" onclick="toggleYear('selected')">Selected Publications</button>
-                <button class="year-nav-btn" onclick="toggleYear('preprint')">Preprint</button>
-                <button class="year-nav-btn" onclick="toggleYear('2026')">2026</button>
-                <button class="year-nav-btn" onclick="toggleYear('2025')">2025</button>
-                <button class="year-nav-btn" onclick="toggleYear('2024')">2024</button>
-                <button class="year-nav-btn" onclick="toggleYear('2023')">2023</button>
-                <button class="year-nav-btn" onclick="toggleYear('2022')">2022</button>
-                <button class="year-nav-btn" onclick="toggleYear('2021')">2021</button>
-                <button class="year-nav-btn" onclick="toggleYear('2020')">2020</button>
-                <button class="year-nav-btn" onclick="toggleYear('2019')">2019 & Prior</button>
+            <div class="paper-filter-controls publications-filter-controls" aria-label="Publication filters">
+                <div class="paper-filter-row paper-filter-row-primary">
+                    <div class="paper-filter-field">
+                        <label class="paper-filter-label" for="publication-collection-filter">Collection</label>
+                        <select id="publication-collection-filter" class="paper-filter-select" aria-label="Filter by collection">
+                            <option value="all">All publications</option>
+                        </select>
+                    </div>
+                    <div class="paper-filter-field">
+                        <label class="paper-filter-label" for="publication-author-filter">Author</label>
+                        <select id="publication-author-filter" class="paper-filter-select" aria-label="Filter by author">
+                            <option value="all">All authors</option>
+                        </select>
+                    </div>
+                    <div class="paper-filter-field">
+                        <label class="paper-filter-label" for="publication-venue-filter">Venue</label>
+                        <select id="publication-venue-filter" class="paper-filter-select" aria-label="Filter by venue">
+                            <option value="all">All venues</option>
+                        </select>
+                    </div>
+                </div>
             </div>
+            <p id="publication-filter-summary" class="publications-filter-summary" aria-live="polite"></p>
 
-            <div class="publications-timeline">
+            <div class="publications-timeline publications-filter-mode" id="publications-filter-root">
                 <!-- Selected Publications -->
                 <div class="year-section active" id="year-selected">
-                    <div class="year-header" onclick="toggleYear('selected')">
+                    <div class="year-header">
                         <h3 class="year-title">
-                            <i class="fas fa-chevron-down year-icon"></i>
                             Selected Publications
                         </h3>
-                        <div class="year-line"></div>
                     </div>
                     <div class="publications-list year-content">
                         <!-- Add selected publications here -->
                         <div class="publication-card">
                             <h4 class="pub-title">
-                                <a href="http://arxiv.org/abs/2505.19210" target="_blank">
+                                <a href="https://arxiv.org/abs/2505.19210" target="_blank">
                                     Towards Understanding the Mechanisms of Classifier-Free Guidance
                                 </a>
                             </h4>
@@ -89,7 +96,7 @@
                             </div>
                         
                             <div class="pub-links">
-                                <a href="http://arxiv.org/abs/2505.19210" class="pub-link" target="_blank">
+                                <a href="https://arxiv.org/abs/2505.19210" class="pub-link" target="_blank">
                                     <i class="fas fa-file-pdf"></i> Preprint
                                 </a>
                                 <a href="https://arxiv.org/pdf/2505.19210" class="pub-link" target="_blank">
@@ -208,7 +215,7 @@
                                 Peng Wang*, Huijie Zhang*, Zekai Zhang, Siyi Chen, Yi Ma, Qing Qu.
                             </p>
                             <p class="pub-venue">
-                                <em>Arxiv Preprint arXiv:2409.02426, 2024.</em>
+                                <em>arXiv preprint arXiv:2409.02426, 2024.</em>
                             </p>
                             <div class="pub-links">
                                 <a href="https://arxiv.org/abs/2409.02426" class="pub-link" target="_blank">
@@ -349,12 +356,10 @@
 
                 <!-- Preprint -->
                 <div class="year-section" id="year-preprint">
-                    <div class="year-header" onclick="toggleYear('preprint')">
+                    <div class="year-header">
                         <h3 class="year-title">
-                            <i class="fas fa-chevron-down year-icon"></i>
                             Preprint
                         </h3>
-                        <div class="year-line"></div>
                     </div>
                     <div class="publications-list year-content">
                         <!-- Publication item template -->
@@ -363,7 +368,7 @@
                                 <a href="https://arxiv.org/abs/2512.13869" target="_blank">Coarse-to-Fine Hierarchical Alignment for UAV-based Human Detection using Diffusion Models</a>
                             </h4>
                             <p class="pub-authors">Wenda Li, Meng Wu, Sungmin Eum, Heesung Kwon, Qing Qu.</p>
-                            <p class="pub-venue"><em>Arxiv Preprint arXiv:2512.13869, 2025.</em></p>
+                            <p class="pub-venue"><em>arXiv preprint arXiv:2512.13869, 2025.</em></p>
                             <div class="pub-links">
                                 <a href="https://arxiv.org/abs/2512.13869" class="pub-link" target="_blank">
                                     <i class="fas fa-file-pdf"></i> Preprint
@@ -385,7 +390,7 @@
                                 <a href="https://arxiv.org/abs/2512.04069" target="_blank">SpaceTools: Tool-Augmented Spatial Reasoning via Double Interactive RL.</a>
                             </h4>
                             <p class="pub-authors">Siyi Chen, Mikaela Angelina Uy, Chan Hee Song, Faisal Ladhak, Adithyavairavan Murali, Qing Qu, Stan Birchfield, Valts Blukis, Jonathan Tremblay.</p>
-                            <p class="pub-venue"><em>Arxiv Preprint arXiv:2512.04069, 2025.</em></p>
+                            <p class="pub-venue"><em>arXiv preprint arXiv:2512.04069, 2025.</em></p>
                             <div class="pub-links">
                                 <a href="https://arxiv.org/abs/2512.04069" class="pub-link" target="_blank">
                                     <i class="fas fa-file-pdf"></i> Preprint
@@ -406,7 +411,7 @@
                                 Huijie Zhang, Zijian Huang, Siyi Chen, Jinfan Zhou, Zekai Zhang, Peng Wang, Qing Qu.
                             </p>
                             <p class="pub-venue">
-                                <em>Arxiv Preprint arXiv:2505.20123, 2025.</em>
+                                <em>arXiv preprint arXiv:2505.20123, 2025.</em>
                             </p>
                             <div class="pub-links">
                                 <a href="https://arxiv.org/abs/2505.20123" class="pub-link" target="_blank">
@@ -428,7 +433,7 @@
                                 Siyi Chen, Yimeng Zhang, Sijia Liu, Qing Qu.
                             </p>
                             <p class="pub-venue">
-                                <em>Arxiv Preprint arXiv:2504.21307, 2025.</em>
+                                <em>arXiv preprint arXiv:2504.21307, 2025.</em>
                             </p>
                             <div class="pub-links">
                                 <a href="https://arxiv.org/abs/2504.21307" class="pub-link" target="_blank">
@@ -450,7 +455,7 @@
                                 Peng Wang*, Huijie Zhang*, Zekai Zhang, Siyi Chen, Yi Ma, Qing Qu.
                             </p>
                             <p class="pub-venue">
-                                <em>Arxiv Preprint arXiv:2409.02426, 2024.</em>
+                                <em>arXiv preprint arXiv:2409.02426, 2024.</em>
                             </p>
                             <div class="pub-links">
                                 <a href="https://arxiv.org/abs/2409.02426" class="pub-link" target="_blank">
@@ -481,7 +486,7 @@
                                 Xiang Li, Soo Min Kwon, Ismail R. Alkhouri, Saiprasad Ravishankar, Qing Qu.
                             </p>
                             <p class="pub-venue">
-                                <em>ArXiv Preprint arXiv:2403.06054, 2024.</em>
+                                <em>arXiv preprint arXiv:2403.06054, 2024.</em>
                             </p>
                             <div class="pub-links">
                                 <a href="https://arxiv.org/abs/2403.06054" class="pub-link" target="_blank">
@@ -505,12 +510,10 @@
 
                 <!-- Year 2026 -->
                 <div class="year-section" id="year-2026">
-                    <div class="year-header" onclick="toggleYear('2026')">
+                    <div class="year-header">
                         <h3 class="year-title">
-                            <i class="fas fa-chevron-down year-icon"></i>
                             2026
                         </h3>
-                        <div class="year-line"></div>
                     </div>
                     <div class="publications-list year-content">
 
@@ -533,8 +536,11 @@
                                 <a href="https://arxiv.org/pdf/2512.20963" class="pub-link" target="_blank" rel="noopener noreferrer">
                                     <i class="fas fa-file-pdf"></i> PDF
                                 </a>
-                                <a href="https://qingqu.engin.umich.edu/bibtex-zhang2026generalization/" class="pub-link" target="_blank" rel="noopener noreferrer">
-                                    <i class="fas fa-quote-right"></i> BibTeX
+                                <a href="https://github.com/la0ka1/diffusion-gen-from-rep" class="pub-link" target="_blank" rel="noopener noreferrer">
+                                    <i class="fas fa-code"></i> Code
+                                </a>
+                                <a href="https://la0ka1.github.io/diffusion-gen-from-rep/" class="pub-link" target="_blank">
+                                    <i class="fas fa-globe"></i> Project Website
                                 </a>
                             </div>
                         </div>
@@ -686,18 +692,16 @@
 
                 <!-- Year 2025 -->
                 <div class="year-section" id="year-2025">
-                    <div class="year-header" onclick="toggleYear('2025')">
+                    <div class="year-header">
                         <h3 class="year-title">
-                            <i class="fas fa-chevron-down year-icon"></i>
                             2025
                         </h3>
-                        <div class="year-line"></div>
                     </div>
                     <div class="publications-list year-content">
 
                         <div class="publication-card">
                             <h4 class="pub-title">
-                                <a href="http://arxiv.org/abs/2505.19210" target="_blank">
+                                <a href="https://arxiv.org/abs/2505.19210" target="_blank">
                                     Towards Understanding the Mechanisms of Classifier-Free Guidance
                                 </a>
                             </h4>
@@ -714,7 +718,7 @@
                             </div>
                         
                             <div class="pub-links">
-                                <a href="http://arxiv.org/abs/2505.19210" class="pub-link" target="_blank">
+                                <a href="https://arxiv.org/abs/2505.19210" class="pub-link" target="_blank">
                                     <i class="fas fa-file-pdf"></i> Preprint
                                 </a>
                                 <a href="https://arxiv.org/pdf/2505.19210" class="pub-link" target="_blank">
@@ -1106,12 +1110,10 @@
 
                 <!-- Year 2024 -->
                 <div class="year-section" id="year-2024">
-                    <div class="year-header" onclick="toggleYear('2024')">
+                    <div class="year-header">
                         <h3 class="year-title">
-                            <i class="fas fa-chevron-down year-icon"></i>
                             2024
                         </h3>
-                        <div class="year-line"></div>
                     </div>
                     <div class="publications-list year-content">
 
@@ -1400,12 +1402,10 @@
 
                 <!-- Year 2023 -->
                 <div class="year-section" id="year-2023">
-                    <div class="year-header" onclick="toggleYear('2023')">
+                    <div class="year-header">
                         <h3 class="year-title">
-                            <i class="fas fa-chevron-down year-icon"></i>
                             2023
                         </h3>
-                        <div class="year-line"></div>
                     </div>
                     <div class="publications-list year-content">
                         <!-- Add 2023 publications here -->
@@ -1590,7 +1590,7 @@
                                 Can Yaras*, Peng Wang*, Wei Hu, Zhihui Zhu, Laura Balzano, Qing Qu.
                             </p>
                             <p class="pub-venue">
-                                <em>ArXiv Preprint arXiv:2306.01154, 2023.</em>
+                                <em>arXiv preprint arXiv:2306.01154, 2023.</em>
                             </p>
                         
                             <div class="pub-links">
@@ -1675,12 +1675,10 @@
 
                 <!-- Year 2022 -->
                 <div class="year-section" id="year-2022">
-                    <div class="year-header" onclick="toggleYear('2022')">
+                    <div class="year-header">
                         <h3 class="year-title">
-                            <i class="fas fa-chevron-down year-icon"></i>
                             2022
                         </h3>
-                        <div class="year-line"></div>
                     </div>
                     <div class="publications-list year-content">
                         <!-- Add 2022 publications here -->
@@ -1914,12 +1912,10 @@
 
                 <!-- Year 2021 -->
                 <div class="year-section" id="year-2021">
-                    <div class="year-header" onclick="toggleYear('2021')">
+                    <div class="year-header">
                         <h3 class="year-title">
-                            <i class="fas fa-chevron-down year-icon"></i>
                             2021
                         </h3>
-                        <div class="year-line"></div>
                     </div>
                     <div class="publications-list year-content">
                         <!-- Add 2021 publications here -->
@@ -2053,12 +2049,10 @@
 
                 <!-- Year 2020 -->
                 <div class="year-section" id="year-2020">
-                    <div class="year-header" onclick="toggleYear('2020')">
+                    <div class="year-header">
                         <h3 class="year-title">
-                            <i class="fas fa-chevron-down year-icon"></i>
                             2020
                         </h3>
-                        <div class="year-line"></div>
                     </div>
                     <div class="publications-list year-content">
                         <!-- Add 2020 publications here -->
@@ -2237,12 +2231,10 @@
 
                 <!-- Year 2019 & Prior -->
                 <div class="year-section" id="year-2019">
-                    <div class="year-header" onclick="toggleYear('2019')">
+                    <div class="year-header">
                         <h3 class="year-title">
-                            <i class="fas fa-chevron-down year-icon"></i>
                             2019 & Prior
                         </h3>
-                        <div class="year-line"></div>
                     </div>
                     <div class="publications-list year-content">
                         <!-- Add 2019 and earlier publications here -->
@@ -2600,6 +2592,9 @@
                     </div>
                 </div>
             </div>
+            <p id="publication-filter-empty" class="paper-review-empty" hidden>
+                No publications match the current filters.
+            </p>
 
         </div>
     </section>
@@ -2625,4 +2620,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-
