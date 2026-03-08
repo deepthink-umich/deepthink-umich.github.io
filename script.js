@@ -671,14 +671,16 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// Initialize publication year sections on page load
+// Initialize publication year sections on page load (publications page only)
 document.addEventListener('DOMContentLoaded', function() {
-    // Set proper max-height for initially active year
-    const activeSection = document.querySelector('.year-section.active');
-    if (activeSection) {
-        const activeContent = activeSection.querySelector('.year-content');
-        if (activeContent) {
-            activeContent.style.maxHeight = activeContent.scrollHeight + 'px';
+    var pubTimeline = document.querySelector('.publications > .container > .publications-timeline');
+    if (pubTimeline) {
+        var activeSection = pubTimeline.querySelector('.year-section.active');
+        if (activeSection) {
+            var activeContent = activeSection.querySelector('.year-content');
+            if (activeContent) {
+                activeContent.style.maxHeight = activeContent.scrollHeight + 'px';
+            }
         }
     }
 });
@@ -747,6 +749,36 @@ function toggleYear(year) {
                 behavior: 'smooth'
             });
         }, 100); // Small delay to allow content to start expanding
+    }
+}
+
+function toggleResearchCategory(category) {
+    var selectedSection = document.getElementById('research-cat-' + category);
+    if (!selectedSection) return;
+    var panel = selectedSection.closest('.research-panel');
+    if (!panel) return;
+    var allSections = panel.querySelectorAll('.year-section');
+    var isActive = selectedSection.classList.contains('active');
+
+    allSections.forEach(function(section) {
+        section.classList.remove('active');
+    });
+
+    if (!isActive) {
+        selectedSection.classList.add('active');
+        setTimeout(function() {
+            var navbar = document.getElementById('navbar');
+            var navbarHeight = navbar ? navbar.offsetHeight : 80;
+            var yearTitle = selectedSection.querySelector('.year-title');
+            var elementTop = 0;
+            var element = yearTitle;
+            while (element) {
+                elementTop += element.offsetTop;
+                element = element.offsetParent;
+            }
+            var offsetPosition = elementTop - navbarHeight - 40;
+            window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+        }, 100);
     }
 }
 
