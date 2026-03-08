@@ -135,21 +135,623 @@
                     <div class="panel-header">
                         <h3><i class="fas fa-flask"></i> Scientific Applications</h3>
                     </div>
-                    <!-- <div class="panel-content">
+                    <div class="panel-content">
                         <p class="panel-intro">Applying machine learning methods to biomedical imaging, spectrometer sensing, geophysics, and other scientific domains.</p>
-                        <div class="panel-details">
-                            <div class="detail-section">
-                                <h4>Released Papers</h4>
-                                <ul>
-                                    <li><strong>Optimization Algorithms:</strong> Fast and scalable optimization methods</li>
-                                </ul>
-                                <h4>Blogs</h4>
-                                <ul>
-                                    <li><strong>Optimization Algorithms:</strong> Fast and scalable optimization methods</li>
-                                </ul>
+
+                        <div class="publications-timeline">
+
+                            <div class="year-section active" id="research-cat-inverse">
+                                <div class="year-header" onclick="toggleResearchCategory('inverse')">
+                                    <h3 class="year-title">
+                                        <i class="fas fa-chevron-down year-icon"></i>
+                                        I. Inverse Problems, Reconstruction, and Imaging
+                                    </h3>
+                                    <div class="year-line"></div>
+                                </div>
+                                <div class="publications-list year-content">
+
+                                    <div class="publication-card">
+                                        <h4 class="pub-title">
+                                            <a href="https://arxiv.org/abs/2309.05794" target="_blank">
+                                                Robust Physics-based Deep MRI Reconstruction Via Diffusion Purification
+                                            </a>
+                                        </h4>
+                                        <p class="pub-authors">
+                                            Ismail Alkhouri*, Shijun Liang*, Rongrong Wang, Qing Qu, Saiprasad Ravishankar.
+                                        </p>
+                                        <p class="pub-venue">
+                                            <em>IEEE Transactions on Neural Networks and Learning Systems (TNNLS), 2025.</em>
+                                        </p>
+                                        <div class="pub-links">
+                                            <a href="https://arxiv.org/abs/2309.05794" class="pub-link" target="_blank">
+                                                <i class="fas fa-file-pdf"></i> Preprint
+                                            </a>
+                                            <a href="https://arxiv.org/pdf/2309.05794.pdf" class="pub-link" target="_blank">
+                                                <i class="fas fa-file-pdf"></i> PDF
+                                            </a>
+                                            <!-- <a href="https://scholar.googleusercontent.com/scholar.bib?q=info:7n3sq3PUpjoJ:scholar.google.com/&output=citation&scisdr=Cl9qQb46EKyGoxvNliM:AFtJQiwAAAAAaa3LjiMN9TjHTD-abCZon8O6A2U&scisig=AFtJQiwAAAAAaa3LjvwwE4EMlyDvnYt9tGc28cQ&scisf=4&ct=citation&cd=-1&hl=en" class="pub-link" target="_blank">
+                                                <i class="fas fa-quote-right"></i> BibTeX
+                                            </a> -->
+                                        </div>
+                                    </div>
+
+                                    <div class="publication-card">
+                                        <h4 class="pub-title">
+                                            <a href="https://arxiv.org/abs/2511.14680" target="_blank">
+                                                NERD: Network-Regularized Diffusion Sampling For 3D Computed Tomography
+                                            </a>
+                                        </h4>
+                                        <p class="pub-authors">
+                                            Shijun Liang, Ismail Alkhouri, Qing Qu, Rongrong Wang, Saiprasad Ravishankar.
+                                        </p>
+                                        <p class="pub-venue">
+                                            <em>IEEE CAMSAP, 2025.</em>
+                                        </p>
+                                        <div class="pub-links">
+                                            <a href="https://arxiv.org/abs/2511.14680" class="pub-link" target="_blank">
+                                                <i class="fas fa-file-pdf"></i> Preprint
+                                            </a>
+                                            <a href="https://arxiv.org/pdf/2511.14680" class="pub-link" target="_blank">
+                                                <i class="fas fa-file-pdf"></i> PDF
+                                            </a>
+                                            <!-- <a href="https://scholar.googleusercontent.com/scholar.bib?q=info:oE0dl345_K8J:scholar.google.com/&output=citation&scisdr=Cl9qQb46EKyGoxvOlI4:AFtJQiwAAAAAaa3IjI6_S2bWYaDWTjd0fL1DOxk&scisig=AFtJQiwAAAAAaa3IjAw8PH9nkzAU0Q2uSy_mxP0&scisf=4&ct=citation&cd=-1&hl=en" class="pub-link" target="_blank">
+                                                <i class="fas fa-quote-right"></i> BibTeX
+                                            </a> -->
+                                        </div>
+                                    </div>
+
+                                    <div class="publication-card">
+                                        <h4 class="pub-title">
+                                            <a href="https://arxiv.org/abs/2505.11720" target="_blank">
+                                                UGoDIT: Unsupervised Group Deep Image Prior Via Transferable Weights
+                                            </a>
+                                        </h4>
+                                        <p class="pub-authors">
+                                            Shijun Liang, Ismail R. Alkhouri, Siddhant Gautam, Qing Qu, Saiprasad Ravishankar.
+                                        </p>
+                                        <p class="pub-venue">
+                                            <em>Neural Information Processing Systems (NeurIPS'25), 2025.</em>
+                                        </p>
+                                        <div class="pub-links">
+                                            <a href="https://arxiv.org/abs/2505.11720" class="pub-link" target="_blank">
+                                                <i class="fas fa-file-pdf"></i> Preprint
+                                            </a>
+                                            <a href="https://arxiv.org/pdf/2505.11720" class="pub-link" target="_blank">
+                                                <i class="fas fa-file-pdf"></i> PDF
+                                            </a>
+                                            <!-- <a href="https://scholar.googleusercontent.com/scholar.bib?q=info:ZdzelOzCFtYJ:scholar.google.com/&output=citation&scisdr=Cl9qQb46EKyGoxvO_qk:AFtJQiwAAAAAaa3I5ql8ZTd59Pd-pw_vBNjmTBk&scisig=AFtJQiwAAAAAaa3I5nYsv1eOXHpR-1O4-4PKZX0&scisf=4&ct=citation&cd=-1&hl=en" class="pub-link" target="_blank">
+                                                <i class="fas fa-quote-right"></i> BibTeX
+                                            </a> -->
+                                        </div>
+                                    </div>
+
+                                    <div class="publication-card">
+                                        <h4 class="pub-title">
+                                            <a href="https://arxiv.org/abs/2410.04479" target="_blank">
+                                                SITCOM: Step-wise Triple-Consistent Diffusion Sampling for Inverse Problems
+                                            </a>
+                                        </h4>
+                                        <p class="pub-authors">
+                                            Ismail Alkhouri, Shijun Liang, Cheng-Han Huang, Jimmy Dai, Qing Qu, Saiprasad Ravishankar, Rongrong Wang.
+                                        </p>
+                                        <p class="pub-venue">
+                                            <em>International Conference on Machine Learning (ICML'25), 2025.</em>
+                                        </p>
+                                        <div class="pub-links">
+                                            <a href="https://arxiv.org/abs/2410.04479" class="pub-link" target="_blank">
+                                                <i class="fas fa-file-pdf"></i> Preprint
+                                            </a>
+                                            <a href="https://arxiv.org/pdf/2410.04479" class="pub-link" target="_blank">
+                                                <i class="fas fa-file-pdf"></i> PDF
+                                            </a>
+                                            <!-- <a href="https://scholar.googleusercontent.com/scholar.bib?q=info:Rcd9MfeA3AYJ:scholar.google.com/&output=citation&scisdr=Cl9qQb46EKyGoxvPHsQ:AFtJQiwAAAAAaa3JBsQuM62vZQIBWVtF_Kb13t0&scisig=AFtJQiwAAAAAaa3JBh75epSKBOJyxKK42W7puwU&scisf=4&ct=citation&cd=-1&hl=en" class="pub-link" target="_blank">
+                                                <i class="fas fa-quote-right"></i> BibTeX
+                                            </a> -->
+                                        </div>
+                                    </div>
+
+                                    <div class="publication-card">
+                                        <h4 class="pub-title">
+                                            <a href="https://ieeexplore.ieee.org/document/10896571" target="_blank">
+                                                Analysis of Deep Image Prior and Exploiting Self-Guidance for Image Reconstruction
+                                            </a>
+                                        </h4>
+                                        <p class="pub-authors">
+                                            Shijun Liang, Evan Bell, Qing Qu, Rongrong Wang, Saiprasad Ravishankar.
+                                        </p>
+                                        <p class="pub-venue">
+                                            <em>IEEE Transactions on Computational Imaging (TCI), 2025.</em>
+                                        </p>
+                                        <div class="pub-links">
+                                            <a href="https://arxiv.org/abs/2402.04097" class="pub-link" target="_blank">
+                                                <i class="fas fa-file-pdf"></i> Preprint
+                                            </a>
+                                            <a href="https://arxiv.org/pdf/2402.04097" class="pub-link" target="_blank">
+                                                <i class="fas fa-file-pdf"></i> PDF
+                                            </a>
+                                            <a href="https://qingqu.engin.umich.edu/bibtex-liang2024analysis/" class="pub-link" target="_blank">
+                                                <i class="fas fa-quote-right"></i> BibTeX
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="publication-card">
+                                        <h4 class="pub-title">
+                                            <a href="https://openreview.net/forum?id=K1EG2ABzNE&noteId=KLbtyQ08BC" target="_blank">
+                                                Image Reconstruction Via Autoencoding Sequential Deep Image Prior
+                                            </a>
+                                        </h4>
+                                        <p class="pub-authors">
+                                            Ismail Alkhouri, Shijun Liang, Evan Bell, Qing Qu, Rongrong Wang, Saiprasad Ravishankar.
+                                        </p>
+                                        <p class="pub-venue">
+                                            <em>Neural Information Processing Systems (NeurIPS'24), 2024.</em>
+                                        </p>
+                                        <div class="pub-links">
+                                            <a href="https://openreview.net/forum?id=K1EG2ABzNE&noteId=KLbtyQ08BC" class="pub-link" target="_blank">
+                                                <i class="fas fa-file-pdf"></i> Preprint
+                                            </a>
+                                            <a href="https://proceedings.neurips.cc/paper_files/paper/2024/file/21eba560be81c3a1e1f3404493a92a6a-Paper-Conference.pdf" class="pub-link" target="_blank">
+                                                <i class="fas fa-file-pdf"></i> PDF
+                                            </a>
+                                            <a href="https://qingqu.engin.umich.edu/bibtex-alkhouri2024image/" class="pub-link" target="_blank">
+                                                <i class="fas fa-quote-right"></i> BibTeX
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="publication-card">
+                                        <h4 class="pub-title">
+                                            <a href="https://arxiv.org/abs/2403.06054" target="_blank">
+                                                Decoupled Data Consistency with Diffusion Purification for Image Restoration
+                                            </a>
+                                        </h4>
+                                        <p class="pub-authors">
+                                            Xiang Li, Soo Min Kwon, Ismail R. Alkhouri, Saiprasad Ravishankar, Qing Qu.
+                                        </p>
+                                        <p class="pub-venue">
+                                            <em>Neural Information Processing Systems (NeurIPS'24), 2024.</em>
+                                        </p>
+                                        <div class="pub-links">
+                                            <a href="https://arxiv.org/abs/2403.06054" class="pub-link" target="_blank">
+                                                <i class="fas fa-file-pdf"></i> Preprint
+                                            </a>
+                                            <a href="https://arxiv.org/pdf/2403.06054" class="pub-link" target="_blank">
+                                                <i class="fas fa-file-pdf"></i> PDF
+                                            </a>
+                                            <!-- <a href="https://scholar.googleusercontent.com/scholar.bib?q=info:8Smq3FAR7J8J:scholar.google.com/&output=citation&scisdr=Cl9qQb46EKyGoxvPMcI:AFtJQiwAAAAAaa3JKcK13b4qsPu5eTrpgSVnwQQ&scisig=AFtJQiwAAAAAaa3JKfAjWWzso1iHiqfEq1T_mW8&scisf=4&ct=citation&cd=-1&hl=en" class="pub-link" target="_blank">
+                                                <i class="fas fa-quote-right"></i> BibTeX
+                                            </a> -->
+                                        </div>
+                                    </div>
+
+                                    <div class="publication-card">
+                                        <h4 class="pub-title">
+                                            <a href="https://arxiv.org/abs/2307.08123" target="_blank">
+                                                Solving Inverse Problems with Latent Diffusion Models via Hard Data Consistency
+                                            </a>
+                                        </h4>
+                                        <p class="pub-authors">
+                                            Bowen Song*, Soo Min Kwon*, Zecheng Zhang, Xinyu Hu, Qing Qu, Liyue Shen.
+                                        </p>
+                                        <p class="pub-venue">
+                                            <em>International Conference on Learning Representations (ICLR'24), 2024.</em>
+                                        </p>
+                                        <div class="pub-award">
+                                            <i class="fas fa-award"></i>
+                                            <span>Spotlight Presentation (top 5%)</span>
+                                        </div>
+                                        <div class="pub-links">
+                                            <a href="https://arxiv.org/abs/2307.08123" class="pub-link" target="_blank">
+                                                <i class="fas fa-file-pdf"></i> Preprint
+                                            </a>
+                                            <a href="https://arxiv.org/pdf/2307.08123.pdf" class="pub-link" target="_blank">
+                                                <i class="fas fa-file-pdf"></i> PDF
+                                            </a>
+                                            <a href="https://qingqu.engin.umich.edu/bibtex-song2023solving/" class="pub-link" target="_blank">
+                                                <i class="fas fa-quote-right"></i> BibTeX
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="publication-card">
+                                        <h4 class="pub-title">
+                                            <a href="https://ieeexplore.ieee.org/abstract/document/10403476/" target="_blank">
+                                                Robust Deep Image Recovery from Sparsely Corrupted and Sub-Sampled Measurements
+                                            </a>
+                                        </h4>
+                                        <p class="pub-authors">
+                                            Xiang Li, Saiprasad Ravishankar, Qing Qu.
+                                        </p>
+                                        <p class="pub-venue">
+                                            <em>IEEE 9th International Workshop on Computational Advances in Multi-Sensor Adaptive Processing (CAMSAP), 2023.</em>
+                                        </p>
+                                        <div class="pub-links">
+                                            <a href="https://ieeexplore.ieee.org/abstract/document/10403476/" class="pub-link" target="_blank">
+                                                <i class="fas fa-file-pdf"></i> PDF
+                                            </a>
+                                            <!-- <a href="https://scholar.googleusercontent.com/scholar.bib?q=info:W1L3w20J1z4J:scholar.google.com/&output=citation&scisdr=Cl9qQb46EKyGoxvN0fQ:AFtJQiwAAAAAaa3LyfQti98hGtjPO-RmWG_CZ6A&scisig=AFtJQiwAAAAAaa3LyR0w8hiC-4gFiqrSs1tW_zU&scisf=4&ct=citation&cd=-1&hl=en" class="pub-link" target="_blank">
+                                                <i class="fas fa-quote-right"></i> BibTeX
+                                            </a> -->
+                                        </div>
+                                    </div>
+
+                                    <div class="publication-card">
+                                        <h4 class="pub-title">
+                                            <a href="https://ieeexplore.ieee.org/document/10096631" target="_blank">
+                                                Robust Self-Guided Deep Image Prior
+                                            </a>
+                                        </h4>
+                                        <p class="pub-authors">
+                                            Evan Bell, Shijun Liang, Qing Qu, Saiprasad Ravishankar.
+                                        </p>
+                                        <p class="pub-venue">
+                                            <em>IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP'23), 2023.</em>
+                                        </p>
+                                        <div class="pub-links">
+                                            <a href="https://qingqu.engin.umich.edu/wp-content/uploads/sites/42/2023/06/Robust_Self-Guided_Deep_Image_Prior.pdf" class="pub-link" target="_blank">
+                                                <i class="fas fa-file-pdf"></i> Preprint
+                                            </a>
+                                            <a href="https://qingqu.engin.umich.edu/wp-content/uploads/sites/42/2023/06/Robust_Self-Guided_Deep_Image_Prior.pdf" class="pub-link" target="_blank">
+                                                <i class="fas fa-file-pdf"></i> PDF
+                                            </a>
+                                            <a href="https://qingqu.engin.umich.edu/bibtex-bell2023robust/" class="pub-link" target="_blank">
+                                                <i class="fas fa-quote-right"></i> BibTeX
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="publication-card">
+                                        <h4 class="pub-title">
+                                            <a href="https://arxiv.org/abs/1712.00716" target="_blank">
+                                                Convolutional Phase Retrieval via Gradient Descent
+                                            </a>
+                                        </h4>
+                                        <p class="pub-authors">
+                                            Qing Qu, Yuqian Zhang, Yonina C. Eldar, John Wright.
+                                        </p>
+                                        <p class="pub-venue">
+                                            <em>IEEE Transactions on Information Theory, 66(3): 1785-1821, March 2020. Preliminary version appeared at NeurIPS 2017.</em>
+                                        </p>
+                                        <div class="pub-links">
+                                            <a href="https://arxiv.org/abs/1712.00716" class="pub-link" target="_blank">
+                                                <i class="fas fa-file-pdf"></i> Preprint
+                                            </a>
+                                            <a href="https://qingqu.engin.umich.edu/wp-content/uploads/sites/42/2020/08/08888195.pdf" class="pub-link" target="_blank">
+                                                <i class="fas fa-file-pdf"></i> PDF
+                                            </a>
+                                            <a href="https://qingqu.engin.umich.edu/bibtex-qu2020convolutional/" class="pub-link" target="_blank">
+                                                <i class="fas fa-quote-right"></i> BibTeX
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="publication-card">
+                                        <h4 class="pub-title">
+                                            <a href="https://arxiv.org/abs/1602.06664" target="_blank">
+                                                A Geometric Analysis of Phase Retrieval
+                                            </a>
+                                        </h4>
+                                        <p class="pub-authors">
+                                            Ju Sun, Qing Qu, John Wright.
+                                        </p>
+                                        <p class="pub-venue">
+                                            <em>Foundations of Computational Mathematics, 18(5): 1131-1198, 2018. Preliminary version appeared at ISIT 2016.</em>
+                                        </p>
+                                        <div class="pub-links">
+                                            <a href="https://arxiv.org/abs/1602.06664" class="pub-link" target="_blank">
+                                                <i class="fas fa-file-pdf"></i> Preprint
+                                            </a>
+                                            <a href="https://qingqu.engin.umich.edu/wp-content/uploads/sites/42/2020/08/Sun_et_al-2018-Foundations_of_Computational_Mathematics.pdf" class="pub-link" target="_blank">
+                                                <i class="fas fa-file-pdf"></i> PDF
+                                            </a>
+                                            <a href="https://qingqu.engin.umich.edu/bibtex-sun2018geometric/" class="pub-link" target="_blank">
+                                                <i class="fas fa-quote-right"></i> BibTeX
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                </div>
                             </div>
+
+                            <div class="year-section" id="research-cat-data">
+                                <div class="year-header" onclick="toggleResearchCategory('data')">
+                                    <h3 class="year-title">
+                                        <i class="fas fa-chevron-down year-icon"></i>
+                                        II. Data Assimilation, Physics, and Dynamical Systems
+                                    </h3>
+                                    <div class="year-line"></div>
+                                </div>
+                                <div class="publications-list year-content">
+
+                                    <div class="publication-card">
+                                        <h4 class="pub-title">
+                                            <a href="https://arxiv.org/abs/2501.16642" target="_blank">
+                                                FlowDAS: A Stochastic Interpolant-based Framework for Data Assimilation
+                                            </a>
+                                        </h4>
+                                        <p class="pub-authors">
+                                            Siyi Chen*, Yixuan Jia*, Qing Qu, He Sun, Jeffrey A. Fessler.
+                                        </p>
+                                        <p class="pub-venue">
+                                            <em>Neural Information Processing Systems (NeurIPS'25), 2025.</em>
+                                        </p>
+                                        <div class="pub-links">
+                                            <a href="https://arxiv.org/abs/2501.16642" class="pub-link" target="_blank">
+                                                <i class="fas fa-file-pdf"></i> Preprint
+                                            </a>
+                                            <a href="https://arxiv.org/pdf/2501.16642" class="pub-link" target="_blank">
+                                                <i class="fas fa-file-pdf"></i> PDF
+                                            </a>
+                                            <!-- <a href="https://scholar.googleusercontent.com/scholar.bib?q=info:W93prAKMiWwJ:scholar.google.com/&output=citation&scisdr=Cl9qQb46EKyGoxvPULM:AFtJQiwAAAAAaa3JSLN1y5AVBtwl0A_ClG4tm-c&scisig=AFtJQiwAAAAAaa3JSKYUbMJ2W-AYs1fAW8Ffkl0&scisf=4&ct=citation&cd=-1&hl=en" class="pub-link" target="_blank">
+                                                <i class="fas fa-quote-right"></i> BibTeX
+                                            </a> -->
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="year-section" id="research-cat-spectroscopy">
+                                <div class="year-header" onclick="toggleResearchCategory('spectroscopy')">
+                                    <h3 class="year-title">
+                                        <i class="fas fa-chevron-down year-icon"></i>
+                                        III. Spectroscopy, Optics, and Scientific Instruments
+                                    </h3>
+                                    <div class="year-line"></div>
+                                </div>
+                                <div class="publications-list year-content">
+
+                                    <div class="publication-card">
+                                        <h4 class="pub-title">
+                                            <a href="https://arxiv.org/abs/2403.12354" target="_blank">
+                                                Sim2Real in Reconstructive Spectroscopy: Deep Learning with Augmented Device-Informed Data Simulation
+                                            </a>
+                                        </h4>
+                                        <p class="pub-authors">
+                                            Jiyi Chen*, Pengyu Li*, Yutong Wang, Pei-Cheng Ku, Qing Qu.
+                                        </p>
+                                        <p class="pub-venue">
+                                            <em>APL Machine Learning, Vol. 2, No. 3, pp. 036106, Aug. 2024.</em>
+                                        </p>
+                                        <div class="pub-links">
+                                            <a href="https://arxiv.org/abs/2403.12354" class="pub-link" target="_blank">
+                                                <i class="fas fa-file-pdf"></i> Preprint
+                                            </a>
+                                            <a href="https://pubs.aip.org/aip/aml/article-pdf/doi/10.1063/5.0209339/20121785/036106_1_5.0209339.pdf" class="pub-link" target="_blank">
+                                                <i class="fas fa-file-pdf"></i> PDF
+                                            </a>
+                                            <a href="https://qingqu.engin.umich.edu/bibtex-chen2024sim2real/" class="pub-link" target="_blank">
+                                                <i class="fas fa-quote-right"></i> BibTeX
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="publication-card">
+                                        <h4 class="pub-title">
+                                            <a href="https://www.spiedigitallibrary.org/conference-proceedings-of-spie/13026/1302605/UV-VIS-chip-scale-spectropolarimeter/10.1117/12.3013574.short" target="_blank">
+                                                UV-VIS Chip-Scale Spectropolarimeter
+                                            </a>
+                                        </h4>
+                                        <p class="pub-authors">
+                                            Juhyeon Kim, Jiyi Chen, Pengyu Li, Yutong Wang, Qing Qu, Pei-Cheng Ku.
+                                        </p>
+                                        <p class="pub-venue">
+                                            <em>Proceedings of SPIE 13026, Next-Generation Spectroscopic Technologies XVI, 1302605, 2024.</em>
+                                        </p>
+                                        <div class="pub-links">
+                                            <a href="https://www.spiedigitallibrary.org/conference-proceedings-of-spie/13026/1302605/UV-VIS-chip-scale-spectropolarimeter/10.1117/12.3013574.short" class="pub-link" target="_blank">
+                                                <i class="fas fa-file-pdf"></i> Preprint
+                                            </a>
+                                            <a href="https://www.spiedigitallibrary.org/conference-proceedings-of-spie/13026/1302605/UV-VIS-chip-scale-spectropolarimeter/10.1117/12.3013574.short" class="pub-link" target="_blank">
+                                                <i class="fas fa-file-pdf"></i> PDF
+                                            </a>
+                                            <!-- <a href="https://scholar.googleusercontent.com/scholar.bib?q=info:6o02PT9izZ0J:scholar.google.com/&output=citation&scisdr=Cl9qQb46EKyGoxvPaa0:AFtJQiwAAAAAaa3Jca0XWkK0NOMh3GS6x1aIwVI&scisig=AFtJQiwAAAAAaa3JcaFFeTGnFpZITpckCJSq16I&scisf=4&ct=citation&cd=-1&hl=en" class="pub-link" target="_blank">
+                                                <i class="fas fa-quote-right"></i> BibTeX
+                                            </a> -->
+                                        </div>
+                                    </div>
+
+                                    <div class="publication-card">
+                                        <h4 class="pub-title">
+                                            <a href="https://opg.optica.org/abstract.cfm?uri=CLEO_SI-2023-JTu2A.71" target="_blank">
+                                                Accelerating Deep Learning in Reconstructive Spectroscopy Using Synthetic Data
+                                            </a>
+                                        </h4>
+                                        <p class="pub-authors">
+                                            Pengyu Li, Can Yaras, Tuba Sarwar, Pei-Cheng Ku, Qing Qu.
+                                        </p>
+                                        <p class="pub-venue">
+                                            <em>Conference on Lasers and Electro-Optics (CLEO), 2023.</em>
+                                        </p>
+                                        <div class="pub-links">
+                                            <a href="https://opg.optica.org/abstract.cfm?uri=CLEO_SI-2023-JTu2A.71" class="pub-link" target="_blank">
+                                                <i class="fas fa-file-pdf"></i> PDF
+                                            </a>
+                                            <!-- <a href="https://scholar.googleusercontent.com/scholar.bib?q=info:xH6HGuzjYWsJ:scholar.google.com/&output=citation&scisdr=Cl9qQb46EKyGoxvPijw:AFtJQiwAAAAAaa3JkjzuxEhANutV2uYIXJ0xgRI&scisig=AFtJQiwAAAAAaa3JkllKrdrqhFx0k4myHKFLOPk&scisf=4&ct=citation&cd=-1&hl=en" class="pub-link" target="_blank">
+                                                <i class="fas fa-quote-right"></i> BibTeX
+                                            </a> -->
+                                        </div>
+                                    </div>
+
+                                    <div class="publication-card">
+                                        <h4 class="pub-title">
+                                            <a href="https://pubs.acs.org/doi/10.1021/acs.nanolett.2c02654" target="_blank">
+                                                Miniaturizing a Chip-Scale Spectrometer Using Local Strain Engineering and Total-Variation Regularized Reconstruction
+                                            </a>
+                                        </h4>
+                                        <p class="pub-authors">
+                                            Tuba Sarwar, Can Yaras, Xiang Li, Qing Qu, Pei-Cheng Ku.
+                                        </p>
+                                        <p class="pub-venue">
+                                            <em>Nano Letters, Vol. 22, No. 20, pp. 8174-8180, 2022.</em>
+                                        </p>
+                                        <div class="pub-links">
+                                            <a href="https://pubs.acs.org/doi/10.1021/acs.nanolett.2c02654" class="pub-link" target="_blank">
+                                                <i class="fas fa-file-pdf"></i> Preprint
+                                            </a>
+                                            <a href="https://pubs.acs.org/doi/10.1021/acs.nanolett.2c02654" class="pub-link" target="_blank">
+                                                <i class="fas fa-file-pdf"></i> PDF
+                                            </a>
+                                            <a href="https://qingqu.engin.umich.edu/bibtex-sarwar2022miniaturizing/" class="pub-link" target="_blank">
+                                                <i class="fas fa-quote-right"></i> BibTeX
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="year-section" id="research-cat-remote">
+                                <div class="year-header" onclick="toggleResearchCategory('remote')">
+                                    <h3 class="year-title">
+                                        <i class="fas fa-chevron-down year-icon"></i>
+                                        IV. Remote Sensing and Hyperspectral Imaging
+                                    </h3>
+                                    <div class="year-line"></div>
+                                </div>
+                                <div class="publications-list year-content">
+
+                                    <div class="publication-card">
+                                        <h4 class="pub-title">
+                                            <a href="https://ieeexplore.ieee.org/document/7078862" target="_blank">
+                                                Subspace Vertex Pursuit: A Fast and Robust Near-Separable Nonnegative Matrix Factorization Method for Hyperspectral Unmixing
+                                            </a>
+                                        </h4>
+                                        <p class="pub-authors">
+                                            Qing Qu, Nasser M. Nasrabadi, Trac D. Tran.
+                                        </p>
+                                        <p class="pub-venue">
+                                            <em>IEEE Journal of Selected Topics in Signal Processing, 9(6): 1142-1155, September 2015. Preliminary version appeared at ICASSP 2014.</em>
+                                        </p>
+                                        <div class="pub-links">
+                                            <a href="https://qingqu.engin.umich.edu/wp-content/uploads/sites/42/2020/08/07078862.pdf" class="pub-link" target="_blank">
+                                                <i class="fas fa-file-pdf"></i> PDF
+                                            </a>
+                                            <a href="https://qingqu.engin.umich.edu/bibtex-qu2015subspace/" class="pub-link" target="_blank">
+                                                <i class="fas fa-quote-right"></i> BibTeX
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="publication-card">
+                                        <h4 class="pub-title">
+                                            <a href="https://ieeexplore.ieee.org/document/6855182" target="_blank">
+                                                Subspace Vertex Pursuit for Separable Non-negative Matrix Factorization in Hyperspectral Unmixing
+                                            </a>
+                                        </h4>
+                                        <p class="pub-authors">
+                                            Qing Qu, Nasser M. Nasrabadi, Trac D. Tran.
+                                        </p>
+                                        <p class="pub-venue">
+                                            <em>IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), 2014.</em>
+                                        </p>
+                                        <div class="pub-links">
+                                            <a href="https://ieeexplore.ieee.org/document/6855182" class="pub-link" target="_blank">
+                                                <i class="fas fa-file-pdf"></i> PDF
+                                            </a>
+                                            <!-- <a href="https://scholar.googleusercontent.com/scholar.bib?q=info:wiSfdu4s4z0J:scholar.google.com/&output=citation&scisdr=Cl9qQb46EKyGoxvN73w:AFtJQiwAAAAAaa3L93zTNy-fAhSKjmtclLsUqf0&scisig=AFtJQiwAAAAAaa3L9-GiYcIxEfO28J1uwTV40LY&scisf=4&ct=citation&cd=-1&hl=en" class="pub-link" target="_blank">
+                                                <i class="fas fa-quote-right"></i> BibTeX
+                                            </a> -->
+                                        </div>
+                                    </div>
+
+                                    <div class="publication-card">
+                                        <h4 class="pub-title">
+                                            <a href="https://ieeexplore.ieee.org/document/6681879" target="_blank">
+                                                Structured Priors for Sparse-Representation-Based Hyperspectral Image Classification
+                                            </a>
+                                        </h4>
+                                        <p class="pub-authors">
+                                            Xiaoxia Sun, Qing Qu, Nasser M. Nasrabadi, Trac D. Tran.
+                                        </p>
+                                        <p class="pub-venue">
+                                            <em>IEEE Geoscience and Remote Sensing Letters, 11(7): 1235-1239, July 2014.</em>
+                                        </p>
+                                        <div class="pub-links">
+                                            <a href="https://arxiv.org/abs/1401.3818" class="pub-link" target="_blank">
+                                                <i class="fas fa-file-pdf"></i> Preprint
+                                            </a>
+                                            <a href="https://qingqu.engin.umich.edu/wp-content/uploads/sites/42/2020/08/06681879.pdf" class="pub-link" target="_blank">
+                                                <i class="fas fa-file-pdf"></i> PDF
+                                            </a>
+                                            <a href="https://qingqu.engin.umich.edu/bibtex-sun2014structured/" class="pub-link" target="_blank">
+                                                <i class="fas fa-quote-right"></i> BibTeX
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="publication-card">
+                                        <h4 class="pub-title">
+                                            <a href="https://ieeexplore.ieee.org/document/6619431" target="_blank">
+                                                Abundance Estimation for Bilinear Mixture Models via Joint Sparse and Low-Rank Representation
+                                            </a>
+                                        </h4>
+                                        <p class="pub-authors">
+                                            Qing Qu, Nasser M. Nasrabadi, Trac D. Tran.
+                                        </p>
+                                        <p class="pub-venue">
+                                            <em>IEEE Transactions on Geoscience and Remote Sensing, 52(7): 4404-4423, July 2014. Preliminary version appeared at ICASSP 2013.</em>
+                                        </p>
+                                        <div class="pub-links">
+                                            <a href="https://qingqu.engin.umich.edu/wp-content/uploads/sites/42/2020/08/06619431.pdf" class="pub-link" target="_blank">
+                                                <i class="fas fa-file-pdf"></i> PDF
+                                            </a>
+                                            <a href="https://qingqu.engin.umich.edu/bibtex-qu2014abundance/" class="pub-link" target="_blank">
+                                                <i class="fas fa-quote-right"></i> BibTeX
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="publication-card">
+                                        <h4 class="pub-title">
+                                            <a href="https://ieeexplore.ieee.org/document/8080597" target="_blank">
+                                                Low Rank Representation for Bilinear Abundance Estimation Problem
+                                            </a>
+                                        </h4>
+                                        <p class="pub-authors">
+                                            Qing Qu, Nasser M. Nasrabadi, Trac D. Tran.
+                                        </p>
+                                        <p class="pub-venue">
+                                            <em>IEEE Workshop on Hyperspectral Image and Signal Processing (WHISPERS), 2017.</em>
+                                        </p>
+                                        <div class="pub-links">
+                                            <a href="https://ieeexplore.ieee.org/document/8080597" class="pub-link" target="_blank">
+                                                <i class="fas fa-file-pdf"></i> PDF
+                                            </a>
+                                            <!-- <a href="https://scholar.googleusercontent.com/scholar.bib?q=info:L7XHHAPso10J:scholar.google.com/&output=citation&scisdr=Cl9qQb46EKyGoxvP_c4:AFtJQiwAAAAAaa3J5c7HiT_juVY1dOw8WZbi8dg&scisig=AFtJQiwAAAAAaa3J5RVocFoq36d0jmSbv_hm27c&scisf=4&ct=citation&cd=-1&hl=en" class="pub-link" target="_blank">
+                                                <i class="fas fa-quote-right"></i> BibTeX
+                                            </a> -->
+                                        </div>
+                                    </div>
+
+                                    <div class="publication-card">
+                                        <h4 class="pub-title">
+                                            <a href="https://ieeexplore.ieee.org/document/6638030" target="_blank">
+                                                Hyperspectral Abundance Estimation for the Generalized Bilinear Model with Joint Sparsity Constraint
+                                            </a>
+                                        </h4>
+                                        <p class="pub-authors">
+                                            Qing Qu, Nasser M. Nasrabadi, Trac D. Tran.
+                                        </p>
+                                        <p class="pub-venue">
+                                            <em>IEEE Workshop on Hyperspectral Image and Signal Processing (WHISPERS), 2013.</em>
+                                        </p>
+                                        <div class="pub-links">
+                                            <a href="https://ieeexplore.ieee.org/document/6638030" class="pub-link" target="_blank">
+                                                <i class="fas fa-file-pdf"></i> PDF
+                                            </a>
+                                            <!-- <a href="https://scholar.googleusercontent.com/scholar.bib?q=info:npRhcDSRHbkJ:scholar.google.com/&output=citation&scisdr=Cl9qQb46EKyGoxvP760:AFtJQiwAAAAAaa3J962KyVZOFCpCqNfIMa4RO30&scisig=AFtJQiwAAAAAaa3J93d3VQ-zR69WKyzAr6e21LE&scisf=4&ct=citation&cd=-1&hl=en" class="pub-link" target="_blank">
+                                                <i class="fas fa-quote-right"></i> BibTeX
+                                            </a> -->
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
                         </div>
-                    </div> -->
+                    </div>
                 </div>
             </div>
         </div>
