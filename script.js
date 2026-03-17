@@ -738,23 +738,192 @@ function normalizePublicationAuthor(author) {
     return normalized;
 }
 
-function normalizeVenueForFilter(venueText) {
+const PUBLICATION_VENUE_ORDER = [
+    'neurips',
+    'icml',
+    'iclr',
+    'aistats',
+    'cvpr',
+    'emnlp',
+    'jmlr',
+    'tmlr',
+    'journal',
+    'preprint',
+    'workshop',
+    'other-conference',
+    'other'
+];
+
+const FALLBACK_PEOPLE_NAMES = [
+    'Aiden Pan',
+    'Alec Xu',
+    'Can Yaras',
+    'Chanyong Jung',
+    'Dogyoon Song',
+    'Hairong Ni',
+    'Huijie Zhang',
+    'Ismail Alkhouri',
+    'Jade Byeon',
+    'Jiahao Qiu',
+    'Jinfan Zhou',
+    'Jingjing Qian',
+    'Jiyi Chen',
+    'Lianghe Shi',
+    'Liangzhao Chen',
+    'Meng Wu',
+    'Minzhe Guo',
+    'Peng Wang',
+    'Pengyu Li',
+    'Qing Qu',
+    'Saaketh Medepalli',
+    'Siyi Chen',
+    'Soo-Min Kwon',
+    'Wenda Li',
+    'Wenxi Cai',
+    'Xiang Li',
+    'Xiao Li',
+    'Xiaoyan Zhang',
+    'Xinyu Lu',
+    'Xiyuan Li',
+    'Yifu Lu',
+    'Yixiang Dai',
+    'Yixuan Jia',
+    'Yutong Wang',
+    'Zekai Zhang',
+    'Zhen Qin',
+    'Zhexin Wu',
+    'Zijian Huang'
+];
+
+function normalizePublicationVenueText(venueText) {
     const normalized = venueText.replace(/\s+/g, ' ').trim().replace(/\.$/, '');
 
-    if (/arxiv/i.test(normalized)) {
-        return 'arXiv preprint';
-    }
-
-    const withoutYearSuffix = normalized.split(',')[0] ? normalized.split(',')[0].trim() : normalized;
-    return withoutYearSuffix
-        .replace(/\barXiv:\S+/gi, '')
-        .replace(/\bpreprint\b/gi, 'Preprint')
-        .replace(/\(([A-Za-z0-9&.+\-\s]+?)'?\d{2}\)/g, '($1)')
-        .replace(/\s+/g, ' ')
-        .trim();
+    return normalized.replace(/\s+/g, ' ').trim();
 }
 
-function initializePublicationFilters() {
+function normalizePersonNameKey(name) {
+    return name
+        .replace(/\*/g, '')
+        .replace(/[.']/g, '')
+        .replace(/-/g, ' ')
+        .replace(/\s+/g, ' ')
+        .trim()
+        .toLowerCase()
+        .split(' ')
+        .filter(token => token.length > 1)
+        .join(' ');
+}
+
+function buildPeopleNameMap(names) {
+    const nameMap = new Map();
+
+    names.forEach(name => {
+        const normalizedName = (name || '').replace(/\s+/g, ' ').trim();
+        if (!normalizedName) return;
+
+        const key = normalizePersonNameKey(normalizedName);
+        if (!key || nameMap.has(key)) return;
+        nameMap.set(key, normalizedName);
+    });
+
+    return nameMap;
+}
+
+async function loadPeopleNameMap() {
+    const fallbackMap = buildPeopleNameMap(FALLBACK_PEOPLE_NAMES);
+
+    try {
+        const response = await fetch('people.html', { cache: 'no-store' });
+        if (!response.ok) return fallbackMap;
+
+        const html = await response.text();
+        const parser = new DOMParser();
+        const peopleDocument = parser.parseFromString(html, 'text/html');
+        const extractedNames = Array.from(peopleDocument.querySelectorAll('.member-name, .pi-name'))
+            .map(element => element.textContent.replace(/\s+/g, ' ').trim())
+            .filter(Boolean);
+
+        if (extractedNames.length === 0) return fallbackMap;
+        return buildPeopleNameMap(extractedNames);
+    } catch (error) {
+        return fallbackMap;
+    }
+}
+
+function classifyPublicationVenue(venueText) {
+    const normalized = normalizePublicationVenueText(venueText);
+
+    if (!normalized) {
+        return { key: 'other', label: 'Other Venue', tone: 'other' };
+    }
+
+    if (/arxiv|^preprint\b/i.test(normalized)) {
+        return { key: 'preprint', label: 'Preprint', tone: 'preprint' };
+    }
+
+    if (/journal of machine learning research|\bjmlr\b/i.test(normalized)) {
+        return { key: 'jmlr', label: 'JMLR', tone: 'journal' };
+    }
+
+    if (/transactions on machine learning research|\btmlr\b/i.test(normalized)) {
+        return { key: 'tmlr', label: 'TMLR', tone: 'journal' };
+    }
+
+    if (/neural information processing systems|\bneurips\b/i.test(normalized)) {
+        return { key: 'neurips', label: 'NeurIPS', tone: 'top-conference' };
+    }
+
+    if (/international conference on machine learning|\bicml\b/i.test(normalized)) {
+        return { key: 'icml', label: 'ICML', tone: 'top-conference' };
+    }
+
+    if (/international conference on learning representations|\biclr\b/i.test(normalized)) {
+        return { key: 'iclr', label: 'ICLR', tone: 'top-conference' };
+    }
+
+    if (/artificial intelligence and statistics|\baistats\b/i.test(normalized)) {
+        return { key: 'aistats', label: 'AISTATS', tone: 'top-conference' };
+    }
+
+    if (/computer vision and pattern recognition|\bcvpr\b/i.test(normalized)) {
+        return { key: 'cvpr', label: 'CVPR', tone: 'top-conference' };
+    }
+
+    if (/empirical methods in natural language processing|\bemnlp\b/i.test(normalized)) {
+        return { key: 'emnlp', label: 'EMNLP', tone: 'top-conference' };
+    }
+
+    if (/workshop/i.test(normalized)) {
+        return { key: 'workshop', label: 'Workshop', tone: 'supporting' };
+    }
+
+    if (/(journal|transactions|letters|magazine|review|siam|ieee|iet|nano letters|apl|foundations of computational mathematics)/i.test(normalized)) {
+        return { key: 'journal', label: 'Journal', tone: 'journal' };
+    }
+
+    if (/(conference|symposium|proceedings|icassp|cpal|spie)/i.test(normalized)) {
+        return { key: 'other-conference', label: 'Other Conference', tone: 'conference' };
+    }
+
+    return { key: 'other', label: 'Other Venue', tone: 'other' };
+}
+
+function sortPublicationVenueKeys(keys, venueMap) {
+    return keys.sort((left, right) => {
+        const leftIndex = PUBLICATION_VENUE_ORDER.indexOf(left);
+        const rightIndex = PUBLICATION_VENUE_ORDER.indexOf(right);
+        const normalizedLeftIndex = leftIndex === -1 ? Number.MAX_SAFE_INTEGER : leftIndex;
+        const normalizedRightIndex = rightIndex === -1 ? Number.MAX_SAFE_INTEGER : rightIndex;
+
+        if (normalizedLeftIndex !== normalizedRightIndex) {
+            return normalizedLeftIndex - normalizedRightIndex;
+        }
+
+        return (venueMap.get(left)?.label || left).localeCompare(venueMap.get(right)?.label || right);
+    });
+}
+
+async function initializePublicationFilters() {
     const publicationRoot = document.getElementById('publications-filter-root');
     const collectionFilter = document.getElementById('publication-collection-filter');
     const authorFilter = document.getElementById('publication-author-filter');
@@ -767,6 +936,7 @@ function initializePublicationFilters() {
     const yearSections = Array.from(publicationRoot.querySelectorAll('.year-section'));
     const publicationCards = Array.from(publicationRoot.querySelectorAll('.publication-card'));
     if (publicationCards.length === 0) return;
+    const peopleNameMap = await loadPeopleNameMap();
 
     const collectionLabels = new Map();
     const collectionValues = [];
@@ -789,18 +959,23 @@ function initializePublicationFilters() {
             .split(',')
             .map(normalizePublicationAuthor)
             .filter(Boolean);
-        authors.forEach(author => authorSet.add(author));
+        const peopleAuthors = authors
+            .map(author => peopleNameMap.get(normalizePersonNameKey(author)))
+            .filter(Boolean);
+        peopleAuthors.forEach(author => authorSet.add(author));
 
         const venueRaw = (card.querySelector('.pub-venue em')?.textContent || card.querySelector('.pub-venue')?.textContent || '')
             .replace(/\s+/g, ' ')
             .trim();
-        const venueLabel = venueRaw ? normalizeVenueForFilter(venueRaw) : '';
-        const venueKey = venueLabel ? venueLabel.toLowerCase() : '';
+        const venueInfo = classifyPublicationVenue(venueRaw);
+        const venueKey = venueInfo.key;
         if (venueKey && !venueMap.has(venueKey)) {
-            venueMap.set(venueKey, venueLabel);
+            venueMap.set(venueKey, venueInfo);
         }
 
-        cardMeta.set(card, { collection, authors, venueKey });
+        card.dataset.venueGroup = venueKey;
+
+        cardMeta.set(card, { collection, authors: peopleAuthors, venueKey });
     });
 
     function populateFilterOptions(selectElement, values, labelMap) {
@@ -811,18 +986,16 @@ function initializePublicationFilters() {
         values.forEach(value => {
             const option = document.createElement('option');
             option.value = value;
-            option.textContent = labelMap ? (labelMap.get(value) || value) : value;
+            const mappedLabel = labelMap ? labelMap.get(value) : null;
+            option.textContent = mappedLabel?.label || mappedLabel || value;
             selectElement.appendChild(option);
         });
     }
 
     populateFilterOptions(collectionFilter, collectionValues, collectionLabels);
     populateFilterOptions(authorFilter, Array.from(authorSet).sort((a, b) => a.localeCompare(b)));
-    populateFilterOptions(
-        venueFilter,
-        Array.from(venueMap.keys()).sort((a, b) => (venueMap.get(a) || a).localeCompare(venueMap.get(b) || b)),
-        venueMap
-    );
+    const sortedVenueKeys = sortPublicationVenueKeys(Array.from(venueMap.keys()), venueMap);
+    populateFilterOptions(venueFilter, sortedVenueKeys, venueMap);
 
     function applyPublicationFilters() {
         const selectedCollection = collectionFilter.value;

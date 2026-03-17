@@ -46,9 +46,9 @@
             <div class="paper-filter-controls publications-filter-controls" aria-label="Publication filters">
                 <div class="paper-filter-row paper-filter-row-primary">
                     <div class="paper-filter-field">
-                        <label class="paper-filter-label" for="publication-collection-filter">Collection</label>
-                        <select id="publication-collection-filter" class="paper-filter-select" aria-label="Filter by collection">
-                            <option value="all">All publications</option>
+                        <label class="paper-filter-label" for="publication-collection-filter">Section</label>
+                        <select id="publication-collection-filter" class="paper-filter-select" aria-label="Filter by section">
+                            <option value="all">All sections</option>
                         </select>
                     </div>
                     <div class="paper-filter-field">
@@ -58,12 +58,17 @@
                         </select>
                     </div>
                     <div class="paper-filter-field">
-                        <label class="paper-filter-label" for="publication-venue-filter">Venue</label>
-                        <select id="publication-venue-filter" class="paper-filter-select" aria-label="Filter by venue">
-                            <option value="all">All venues</option>
+                        <label class="paper-filter-label" for="publication-venue-filter">Venue Group</label>
+                        <select id="publication-venue-filter" class="paper-filter-select" aria-label="Filter by venue group">
+                            <option value="all">All venue groups</option>
                         </select>
                     </div>
                 </div>
+                <!-- <div class="publication-filter-meta">
+                    <p class="publication-filter-note">
+                        Top AI venues are grouped across years using short names. Long-tail outlets are folded into broader buckets like Journal, Workshop, and Other Conference.
+                    </p>
+                </div> -->
             </div>
             <p id="publication-filter-summary" class="publications-filter-summary" aria-live="polite"></p>
 
@@ -387,22 +392,6 @@
 
                         <div class="publication-card">
                             <h4 class="pub-title">
-                                <a href="https://arxiv.org/abs/2512.04069" target="_blank">SpaceTools: Tool-Augmented Spatial Reasoning via Double Interactive RL.</a>
-                            </h4>
-                            <p class="pub-authors">Siyi Chen, Mikaela Angelina Uy, Chan Hee Song, Faisal Ladhak, Adithyavairavan Murali, Qing Qu, Stan Birchfield, Valts Blukis, Jonathan Tremblay.</p>
-                            <p class="pub-venue"><em>arXiv preprint arXiv:2512.04069, 2025.</em></p>
-                            <div class="pub-links">
-                                <a href="https://arxiv.org/abs/2512.04069" class="pub-link" target="_blank">
-                                    <i class="fas fa-file-pdf"></i> Preprint
-                                </a>
-                                <a href="https://arxiv.org/pdf/2512.04069" class="pub-link" target="_blank">
-                                    <i class="fas fa-file-pdf"></i> PDF
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="publication-card">
-                            <h4 class="pub-title">
                                 <a href="https://arxiv.org/abs/2505.20123" target="_blank">
                                     Understanding Generalization in Diffusion Models via Probability Flow Distance
                                 </a>
@@ -516,6 +505,22 @@
                         </h3>
                     </div>
                     <div class="publications-list year-content">
+                        
+                    <div class="publication-card">
+                            <h4 class="pub-title">
+                                <a href="https://arxiv.org/abs/2512.04069" target="_blank">SpaceTools: Tool-Augmented Spatial Reasoning via Double Interactive RL.</a>
+                            </h4>
+                            <p class="pub-authors">Siyi Chen, Mikaela Angelina Uy, Chan Hee Song, Faisal Ladhak, Adithyavairavan Murali, Qing Qu, Stan Birchfield, Valts Blukis, Jonathan Tremblay.</p>
+                            <p class="pub-venue"><em>Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR'26), 2026.</em></p>
+                            <div class="pub-links">
+                                <a href="https://arxiv.org/abs/2512.04069" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> Preprint
+                                </a>
+                                <a href="https://arxiv.org/pdf/2512.04069" class="pub-link" target="_blank">
+                                    <i class="fas fa-file-pdf"></i> PDF
+                                </a>
+                            </div>
+                        </div>
 
                         <div class="publication-card">
                             <h4 class="pub-title">
@@ -527,7 +532,7 @@
                                 Zekai Zhang*, Xiao Li*, Xiang Li, Lianghe Shi, Meng Wu, Molei Tao, Qing Qu.
                             </p>
                             <p class="pub-venue">
-                                <em>International Conference on Learning Representations (ICLR), 2026.</em>
+                                <em>International Conference on Learning Representations (ICLR'26), 2026.</em>
                             </p>
                             <div class="pub-links">
                                 <a href="https://arxiv.org/abs/2512.20963" class="pub-link" target="_blank" rel="noopener noreferrer">
@@ -550,7 +555,7 @@
                                 <a href="https://arxiv.org/abs/2510.20771" target="_blank" rel="noopener noreferrer">AlphaFlow: Understanding and Improving MeanFlow Models.</a>
                             </h4>
                             <p class="pub-authors">Huijie Zhang, Aliaksandr Siarohin, Willi Menapace, Michael Vasilkovsky, Sergey Tulyakov, Qing Qu, Ivan Skorokhodov.</p>
-                            <p class="pub-venue"><em>International Conference on Learning Representations (ICLR), 2026.</em></p>
+                            <p class="pub-venue"><em>International Conference on Learning Representations (ICLR'26), 2026.</em></p>
                             <div class="pub-links">
                                 <a href="https://arxiv.org/abs/2510.20771" class="pub-link" target="_blank" rel="noopener noreferrer">
                                     <i class="fas fa-file-pdf"></i> Preprint
@@ -572,7 +577,7 @@
                                 <a href="https://arxiv.org/abs/2506.14003" target="_blank" rel="noopener noreferrer">Unlearning Isn't Invisible: Detecting Unlearning Traces in LLMs from Model Outputs.</a>
                             </h4>
                             <p class="pub-authors">Yiwei Chen, Soumyadeep Pal, Yimeng Zhang, Qing Qu, Sijia Liu.</p>
-                            <p class="pub-venue"><em>International Conference on Learning Representations (ICLR), 2026.</em></p>
+                            <p class="pub-venue"><em>International Conference on Learning Representations (ICLR'26), 2026.</em></p>
                             <div class="pub-links">
                                 <a href="https://arxiv.org/abs/2506.14003" class="pub-link" target="_blank" rel="noopener noreferrer">
                                     <i class="fas fa-file-pdf"></i> Preprint
@@ -622,7 +627,7 @@
                                 Soo Min Kwon*, Alec S. Xu*, Can Yaras, Laura Balzano, Qing Qu.
                             </p>
                             <p class="pub-venue">
-                                <em>Twenty-Ninth Annual Conference on Artificial Intelligence and Statistics (AISTATS), 2026.</em>
+                                <em>Twenty-Ninth Annual Conference on Artificial Intelligence and Statistics (AISTATS'26), 2026.</em>
                             </p>
                             <div class="pub-links">
                                 <a href="https://arxiv.org/abs/2505.14808" class="pub-link" target="_blank" rel="noopener noreferrer">
@@ -647,7 +652,7 @@
                                 Alec S. Xu, Can Yaras, Peng Wang, Qing Qu.
                             </p>
                             <p class="pub-venue">
-                                <em>Twenty-Ninth Annual Conference on Artificial Intelligence and Statistics (AISTATS), 2026.</em>
+                                <em>Twenty-Ninth Annual Conference on Artificial Intelligence and Statistics (AISTATS'26), 2026.</em>
                             </p>
                             <div class="pub-links">
                                 <a href="https://arxiv.org/abs/2501.02364" class="pub-link" target="_blank" rel="noopener noreferrer">
@@ -672,7 +677,7 @@
                                 Huminhao Zhu, Fangyikang Wang, Tianyu Ding, Qing Qu, Zhihui Zhu.
                             </p>
                             <p class="pub-venue">
-                                <em>Conference on Parsimony and Learning (CPAL), 2026.</em>
+                                <em>Conference on Parsimony and Learning (CPAL'26), 2026.</em>
                             </p>
                             <div class="pub-links">
                                 <a href="https://arxiv.org/abs/2412.08175" class="pub-link" target="_blank" rel="noopener noreferrer">

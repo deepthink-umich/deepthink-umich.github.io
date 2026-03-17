@@ -1071,7 +1071,7 @@ section {
 }
 
 .page-header .section-title {
-    margin-bottom: 0.9rem;
+    margin-bottom: 1.5rem;
     line-height: 1.1;
 }
 
@@ -1398,8 +1398,8 @@ section {
     background: white;
     border: 3px solid #e2e8f0;
     border-radius: 1rem;
-    padding: 1.25rem 1rem;
-    min-height: 120px;
+    padding: 1.45rem 1.15rem;
+    min-height: 132px;
     cursor: pointer;
     transition: all 0.3s ease;
     position: relative;
@@ -1440,9 +1440,9 @@ section {
 }
 
 .tab-icon {
-    font-size: 2.25rem;
+    font-size: 2.45rem;
     color: var(--primary-color);
-    margin-bottom: 0.6rem;
+    margin-bottom: 0.7rem;
     transition: all 0.3s ease;
 }
 
@@ -1451,7 +1451,7 @@ section {
 }
 
 .tab-title {
-    font-size: 1.2rem;
+    font-size: 1.28rem;
     font-weight: 700;
     color: var(--primary-color);
     transition: all 0.3s ease;
@@ -1940,6 +1940,18 @@ section {
 
 .paper-filter-row-primary {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.publication-filter-meta {
+    margin-top: 1rem;
+    display: block;
+}
+
+.publication-filter-note {
+    margin: 0;
+    color: var(--text-secondary);
+    font-size: 0.96rem;
+    line-height: 1.6;
 }
 
 .paper-filter-field {
@@ -2997,8 +3009,8 @@ section {
     }
 
     .research-tab {
-        padding: 0.95rem 0.6rem;
-        min-height: 96px;
+        padding: 1.08rem 0.7rem;
+        min-height: 104px;
     }
 
     .tab-number {
@@ -3009,12 +3021,12 @@ section {
     }
 
     .tab-icon {
-        font-size: 1.75rem;
-        margin-bottom: 0.4rem;
+        font-size: 1.9rem;
+        margin-bottom: 0.5rem;
     }
 
     .tab-title {
-        font-size: 1rem;
+        font-size: 1.06rem;
         line-height: 1.3;
     }
 
