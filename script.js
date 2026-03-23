@@ -652,6 +652,38 @@ function initializeResearchTabs() {
     openResearchTab(initialTab.dataset.tab, { shouldScroll: false });
 }
 
+function setResearchDisclosureState(toggle, panel, isExpanded) {
+    toggle.setAttribute('aria-expanded', String(isExpanded));
+    panel.hidden = !isExpanded;
+
+    const label = isExpanded
+        ? toggle.dataset.expandedLabel || 'Hide details'
+        : toggle.dataset.collapsedLabel || 'Show details';
+    const labelElement = toggle.querySelector('.science-disclosure-label');
+
+    if (labelElement) {
+        labelElement.textContent = label;
+    }
+}
+
+function initializeResearchDisclosures() {
+    const toggles = Array.from(document.querySelectorAll('.science-disclosure-toggle'));
+    if (toggles.length === 0) return;
+
+    toggles.forEach(toggle => {
+        const panelId = toggle.getAttribute('aria-controls');
+        const panel = panelId ? document.getElementById(panelId) : null;
+        if (!panel) return;
+
+        setResearchDisclosureState(toggle, panel, toggle.getAttribute('aria-expanded') === 'true');
+
+        toggle.addEventListener('click', function() {
+            const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+            setResearchDisclosureState(toggle, panel, !isExpanded);
+        });
+    });
+}
+
 // Photo Carousel Functions
 let currentSlide = 0;
 const slides = document.querySelectorAll('.carousel-slide');
@@ -1067,6 +1099,7 @@ async function initializePublicationFilters() {
 }
 
 document.addEventListener('DOMContentLoaded', initializeResearchTabs);
+document.addEventListener('DOMContentLoaded', initializeResearchDisclosures);
 document.addEventListener('DOMContentLoaded', initializePublicationFilters);
 
 // Particles Background Animation

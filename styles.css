@@ -1091,6 +1091,7 @@ section {
     background-attachment: fixed;
     position: relative;
     overflow: hidden;
+    padding-top: 8rem;
 }
 
 .about::before {
@@ -1099,7 +1100,7 @@ section {
     top: 0;
     left: 0;
     right: 0;
-    height: 200px;
+    height: 150px;
     background: linear-gradient(to bottom, #00274C, rgba(0, 39, 76, 0.9), rgba(0, 39, 76, 0.6), rgba(0, 39, 76, 0.3), transparent);
     z-index: 1;
     pointer-events: none;
@@ -1108,10 +1109,11 @@ section {
 @media (max-width: 768px) {
     .about {
         background-attachment: scroll;
+        padding-top: 6.5rem;
     }
     
     .about::before {
-        height: 150px;
+        height: 110px;
     }
 }
 
@@ -1208,18 +1210,28 @@ section {
 }
 
 .about {
-    padding-top: 5rem;   
-    padding-bottom: 3rem;
+    padding-top: 9rem;
+    padding-bottom: 2rem;
 }
 
 .news {
-    padding-top: 3rem;  
+    padding-top: 0.5rem;
     padding-bottom: 3rem;
 }
 
 .ack {
     padding-top: 3rem;   
     padding-bottom: 3rem;
+}
+
+@media (max-width: 768px) {
+    .about {
+        padding-top: 7rem;
+    }
+
+    .news {
+        padding-top: 0;
+    }
 }
 
 .umich-motto {
@@ -1608,6 +1620,203 @@ section {
 }
 
 .science-thrust-links a:hover {
+    text-decoration: underline;
+}
+
+.science-resource-group {
+    margin-top: 0.5rem;
+}
+
+.science-resource-cells {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.65rem;
+}
+
+.science-resource-cell {
+    padding: 0.85rem 0.95rem;
+    border: 1px solid rgba(0, 39, 76, 0.1);
+    border-radius: 0.9rem;
+    background: rgba(248, 250, 252, 0.72);
+    color: var(--text-secondary);
+    min-height: 100%;
+}
+
+.science-resource-cell-disclosure {
+    display: flex;
+    flex-direction: column;
+}
+
+.science-resource-cell-open {
+    padding-bottom: 0.95rem;
+}
+
+.science-resource-cell-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.8rem;
+    margin-bottom: 0.35rem;
+}
+
+.science-resource-label {
+    display: inline-block;
+    margin-bottom: 0.3rem;
+    font-size: 0.92rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--text-primary);
+}
+
+.science-resource-primary-link {
+    display: block;
+    font-size: 1rem;
+    line-height: 1.45;
+    color: var(--primary-color);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.science-resource-primary-link:hover {
+    text-decoration: underline;
+}
+
+.science-resource-cell a {
+    color: var(--primary-color);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.science-resource-cell a:hover {
+    text-decoration: underline;
+}
+
+.science-disclosure-toggle {
+    border: 1px solid rgba(0, 39, 76, 0.14);
+    background: linear-gradient(135deg, rgba(0, 39, 76, 0.04), rgba(243, 89, 15, 0.08));
+    color: var(--primary-color);
+    border-radius: 999px;
+    padding: 0.35rem 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.45rem;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transition);
+    flex-shrink: 0;
+}
+
+.science-disclosure-toggle:hover,
+.science-disclosure-toggle:focus-visible {
+    border-color: rgba(0, 39, 76, 0.26);
+    box-shadow: 0 6px 18px rgba(0, 39, 76, 0.1);
+    outline: none;
+}
+
+.science-disclosure-toggle i {
+    transition: transform 0.25s ease;
+}
+
+.science-disclosure-toggle[aria-expanded="true"] i {
+    transform: rotate(180deg);
+}
+
+.science-disclosure-panel {
+    margin-top: 0.55rem;
+}
+
+.research-paper-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+}
+
+.research-paper-card {
+    position: relative;
+    padding: 0.72rem 0.8rem;
+    background: rgba(248, 250, 252, 0.9);
+    border: 1px solid rgba(0, 39, 76, 0.1);
+    border-radius: 0.8rem;
+    box-shadow: 0 2px 10px rgba(0, 39, 76, 0.05);
+}
+
+.research-paper-card.has-award {
+    padding-right: 10.5rem;
+}
+
+.research-paper-title {
+    margin: 0 0 0.28rem;
+    font-size: 1.02rem;
+    line-height: 1.35;
+    color: var(--text-primary);
+}
+
+.research-paper-title a {
+    color: var(--text-primary);
+    text-decoration: none;
+}
+
+.research-paper-title a:hover {
+    color: var(--primary-color);
+}
+
+.research-paper-meta {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.45;
+    color: var(--text-secondary);
+}
+
+.research-paper-authors,
+.research-paper-venue {
+    margin: 0;
+    font-size: inherit;
+    line-height: inherit;
+    color: var(--text-secondary);
+}
+
+.research-paper-venue-inline {
+    margin-left: 0.5rem;
+    font-style: italic;
+    font-weight: 600;
+    color: var(--text-light);
+    white-space: nowrap;
+}
+
+.research-paper-venue-inline::before {
+    content: '•';
+    margin-right: 0.5rem;
+    color: rgba(107, 114, 128, 0.7);
+}
+
+.research-paper-award {
+    position: absolute;
+    top: 0.7rem;
+    right: 0.75rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    max-width: 9rem;
+    padding: 0.28rem 0.55rem;
+    border-radius: 0.7rem;
+    background: linear-gradient(135deg, rgba(255, 203, 5, 0.18), rgba(243, 89, 15, 0.1));
+    border: 1px solid rgba(255, 203, 5, 0.35);
+    color: var(--primary-color);
+    font-size: 0.69rem;
+    line-height: 1.2;
+    font-weight: 600;
+}
+
+.research-paper-award i {
+    color: var(--secondary-color);
+    flex-shrink: 0;
+}
+
+.research-paper-award a {
+    color: inherit;
     text-decoration: underline;
 }
 
@@ -3082,6 +3291,43 @@ section {
         font-size: 0.99rem;
     }
 
+    .science-disclosure-toggle {
+        padding: 0.32rem 0.62rem;
+        font-size: 0.9rem;
+    }
+
+    .science-resource-cell {
+        padding: 0.8rem 0.85rem;
+    }
+
+    .science-resource-cell-head {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .research-paper-card {
+        padding: 0.72rem 0.78rem;
+    }
+
+    .research-paper-card.has-award {
+        padding-right: 8.4rem;
+    }
+
+    .research-paper-title {
+        font-size: 0.98rem;
+    }
+
+    .research-paper-meta {
+        font-size: 0.88rem;
+    }
+
+    .research-paper-award {
+        top: 0.65rem;
+        right: 0.65rem;
+        max-width: 7rem;
+        font-size: 0.62rem;
+    }
+
     .publications-filter-controls {
         padding: 1rem;
         margin-bottom: 0.8rem;
@@ -3523,7 +3769,7 @@ section {
 
 .news-year h4 {
     color: var(--primary-color);
-    font-size: 1.2rem;
+    font-size: 1.32rem;
     font-weight: 600;
     margin: 0;
     padding: 0.4rem 0.8rem;
@@ -3546,39 +3792,39 @@ section {
     display: inline-flex;
     align-items: center;
     gap: 0.3rem;
-    margin-right: 1rem;
+    margin-right: 0.5rem;
     flex-shrink: 0;
-    min-width: 100px;
-    width: 100px;
+    min-width: 88px;
+    width: 88px;
 }
 
 .date-month {
-    font-size: 0.9rem;
+    font-size: 1rem;
     font-weight: 700;
     color: var(--secondary-color);
     letter-spacing: 0.5px;
 }
 
 .date-year {
-    font-size: 0.85rem;
-    font-weight: 500;
+    font-size: 1rem;
+    font-weight: 600;
     color: var(--text-secondary);
 }
 
 .news-content {
     flex: 1;
-    background: transparent;
-    padding: 0.9rem 1.2rem;
-    border-radius: 4px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
-    /* border-left: 3px solid var(--primary-color); */
+    background: rgba(255, 255, 255, 0.96);
+    padding: 1.05rem 1.35rem;
+    border-radius: 10px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0, 39, 76, 0.08);
     position: relative;
     transition: var(--transition);
     width: 100%;
 }
 
 .news-content:hover {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
 }
 
 /* 连接线上的圆点 */
@@ -3600,15 +3846,15 @@ section {
 .news-text {
     flex: 1;
     color: var(--text-primary);
-    line-height: 1.6;
-    font-size: 0.95rem;
+    line-height: 1.75;
+    font-size: 1.05rem;
     width: 100%;
 }
 
 .news-text strong {
     color: var(--primary-color);
     font-weight: 600;
-    font-size: 1.1rem;
+    font-size: 1.18rem;
 }
 
 /* Featured News Styling */
@@ -3643,10 +3889,12 @@ section {
     flex: 1;
     text-align: left;
     min-width: 0;
+    font-size: 1.05rem;
+    line-height: 1.7;
 }
 
 .news-header strong {
-    font-size: 1rem;
+    font-size: 1.08rem;
     color: var(--primary-color);
     font-weight: 600;
     letter-spacing: -0.01em;
@@ -3893,7 +4141,7 @@ section {
     }
 
     .news-year h4 {
-        font-size: 1rem;
+        font-size: 1.12rem;
         padding: 0.3rem 0.6rem;
     }
 
@@ -3904,7 +4152,7 @@ section {
 
     .news-content {
         padding: 1rem;
-        margin-left: 0.5rem;
+        margin-left: 0.3rem;
     }
 
     .news-content::before {
@@ -3914,12 +4162,12 @@ section {
     }
 
     .news-text {
-        font-size: 0.9rem;
-        line-height: 1.6;
+        font-size: 1rem;
+        line-height: 1.7;
     }
 
     .news-text strong {
-        font-size: 1rem;
+        font-size: 1.08rem;
     }
     
     .news-toggle {
@@ -3934,18 +4182,18 @@ section {
     }
     
     .news-date-inline {
-        margin-right: 0.75rem;
-        min-width: 75px;
-        width: 75px;
+        margin-right: 0.45rem;
+        min-width: 68px;
+        width: 68px;
         flex-shrink: 0;
     }
     
     .date-month {
-        font-size: 0.85rem;
+        font-size: 0.95rem;
     }
 
     .date-year {
-        font-size: 0.8rem;
+        font-size: 0.92rem;
     }
 
     .badge {
@@ -3965,8 +4213,8 @@ section {
     }
 
     .news-title-text {
-        font-size: 0.9rem;
-        line-height: 1.5;
+        font-size: 0.98rem;
+        line-height: 1.6;
     }
 
     .paper-category {
@@ -4020,8 +4268,8 @@ section {
         width: 100%;
         flex: 1 1 100%;
         min-width: 100%;
-        font-size: 0.85rem;
-        line-height: 1.5;
+        font-size: 0.95rem;
+        line-height: 1.6;
     }
     
     .news-badges {
@@ -4080,7 +4328,7 @@ section {
     }
     
     .news-content {
-        margin-left: 0.5rem;
+        margin-left: 0.3rem;
     }
 }
 
@@ -4867,6 +5115,7 @@ section {
     border-radius: 999px;
     background: rgba(255, 255, 255, 0.92);
     border: 1px solid rgba(0, 0, 0, 0.08);
+    font-size: 1.05rem;
     font-weight: 700;
     letter-spacing: 0.2px;
     color: #1f2a37;
