@@ -862,6 +862,11 @@ body {
     object-fit: cover;
 }
 
+/* Pin the crop to the bottom edge so feet stay in frame and sky is trimmed instead */
+.group-photo.anchor-bottom {
+    object-position: center bottom;
+}
+
 /* Carousel Navigation Buttons */
 .carousel-btn {
     position: absolute;
