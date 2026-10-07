@@ -787,11 +787,12 @@ const PUBLICATION_VENUE_ORDER = [
 ];
 
 const FALLBACK_PEOPLE_NAMES = [
-    'Aiden Pan',
+    'Yida (Aiden) Pan',
     'Alec Xu',
     'Can Yaras',
     'Chanyong Jung',
     'Dogyoon Song',
+    'Guangchen Li',
     'Hairong Ni',
     'Huijie Zhang',
     'Ismail Alkhouri',
@@ -800,14 +801,17 @@ const FALLBACK_PEOPLE_NAMES = [
     'Jinfan Zhou',
     'Jingjing Qian',
     'Jiyi Chen',
+    'Justin Lee',
     'Lianghe Shi',
     'Liangzhao Chen',
     'Meng Wu',
     'Minzhe Guo',
+    'Muhammad Ashiq',
     'Peng Wang',
     'Pengyu Li',
     'Qing Qu',
     'Saaketh Medepalli',
+    'Shaowen Xiang',
     'Siyi Chen',
     'Soo-Min Kwon',
     'Wenda Li',
@@ -817,13 +821,16 @@ const FALLBACK_PEOPLE_NAMES = [
     'Xiaoyan Zhang',
     'Xinyu Lu',
     'Xiyuan Li',
+    'Yanjin He',
     'Yifu Lu',
     'Yixiang Dai',
     'Yixuan Jia',
     'Yutong Wang',
+    'Yuxiang Yang',
     'Zekai Zhang',
     'Zhen Qin',
     'Zhexin Wu',
+    'Zifei Bai',
     'Zijian Huang'
 ];
 
@@ -836,6 +843,7 @@ function normalizePublicationVenueText(venueText) {
 function normalizePersonNameKey(name) {
     return name
         .replace(/\*/g, '')
+        .replace(/\([^)]*\)/g, ' ')
         .replace(/[.']/g, '')
         .replace(/-/g, ' ')
         .replace(/\s+/g, ' ')
@@ -963,9 +971,10 @@ async function initializePublicationFilters() {
     const summaryElement = document.getElementById('publication-filter-summary');
     const emptyStateElement = document.getElementById('publication-filter-empty');
 
-    if (!publicationRoot || !collectionFilter || !authorFilter || !venueFilter) return;
+    if (!publicationRoot || !authorFilter || !venueFilter) return;
 
     const yearSections = Array.from(publicationRoot.querySelectorAll('.year-section'));
+    const jumpLinks = Array.from(document.querySelectorAll('#publication-jump-links a[href^="#year-"]'));
     const publicationCards = Array.from(publicationRoot.querySelectorAll('.publication-card'));
     if (publicationCards.length === 0) return;
     const peopleNameMap = await loadPeopleNameMap();
@@ -1024,13 +1033,13 @@ async function initializePublicationFilters() {
         });
     }
 
-    populateFilterOptions(collectionFilter, collectionValues, collectionLabels);
+    if (collectionFilter) populateFilterOptions(collectionFilter, collectionValues, collectionLabels);
     populateFilterOptions(authorFilter, Array.from(authorSet).sort((a, b) => a.localeCompare(b)));
     const sortedVenueKeys = sortPublicationVenueKeys(Array.from(venueMap.keys()), venueMap);
     populateFilterOptions(venueFilter, sortedVenueKeys, venueMap);
 
     function applyPublicationFilters() {
-        const selectedCollection = collectionFilter.value;
+        const selectedCollection = collectionFilter ? collectionFilter.value : 'all';
         const selectedAuthor = authorFilter.value;
         const selectedVenue = venueFilter.value;
 
@@ -1073,6 +1082,11 @@ async function initializePublicationFilters() {
             setYearSectionExpanded(section, hasMatches);
         });
 
+        jumpLinks.forEach(link => {
+            const target = document.getElementById(link.getAttribute('href').slice(1));
+            link.hidden = Boolean(target && target.hidden);
+        });
+
         const visibleSections = yearSections.filter(section => !section.hidden);
         visibleSections.forEach(section => setYearSectionExpanded(section, true));
 
@@ -1084,6 +1098,7 @@ async function initializePublicationFilters() {
 
             const filterText = activeFilters.length > 0 ? ` (${activeFilters.join(' | ')})` : '';
             summaryElement.textContent = `Showing ${visibleCount} of ${publicationCards.length} publications${filterText}.`;
+            summaryElement.hidden = !filtersActive;
         }
 
         if (emptyStateElement) {
@@ -1091,7 +1106,7 @@ async function initializePublicationFilters() {
         }
     }
 
-    [collectionFilter, authorFilter, venueFilter].forEach(select =>
+    [collectionFilter, authorFilter, venueFilter].filter(Boolean).forEach(select =>
         select.addEventListener('change', applyPublicationFilters)
     );
 
@@ -1100,6 +1115,21 @@ async function initializePublicationFilters() {
 
 document.addEventListener('DOMContentLoaded', initializeResearchTabs);
 document.addEventListener('DOMContentLoaded', initializeResearchDisclosures);
+function highlightPublicationVenueAcronyms() {
+    document.querySelectorAll('#publications-filter-root .pub-venue em').forEach(em => {
+        if (em.children.length > 0) return;
+        const text = em.textContent;
+        const match = text.match(/\(([A-Za-z][A-Za-z-]*(?:'\d{2})?)\)/);
+        if (!match) return;
+        const tag = document.createElement('strong');
+        tag.className = 'pub-venue-tag';
+        tag.textContent = match[0];
+        em.textContent = '';
+        em.append(text.slice(0, match.index), tag, text.slice(match.index + match[0].length));
+    });
+}
+
+document.addEventListener('DOMContentLoaded', highlightPublicationVenueAcronyms);
 document.addEventListener('DOMContentLoaded', initializePublicationFilters);
 
 // Particles Background Animation
