@@ -6923,6 +6923,16 @@ section {
     color: var(--text-primary);
 }
 
+/* Resources page sections (Code / Project / News) */
+.resources-section {
+    margin-top: 3.5rem;
+}
+
+.resources-section .blog-grid,
+.resources-section .blog-note {
+    margin-top: 0;
+}
+
 @media (max-width: 1024px) {
     .blog-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
