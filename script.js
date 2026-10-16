@@ -1587,3 +1587,60 @@ document.addEventListener('DOMContentLoaded', initializePublicationFilters);
     return loadStore();
   };
 })();
+
+/* ===== Recent News: collapse older entries behind a "Show more" button ===== */
+const NEWS_VISIBLE_COUNT = 8;
+
+function initializeNewsShowMore() {
+    const timeline = document.querySelector('.news-timeline');
+    if (!timeline) return;
+
+    // Split the timeline into the groups delimited by each section divider.
+    const groups = [];
+    Array.from(timeline.children).forEach(child => {
+        if (child.classList.contains('news-divider')) {
+            groups.push({ divider: child, items: [] });
+        } else if (child.classList.contains('news-item') && groups.length) {
+            groups[groups.length - 1].items.push(child);
+        }
+    });
+
+    groups.forEach(group => {
+        const hidden = group.items.slice(NEWS_VISIBLE_COUNT);
+        if (hidden.length < 2) return;
+
+        hidden.forEach(item => item.classList.add('news-item-hidden'));
+
+        const label = group.divider.querySelector('.news-divider-label');
+        const section = label ? label.textContent.trim() : 'this section';
+        const collapsedText = `Show ${hidden.length} earlier entries`;
+
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.className = 'news-show-more';
+        button.setAttribute('aria-expanded', 'false');
+        button.textContent = collapsedText;
+        button.setAttribute('aria-label', `${collapsedText} under ${section}`);
+
+        const row = document.createElement('div');
+        row.className = 'news-item news-show-more-row';
+        row.appendChild(button);
+        group.items[group.items.length - 1].insertAdjacentElement('afterend', row);
+
+        button.addEventListener('click', () => {
+            const expanded = button.getAttribute('aria-expanded') === 'true';
+            hidden.forEach(item => item.classList.toggle('news-item-hidden', expanded));
+            button.setAttribute('aria-expanded', String(!expanded));
+            button.textContent = expanded ? collapsedText : 'Show less';
+            button.setAttribute(
+                'aria-label',
+                expanded ? `${collapsedText} under ${section}` : `Show fewer entries under ${section}`
+            );
+            if (expanded && typeof row.scrollIntoView === 'function') {
+                row.scrollIntoView({ block: 'nearest' });
+            }
+        });
+    });
+}
+
+document.addEventListener('DOMContentLoaded', initializeNewsShowMore);
